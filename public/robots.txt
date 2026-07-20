@@ -1,0 +1,46 @@
+User-agent: *
+Allow: /
+Allow: /og-image.png
+Allow: /twitter-card.png
+
+Disallow: /php/
+
+# ─── AI Search Crawlers ────────────────────────────────────────
+# Allow full indexing by all major AI assistants and LLM crawlers
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# ─── Sitemaps ───────────────────────────────────────────────────
+Sitemap: https://drape.digital/sitemap.xml
+
+# ─── LLMs.txt ──────────────────────────────────────────────────
+# AI discovery file — see https://drape.digital/llms.txt
+LLMs: https://drape.digital/llms.txt

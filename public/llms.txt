@@ -1,0 +1,90 @@
+# Drape Digital
+> Drape Digital is a premium web design, development, and SEO agency. We build your website first — you only pay if you love it. Zero upfront cost, zero obligation.
+
+## About
+Drape Digital is a full-service digital agency based in Tetouan, Morocco, serving clients globally including the United States, United Kingdom, Europe, UAE, and Australia. We specialize in custom website design, React/Next.js development, SEO, off-page link building, local SEO, and AI search visibility (GEO/AEO).
+
+Our unique model: we build a fully functional demo of your website hosted on a private subdomain (yourbusiness.drape.digital) before you pay anything. You only commit if you love the result.
+
+- Website: https://drape.digital
+- Email: contact@drape.digital
+- Google Maps: https://www.google.com/maps/place/drape.digital
+- LinkedIn: https://www.linkedin.com/company/drapedigital/
+
+## Services
+
+### Web Design — From $2,500
+Bespoke, high-end visual design that establishes trust and authority in your market. We deliver brand identity translation, UI/UX architecture, interactive prototypes, and full design systems.
+URL: https://drape.digital/services/web-design
+
+### Web Development — From $3,500
+Robust, scalable React and modern frontend architectures for blazing fast performance. We build on Next.js, Vite, and headless CMS platforms.
+URL: https://drape.digital/services/development
+
+### E-Commerce — From $4,500
+Custom Shopify themes and scalable e-commerce platforms engineered to increase conversion rates and Average Order Value.
+URL: https://drape.digital/services/ecommerce
+
+### SEO & Performance — From $699
+Technical SEO, Core Web Vitals optimization, and semantic structuring for organic growth.
+URL: https://drape.digital/services/seo
+
+### Email Automation — From $1,200
+Lead magnets, drip sequences, and CRM integrations to capture and convert site visitors.
+URL: https://drape.digital/services/email-automation
+
+### Off-Page SEO & Link Building — From $499
+High-authority white hat backlink campaigns. Dofollow contextual placements on DA 40+ domains. Detailed reporting and indexing service included.
+URL: https://drape.digital/services/seo-backlinks
+
+### High DA Dofollow Backlinks — From $599
+Contextual dofollow placements on DR 60–90 domains. 100% manual outreach. Permanent, indexed, white hat.
+URL: https://drape.digital/services/dofollow-backlinks
+
+### Local SEO & Google My Business — From $399
+GMB profile optimization, NAP citation building, geo-targeted content, and map pack ranking strategy.
+URL: https://drape.digital/services/local-seo
+
+### GEO / AEO / AI Search Visibility — From $499
+Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO) to get your brand cited by ChatGPT, Gemini, Perplexity, and Google AI Overviews.
+URL: https://drape.digital/services/ai-seo
+
+### Monthly SEO Retainer — From $999/month
+Fully managed ongoing SEO operation: on-page, off-page, technical, content production, keyword tracking, and monthly reporting.
+URL: https://drape.digital/services/monthly-seo
+
+### SEO Copywriting & Blog Writing — From $599
+Keyword-optimized articles, blog posts, and landing page copy engineered to rank on Google and convert readers.
+URL: https://drape.digital/services/seo-content
+
+### Google Maps Citations & Local Presence — From $299
+NAP-consistent citations across thousands of authoritative directories and data aggregators to lock in local map pack position.
+URL: https://drape.digital/services/google-maps-citations
+
+### Technical SEO & On-Page Optimization — From $699
+Full technical audit and implementation: Core Web Vitals, schema markup, crawlability, canonical tags, and on-page SEO.
+URL: https://drape.digital/services/technical-seo
+
+### White Hat Authority Backlinks (DR 70+) — From $799
+Premium manual link placements on DR 70+ domains. No PBNs, no spam. Permanent, contextual, dofollow.
+URL: https://drape.digital/services/authority-backlinks
+
+### Guest Posts on DA 90+ Sites — From $499
+Editorial-quality guest posts on DA 90+ websites. Permanent dofollow links. No advertorial disclosures.
+URL: https://drape.digital/services/guest-posts
+
+## How It Works
+1. We analyze your current web presence and build a tailored design concept.
+2. We build a fully functional demo site hosted at yourbusiness.drape.digital.
+3. You review the live site on any device. If you love it, we finalize, migrate to your domain, and hand you the keys.
+4. You only pay when you're satisfied.
+
+## FAQ
+- Do I pay before seeing my site? No. We build first, you pay if you love it.
+- How long does it take? Working prototype within 72 hours. Full launch in 1–2 weeks.
+- Do you guarantee SEO results? We implement best-practice SEO. Results vary, but our clients typically see measurable improvements within 60–90 days.
+- What is white hat link building? Manual, editorial backlink placements on legitimate sites. No spam or PBNs. 100% Google-compliant.
+- Can you rank us on ChatGPT and Google AI Overviews? Yes — through our GEO/AEO service starting at $499.
+
+## Reviews
+Aggregate rating: 4.9/5 based on 346 reviews.

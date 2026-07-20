@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aura — Skincare, Distilled</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bone:#F2EDE4; --milk:#FBF9F4; --ink:#1C1A15; --moss:#5C6049;
+    --blush:#D8A38C; --stone:#8C8676;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--milk);color:var(--ink);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(12px);background:rgba(251,249,244,.7);border-bottom:1px solid rgba(28,26,21,.06)}
+  .navin{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{font-family:'Fraunces';font-size:26px;letter-spacing:-.02em;font-weight:400}
+  .logo span{font-style:italic}
+  .navlinks{display:flex;gap:38px;font-size:14px;letter-spacing:.02em}
+  .navlinks a{opacity:.65;transition:opacity .3s}
+  .navlinks a:hover{opacity:1}
+  .navcta{border:1px solid var(--ink);padding:10px 22px;border-radius:100px;font-size:13px;transition:all .3s}
+  .navcta:hover{background:var(--ink);color:var(--milk)}
+
+  /* HERO */
+  .hero{padding:160px 0 60px;position:relative}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+  .eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--moss);margin-bottom:28px}
+  h1{font-family:'Fraunces';font-weight:300;font-size:clamp(48px,6vw,86px);line-height:.98;letter-spacing:-.025em;margin-bottom:30px}
+  h1 em{font-style:italic;color:var(--blush)}
+  .lede{font-size:18px;line-height:1.6;color:var(--stone);max-width:440px;margin-bottom:38px}
+  .btnrow{display:flex;gap:16px;align-items:center}
+  .btn{background:var(--ink);color:var(--milk);padding:16px 34px;border-radius:100px;font-size:14px;font-weight:500;transition:transform .3s,background .3s}
+  .btn:hover{transform:translateY(-2px);background:var(--moss)}
+  .btn-ghost{font-size:14px;border-bottom:1px solid var(--ink);padding-bottom:3px}
+  .hero-img{position:relative;aspect-ratio:4/5;border-radius:8px;overflow:hidden;background:var(--bone)}
+  .hero-img img{width:100%;height:100%;object-fit:cover}
+  .hero-badge{position:absolute;bottom:24px;left:24px;background:rgba(251,249,244,.9);backdrop-filter:blur(8px);padding:14px 20px;border-radius:100px;font-size:13px;display:flex;align-items:center;gap:10px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--moss)}
+
+  /* MARQUEE */
+  .ticker{border-top:1px solid rgba(28,26,21,.08);border-bottom:1px solid rgba(28,26,21,.08);overflow:hidden;padding:22px 0;margin-top:70px}
+  .ticker-track{display:flex;gap:60px;white-space:nowrap;animation:scroll 26s linear infinite;font-family:'Fraunces';font-size:22px;font-style:italic;color:var(--stone)}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+  .ticker-track span{display:flex;align-items:center;gap:60px}
+  .ast{color:var(--blush);font-style:normal}
+
+  /* PHILOSOPHY */
+  .sec{padding:120px 0}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:64px;gap:40px}
+  .sec-title{font-family:'Fraunces';font-weight:300;font-size:clamp(34px,4vw,54px);line-height:1.05;letter-spacing:-.02em;max-width:600px}
+  .sec-num{font-size:13px;letter-spacing:.2em;color:var(--moss);white-space:nowrap}
+  .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+  .pcard{background:var(--bone);border-radius:8px;padding:34px;aspect-ratio:1/1.1;display:flex;flex-direction:column;justify-content:space-between;transition:transform .4s}
+  .pcard:hover{transform:translateY(-6px)}
+  .pcard:nth-child(2){background:var(--moss);color:var(--milk)}
+  .pcard-ic{width:46px;height:46px;border-radius:50%;border:1px solid currentColor;display:flex;align-items:center;justify-content:center;font-family:'Fraunces';font-style:italic;font-size:20px}
+  .pcard h3{font-family:'Fraunces';font-weight:400;font-size:24px;margin-bottom:12px;letter-spacing:-.01em}
+  .pcard p{font-size:14.5px;line-height:1.6;opacity:.7}
+
+  /* PRODUCT SHOWCASE */
+  .showcase{background:var(--bone);padding:120px 0}
+  .show-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:60px}
+  .prod{background:var(--milk);border-radius:8px;overflow:hidden;transition:transform .4s}
+  .prod:hover{transform:translateY(-8px)}
+  .prod-img{aspect-ratio:1/1;background:var(--bone);overflow:hidden}
+  .prod-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .prod:hover .prod-img img{transform:scale(1.06)}
+  .prod-info{padding:24px}
+  .prod-info .cat{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss);margin-bottom:8px}
+  .prod-info h4{font-family:'Fraunces';font-weight:400;font-size:21px;margin-bottom:6px}
+  .prod-info .price{font-size:14px;color:var(--stone)}
+
+  /* BIG QUOTE */
+  .quote{padding:140px 0;text-align:center}
+  .quote blockquote{font-family:'Fraunces';font-weight:300;font-size:clamp(30px,4.5vw,58px);line-height:1.15;letter-spacing:-.02em;max-width:900px;margin:0 auto}
+  .quote blockquote em{font-style:italic;color:var(--blush)}
+  .quote cite{display:block;margin-top:32px;font-style:normal;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
+
+  /* CTA */
+  .cta-band{background:var(--ink);color:var(--milk);border-radius:16px;padding:80px 60px;text-align:center;margin:40px 0 100px;position:relative;overflow:hidden}
+  .cta-band h2{font-family:'Fraunces';font-weight:300;font-size:clamp(36px,5vw,64px);line-height:1.02;margin-bottom:24px;letter-spacing:-.02em}
+  .cta-band h2 em{font-style:italic;color:var(--blush)}
+  .cta-band p{color:rgba(251,249,244,.6);font-size:17px;margin-bottom:38px}
+  .cta-band .btn{background:var(--milk);color:var(--ink)}
+  .cta-band .btn:hover{background:var(--blush)}
+  .cta-glow{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(216,163,140,.25),transparent 70%);top:-200px;right:-100px}
+
+  /* FOOTER */
+  footer{padding:70px 0 40px;border-top:1px solid rgba(28,26,21,.08)}
+  .foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:40px;margin-bottom:50px}
+  .foot-brand{max-width:280px}
+  .foot-brand .logo{margin-bottom:16px;display:inline-block}
+  .foot-brand p{font-size:14px;color:var(--stone);line-height:1.6}
+  .foot-col h5{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--moss);margin-bottom:18px}
+  .foot-col a{display:block;font-size:14.5px;margin-bottom:11px;color:var(--stone);transition:color .3s}
+  .foot-col a:hover{color:var(--ink)}
+  .foot-bot{display:flex;justify-content:space-between;font-size:13px;color:var(--stone);padding-top:30px;border-top:1px solid rgba(28,26,21,.06)}
+  .credit{font-size:12px;opacity:.5}
+
+  @media(max-width:880px){
+    .hero-grid,.pgrid,.show-grid{grid-template-columns:1fr}
+    .navlinks{display:none}
+    .hero{padding:120px 0 40px}
+    .pgrid{grid-template-columns:1fr 1fr}
+    .show-grid{grid-template-columns:1fr 1fr}
+    .sec-head{flex-direction:column;align-items:flex-start}
+    .cta-band{padding:56px 28px}
+  }
+  @media(max-width:560px){
+    .pgrid,.show-grid{grid-template-columns:1fr}
+    .wrap{padding:0 22px}
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap navin">
+    <div class="logo">Aura<span>.</span></div>
+    <div class="navlinks">
+      <a href="#">Shop</a><a href="#">Rituals</a><a href="#">Ingredients</a><a href="#">Journal</a>
+    </div>
+    <a href="#" class="navcta">Find your ritual</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Clinically clean · Cruelty-free</div>
+      <h1>Skincare,<br><em>distilled</em> to<br>what works.</h1>
+      <p class="lede">No twelve-step rituals. No mystery actives. Three formulas, dosed for your skin barrier and nothing it doesn't need.</p>
+      <div class="btnrow">
+        <a href="#" class="btn">Shop the edit</a>
+        <a href="#" class="btn-ghost">Take the skin quiz</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <!-- AG-IMG: hero-aura | 1080x1350 (4:5) | Soft-focus editorial product shot: a single amber-glass serum dropper bottle resting on smooth river stone, dewy water droplets, warm bone/cream backdrop with diffused morning light, generous negative space, muted moss-green and blush tones, premium minimalist skincare photography -->
+      <img src="assets/hero-aura.png" alt="Aura serum on stone">
+      <div class="hero-badge"><span class="dot"></span> Barrier-safe at every pH</div>
+    </div>
+  </div>
+  <div class="ticker">
+    <div class="ticker-track">
+      <span>Squalane <span class="ast">✳</span> Niacinamide <span class="ast">✳</span> Polyglutamic Acid <span class="ast">✳</span> Ceramides <span class="ast">✳</span> Bakuchiol <span class="ast">✳</span></span>
+      <span>Squalane <span class="ast">✳</span> Niacinamide <span class="ast">✳</span> Polyglutamic Acid <span class="ast">✳</span> Ceramides <span class="ast">✳</span> Bakuchiol <span class="ast">✳</span></span>
+    </div>
+  </div>
+</header>
+
+<section class="sec wrap">
+  <div class="sec-head">
+    <div class="sec-title">We left out the noise so your skin could do the talking.</div>
+    <div class="sec-num">Our principles</div>
+  </div>
+  <div class="pgrid">
+    <div class="pcard">
+      <div class="pcard-ic">i</div>
+      <div><h3>Radically short lists</h3><p>Every formula caps at nine ingredients. If it isn't doing measurable work, it isn't in the bottle.</p></div>
+    </div>
+    <div class="pcard">
+      <div class="pcard-ic">ii</div>
+      <div><h3>Dosed, not sprinkled</h3><p>Actives at clinical concentrations — the percentages studies actually used, printed on every label.</p></div>
+    </div>
+    <div class="pcard">
+      <div class="pcard-ic">iii</div>
+      <div><h3>Made to run out</h3><p>Refillable glass, compostable mailers, and a reminder before you scrape the jar. Less waste, by design.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="showcase">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title">The whole<br>routine. Three bottles.</div>
+      <div class="sec-num">The edit / 03</div>
+    </div>
+    <div class="show-grid">
+      <div class="prod">
+        <div class="prod-img">
+          <!-- AG-IMG: prod-cleanse | 800x800 (1:1) | Minimalist product shot of a frosted-glass gel cleanser bottle on a pale cream surface, soft natural shadow, single sprig of greenery, calm editorial skincare styling, moss and bone palette -->
+          <img src="assets/prod-cleanse.png" alt="Gentle gel cleanser">
+        </div>
+        <div class="prod-info"><div class="cat">Morning · Night</div><h4>The Gentle Cleanse</h4><div class="price">$28 · 150ml</div></div>
+      </div>
+      <div class="prod">
+        <div class="prod-img">
+          <!-- AG-IMG: prod-serum | 800x800 (1:1) | Minimalist product shot of an amber dropper serum bottle on a pale cream surface, a few dewy water droplets, soft diffused light, premium skincare styling, blush and moss accents -->
+          <img src="assets/prod-serum.png" alt="Barrier serum">
+        </div>
+        <div class="prod-info"><div class="cat">PM · 3 drops</div><h4>The Barrier Serum</h4><div class="price">$46 · 30ml</div></div>
+      </div>
+      <div class="prod">
+        <div class="prod-img">
+          <!-- AG-IMG: prod-cream | 800x800 (1:1) | Minimalist product shot of a squat ceramic moisturizer jar with lid ajar showing cream texture, pale cream backdrop, soft shadow, understated luxury skincare styling, bone and terracotta-blush tones -->
+          <img src="assets/prod-cream.png" alt="Daily moisturizer">
+        </div>
+        <div class="prod-info"><div class="cat">AM · Daily</div><h4>The Quiet Cream</h4><div class="price">$38 · 50ml</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote wrap">
+  <blockquote>"I stopped counting steps and started <em>seeing my skin</em>. Six weeks, three products, and the calmest my barrier has been in years."</blockquote>
+  <cite>Dr. Lena Ortiz — Dermatology, verified buyer</cite>
+</section>
+
+<section class="wrap">
+  <div class="cta-band">
+    <div class="cta-glow"></div>
+    <h2>Start with the <em>quiz</em>.</h2>
+    <p>Two minutes. We'll tell you which formulas your skin actually needs — and which to skip.</p>
+    <a href="#" class="btn">Take the skin quiz</a>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="logo">Aura<span>.</span></div>
+      <p>Clinically clean skincare, distilled to what works. Formulated in small batches, refillable by design.</p>
+    </div>
+    <div class="foot-col"><h5>Shop</h5><a href="#">Cleanse</a><a href="#">Treat</a><a href="#">Moisturize</a><a href="#">Refills</a></div>
+    <div class="foot-col"><h5>Learn</h5><a href="#">Ingredients</a><a href="#">The Journal</a><a href="#">Skin quiz</a></div>
+    <div class="foot-col"><h5>Company</h5><a href="#">About</a><a href="#">Sustainability</a><a href="#">Contact</a></div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 Aura Skincare</span>
+    <span class="credit">Site by Drape Digital</span>
+  </div>
+</footer>
+</body>
+</html>

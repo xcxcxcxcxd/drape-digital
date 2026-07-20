@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexus — Money that moves at your speed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0C10; --panel:#11141B; --panel2:#161A23; --line:#222732;
+    --txt:#E8EBF0; --mut:#8089A0; --mint:#5EEAD4; --volt:#A7F3D0; --iris:#818CF8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--txt);font-family:'Space Grotesk',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+  a{color:inherit;text-decoration:none}
+  .mono{font-family:'IBM Plex Mono',monospace}
+
+  /* glow grid bg */
+  body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:60px 60px;opacity:.18;z-index:0;mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 30%,transparent 75%)}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,12,16,.8);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .navin{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;letter-spacing:-.02em}
+  .logo-mk{width:24px;height:24px;border-radius:7px;background:linear-gradient(135deg,var(--mint),var(--iris));position:relative}
+  .logo-mk::after{content:"";position:absolute;inset:6px;border-radius:3px;background:var(--bg)}
+  .navlinks{display:flex;gap:34px;font-size:14px}
+  .navlinks a{color:var(--mut);transition:color .25s}
+  .navlinks a:hover{color:var(--txt)}
+  .nav-r{display:flex;gap:16px;align-items:center}
+  .nav-login{font-size:14px;color:var(--mut)}
+  .nav-cta{background:var(--mint);color:#06231E;padding:9px 20px;border-radius:8px;font-size:14px;font-weight:600;transition:all .25s}
+  .nav-cta:hover{background:var(--volt);box-shadow:0 0 24px rgba(94,234,212,.35)}
+
+  /* HERO */
+  .hero{position:relative;z-index:1;padding:150px 0 90px;text-align:center}
+  .pill{display:inline-flex;align-items:center;gap:9px;background:var(--panel);border:1px solid var(--line);padding:7px 16px;border-radius:100px;font-size:13px;color:var(--mut);margin-bottom:34px}
+  .pulse{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 0 rgba(94,234,212,.6);animation:pulse 2s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 8px rgba(94,234,212,0)}100%{box-shadow:0 0 0 0 rgba(94,234,212,0)}}
+  h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:-.04em;font-weight:600;margin-bottom:26px}
+  h1 .grad{background:linear-gradient(120deg,var(--mint),var(--iris));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{font-size:19px;color:var(--mut);max-width:560px;margin:0 auto 40px;line-height:1.55}
+  .hbtns{display:flex;gap:14px;justify-content:center;margin-bottom:60px}
+  .btn-pri{background:var(--mint);color:#06231E;padding:15px 30px;border-radius:10px;font-weight:600;font-size:15px;transition:all .25s}
+  .btn-pri:hover{background:var(--volt);transform:translateY(-2px);box-shadow:0 8px 30px rgba(94,234,212,.3)}
+  .btn-sec{background:var(--panel);border:1px solid var(--line);color:var(--txt);padding:15px 30px;border-radius:10px;font-weight:500;font-size:15px;transition:all .25s}
+  .btn-sec:hover{border-color:var(--mut);background:var(--panel2)}
+
+  /* APP MOCK */
+  .mock{position:relative;z-index:1;max-width:1040px;margin:0 auto;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--panel);box-shadow:0 40px 120px -30px rgba(94,234,212,.18)}
+  .mock-bar{display:flex;align-items:center;gap:8px;padding:14px 18px;border-bottom:1px solid var(--line);background:var(--panel2)}
+  .mock-dots{display:flex;gap:7px}
+  .mock-dots i{width:11px;height:11px;border-radius:50%;background:var(--line);display:block}
+  .mock-url{margin-left:14px;font-size:12px;color:var(--mut)}
+  .mock-img{aspect-ratio:16/9.2;background:var(--bg);overflow:hidden}
+  .mock-img img{width:100%;height:100%;object-fit:cover}
+
+  /* LOGOS */
+  .logos{position:relative;z-index:1;padding:60px 0;text-align:center;border-bottom:1px solid var(--line)}
+  .logos p{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);margin-bottom:28px}
+  .logo-row{display:flex;justify-content:center;gap:54px;flex-wrap:wrap;opacity:.55;font-weight:600;font-size:19px;letter-spacing:-.01em}
+
+  /* FEATURES */
+  .feats{position:relative;z-index:1;padding:110px 0}
+  .feat-head{max-width:620px;margin-bottom:64px}
+  .tag{font-family:'IBM Plex Mono';font-size:13px;color:var(--mint);margin-bottom:18px;letter-spacing:.04em}
+  .feat-head h2{font-size:clamp(32px,4.5vw,52px);line-height:1.05;letter-spacing:-.03em;font-weight:600}
+  .feat-grid{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:auto auto;gap:18px}
+  .fcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:32px;transition:border-color .3s,transform .3s}
+  .fcard:hover{border-color:rgba(94,234,212,.35);transform:translateY(-4px)}
+  .fcard.wide{grid-column:1;grid-row:1/3;display:flex;flex-direction:column;justify-content:space-between}
+  .fc-ic{width:42px;height:42px;border-radius:11px;background:var(--panel2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;margin-bottom:22px;color:var(--mint)}
+  .fcard h3{font-size:21px;font-weight:600;margin-bottom:10px;letter-spacing:-.01em}
+  .fcard p{color:var(--mut);font-size:14.5px;line-height:1.6}
+  .fc-visual{margin-top:28px;aspect-ratio:16/10;border-radius:10px;overflow:hidden;background:var(--bg);border:1px solid var(--line)}
+  .fc-visual img{width:100%;height:100%;object-fit:cover}
+  .stat-big{font-family:'IBM Plex Mono';font-size:44px;font-weight:500;color:var(--mint);letter-spacing:-.02em;margin-bottom:6px}
+
+  /* STATS STRIP */
+  .strip{position:relative;z-index:1;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel)}
+  .strip-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+  .strip-cell{padding:44px 28px;border-right:1px solid var(--line);text-align:center}
+  .strip-cell:last-child{border-right:none}
+  .strip-cell .n{font-family:'IBM Plex Mono';font-size:38px;font-weight:500;letter-spacing:-.02em;margin-bottom:8px}
+  .strip-cell .l{font-size:13px;color:var(--mut)}
+
+  /* CTA */
+  .cta{position:relative;z-index:1;padding:130px 0;text-align:center}
+  .cta-inner{position:relative;border:1px solid var(--line);border-radius:20px;padding:80px 40px;background:var(--panel);overflow:hidden}
+  .cta-inner::before{content:"";position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(129,140,248,.16),transparent 70%);top:-300px;left:50%;transform:translateX(-50%)}
+  .cta h2{position:relative;font-size:clamp(34px,5vw,62px);line-height:1.02;letter-spacing:-.03em;font-weight:600;margin-bottom:22px}
+  .cta p{position:relative;color:var(--mut);font-size:18px;margin-bottom:36px}
+
+  footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:60px 0 36px}
+  .foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:40px;margin-bottom:46px}
+  .foot-brand{max-width:280px}
+  .foot-brand p{color:var(--mut);font-size:14px;line-height:1.6;margin-top:16px}
+  .foot-col h5{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:16px}
+  .foot-col a{display:block;color:var(--mut);font-size:14.5px;margin-bottom:11px;transition:color .25s}
+  .foot-col a:hover{color:var(--txt)}
+  .foot-bot{display:flex;justify-content:space-between;padding-top:28px;border-top:1px solid var(--line);font-size:13px;color:var(--mut)}
+
+  @media(max-width:880px){
+    .navlinks,.nav-login{display:none}
+    .feat-grid{grid-template-columns:1fr}
+    .fcard.wide{grid-column:auto;grid-row:auto}
+    .strip-grid{grid-template-columns:1fr 1fr}
+    .strip-cell:nth-child(2){border-right:none}
+    .strip-cell{border-bottom:1px solid var(--line)}
+    .hbtns{flex-direction:column}
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap navin">
+    <div class="logo"><span class="logo-mk"></span> Nexus</div>
+    <div class="navlinks"><a href="#">Product</a><a href="#">Developers</a><a href="#">Pricing</a><a href="#">Company</a></div>
+    <div class="nav-r"><a href="#" class="nav-login">Log in</a><a href="#" class="nav-cta">Open account</a></div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="pill"><span class="pulse"></span> Live settlement now in 38 currencies</div>
+    <h1>Money that moves<br>at <span class="grad">your speed.</span></h1>
+    <p class="sub">The financial OS for modern teams. Send, hold, and reconcile across borders in real time — with the controls finance actually wants.</p>
+    <div class="hbtns">
+      <a href="#" class="btn-pri">Open an account</a>
+      <a href="#" class="btn-sec">View live demo →</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="mock">
+      <div class="mock-bar">
+        <div class="mock-dots"><i></i><i></i><i></i></div>
+        <span class="mock-url mono">app.nexus.finance/treasury</span>
+      </div>
+      <div class="mock-img">
+        <!-- AG-IMG: nexus-dashboard | 1280x737 (16:9.2) | Dark fintech SaaS dashboard UI on near-black background (#0A0C10), showing a multi-currency treasury view: balance cards, a teal/mint line chart of cash flow, a transactions table with status badges, sidebar navigation, mint-green and indigo accent colors, crisp modern interface, high detail, realistic product screenshot -->
+        <img src="assets/nexus-dashboard.png" alt="Nexus treasury dashboard">
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="logos">
+  <div class="wrap">
+    <p>Trusted by finance teams at</p>
+    <div class="logo-row"><span>Hangar</span><span>Coilbase</span><span>Метрика</span><span>Forefront</span><span>Drift&Co</span><span>Pallet</span></div>
+  </div>
+</section>
+
+<section class="feats">
+  <div class="wrap">
+    <div class="feat-head">
+      <div class="tag mono">// built for treasury</div>
+      <h2>Everything your money does, in one ledger.</h2>
+    </div>
+    <div class="feat-grid">
+      <div class="fcard wide">
+        <div>
+          <div class="fc-ic">◈</div>
+          <h3>Real-time multi-currency</h3>
+          <p>Hold balances in 38 currencies and convert at interbank rates the moment you need to. No batch windows, no surprise spreads — every leg of the transfer is visible as it clears.</p>
+        </div>
+        <div class="fc-visual">
+          <!-- AG-IMG: nexus-feat-fx | 720x450 (16:10) | Dark UI panel showing a currency conversion interface with FX rate sparklines, paired currency badges (USD/EUR/GBP), a teal-mint accent gradient, on near-black background, clean fintech product detail -->
+          <img src="assets/nexus-feat-fx.png" alt="Multi-currency panel">
+        </div>
+      </div>
+      <div class="fcard">
+        <div class="fc-ic">⬡</div>
+        <h3>Programmable controls</h3>
+        <p>Approval chains, spend limits, and policy rules as code. Set it once; every payment obeys.</p>
+      </div>
+      <div class="fcard">
+        <div class="stat-big mono">0.2s</div>
+        <h3>Median settlement</h3>
+        <p>Domestic transfers clear faster than a page refresh. Cross-border in minutes, not days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="strip">
+  <div class="wrap">
+    <div class="strip-grid">
+      <div class="strip-cell"><div class="n mono" style="color:var(--mint)">$14B</div><div class="l">Settled in 2025</div></div>
+      <div class="strip-cell"><div class="n mono">38</div><div class="l">Currencies live</div></div>
+      <div class="strip-cell"><div class="n mono" style="color:var(--iris)">99.99%</div><div class="l">Uptime SLA</div></div>
+      <div class="strip-cell"><div class="n mono">SOC&nbsp;2</div><div class="l">Type II certified</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-inner">
+      <h2>Open an account<br>in under ten minutes.</h2>
+      <p>No minimums. No setup fees. Just the controls your finance team has been asking for.</p>
+      <a href="#" class="btn-pri">Get started free</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo"><span class="logo-mk"></span> Nexus</div>
+        <p>The financial OS for modern teams. Real-time money movement with the controls finance actually wants.</p>
+      </div>
+      <div class="foot-col"><h5>Product</h5><a href="#">Treasury</a><a href="#">Payments</a><a href="#">Cards</a><a href="#">API</a></div>
+      <div class="foot-col"><h5>Developers</h5><a href="#">Docs</a><a href="#">API reference</a><a href="#">Status</a></div>
+      <div class="foot-col"><h5>Company</h5><a href="#">About</a><a href="#">Security</a><a href="#">Careers</a></div>
+    </div>
+    <div class="foot-bot">
+      <span class="mono">© 2026 Nexus Financial Technologies</span>
+      <span>Built by Drape Digital</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

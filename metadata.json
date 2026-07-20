@@ -1,0 +1,6 @@
+{
+  "name": "Drape Digital",
+  "description": "Premium conversion-focused agency website for drape.digital.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

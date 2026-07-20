@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solstice — The grid, finally legible</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0E1410; --night:#121A14; --panel:#16201A; --line:#243029;
+    --txt:#EAF0EA; --mut:#8DA293; --solar:#F2B340; --leaf:#52C77E; --sky:#7CC4E8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--txt);font-family:'Sora',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+  a{color:inherit;text-decoration:none}
+  .mono{font-family:'JetBrains Mono',monospace}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(14,20,16,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .navin{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:21px;letter-spacing:-.02em}
+  .sun{width:24px;height:24px;border-radius:50%;background:radial-gradient(circle at 50% 50%,var(--solar),#D9941F);position:relative;box-shadow:0 0 16px rgba(242,179,64,.4)}
+  .navlinks{display:flex;gap:34px;font-size:14.5px}
+  .navlinks a{color:var(--mut);transition:color .25s}
+  .navlinks a:hover{color:var(--txt)}
+  .nav-r{display:flex;gap:18px;align-items:center}
+  .nav-login{font-size:14.5px;color:var(--mut)}
+  .nav-cta{background:var(--leaf);color:#062313;padding:10px 20px;border-radius:9px;font-size:14px;font-weight:600;transition:all .25s}
+  .nav-cta:hover{background:#6BD993;box-shadow:0 0 22px rgba(82,199,126,.3)}
+
+  /* HERO */
+  .hero{position:relative;padding:150px 0 80px;overflow:hidden}
+  .hero::before{content:"";position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(242,179,64,.1),transparent 65%);top:-400px;right:-200px;z-index:0}
+  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .badge{display:inline-flex;align-items:center;gap:9px;background:var(--panel);border:1px solid var(--line);padding:7px 15px;border-radius:100px;font-size:13px;color:var(--mut);margin-bottom:30px}
+  .badge .d{width:7px;height:7px;border-radius:50%;background:var(--leaf)}
+  h1{font-size:clamp(42px,6vw,76px);line-height:1.02;letter-spacing:-.035em;font-weight:600;margin-bottom:24px}
+  h1 .hl{color:var(--solar)}
+  .sub{font-size:18.5px;color:var(--mut);max-width:480px;margin-bottom:36px;line-height:1.6}
+  .hbtns{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .btn-pri{background:var(--leaf);color:#062313;padding:15px 30px;border-radius:10px;font-weight:600;font-size:15px;transition:all .25s}
+  .btn-pri:hover{background:#6BD993;transform:translateY(-2px);box-shadow:0 10px 30px rgba(82,199,126,.25)}
+  .btn-sec{color:var(--txt);font-size:15px;font-weight:500;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--line);padding-bottom:4px;transition:border-color .25s}
+  .btn-sec:hover{border-color:var(--mut)}
+  .hero-vis{position:relative;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--panel);box-shadow:0 30px 80px -30px rgba(82,199,126,.2)}
+  .hero-vis-bar{display:flex;align-items:center;justify-content:space-between;padding:13px 18px;border-bottom:1px solid var(--line)}
+  .hero-vis-bar .t{font-size:12.5px;color:var(--mut)}
+  .hero-vis-bar .live{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--leaf)}
+  .hero-vis-bar .live .dd{width:6px;height:6px;border-radius:50%;background:var(--leaf);animation:bl 1.6s infinite}
+  @keyframes bl{50%{opacity:.3}}
+  .hero-vis-img{aspect-ratio:16/11;overflow:hidden;background:var(--bg)}
+  .hero-vis-img img{width:100%;height:100%;object-fit:cover}
+
+  /* METRIC STRIP */
+  .mstrip{position:relative;z-index:1;border-top:1px solid var(--line);margin-top:70px;padding:36px 0}
+  .mstrip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
+  .mstrip .n{font-family:'JetBrains Mono';font-size:30px;font-weight:500;letter-spacing:-.02em}
+  .mstrip .l{font-size:13px;color:var(--mut);margin-top:6px}
+
+  /* PROBLEM/SOLUTION */
+  .sec{padding:110px 0}
+  .sec-tag{font-family:'JetBrains Mono';font-size:13px;color:var(--leaf);margin-bottom:18px}
+  .sec h2{font-size:clamp(32px,4.4vw,52px);line-height:1.06;letter-spacing:-.03em;font-weight:600;max-width:640px;margin-bottom:14px}
+  .sec .sec-sub{font-size:17px;color:var(--mut);max-width:560px;line-height:1.6;margin-bottom:60px}
+  .bento{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:minmax(180px,auto);gap:16px}
+  .bx{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:30px;transition:border-color .3s,transform .3s;display:flex;flex-direction:column}
+  .bx:hover{border-color:rgba(82,199,126,.35);transform:translateY(-4px)}
+  .bx.a{grid-column:span 4;grid-row:span 2}
+  .bx.b{grid-column:span 2}
+  .bx.c{grid-column:span 2}
+  .bx.d{grid-column:span 3}
+  .bx.e{grid-column:span 3}
+  .bx-ic{width:42px;height:42px;border-radius:11px;background:var(--night);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;margin-bottom:auto;font-size:19px}
+  .bx h3{font-size:21px;font-weight:600;margin:22px 0 10px;letter-spacing:-.01em}
+  .bx p{font-size:14.5px;color:var(--mut);line-height:1.6}
+  .bx.a .bx-img{margin-top:24px;aspect-ratio:16/8;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--bg)}
+  .bx.a .bx-img img{width:100%;height:100%;object-fit:cover}
+  .bx .stat{font-family:'JetBrains Mono';font-size:40px;color:var(--solar);font-weight:500;letter-spacing:-.02em;margin-bottom:6px}
+
+  /* INTEGRATION / how */
+  .how{background:var(--night);padding:110px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .how-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .how-steps{display:flex;flex-direction:column;gap:8px}
+  .hstep{display:flex;gap:20px;padding:22px;border-radius:12px;transition:background .3s}
+  .hstep:hover{background:var(--panel)}
+  .hstep .hn{font-family:'JetBrains Mono';font-size:15px;color:var(--leaf);min-width:30px;padding-top:3px}
+  .hstep h3{font-size:19px;font-weight:600;margin-bottom:7px}
+  .hstep p{font-size:14.5px;color:var(--mut);line-height:1.55}
+  .how-img{aspect-ratio:4/5;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .how-img img{width:100%;height:100%;object-fit:cover}
+
+  /* CTA */
+  .cta{padding:130px 0;position:relative;overflow:hidden}
+  .cta::before{content:"";position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(242,179,64,.12),transparent 65%);bottom:-350px;left:50%;transform:translateX(-50%)}
+  .cta-inner{position:relative;text-align:center}
+  .cta h2{font-size:clamp(36px,5vw,66px);line-height:1.02;letter-spacing:-.03em;font-weight:600;margin-bottom:22px}
+  .cta h2 .hl{color:var(--solar)}
+  .cta p{color:var(--mut);font-size:18px;margin-bottom:38px;max-width:480px;margin-left:auto;margin-right:auto}
+
+  footer{border-top:1px solid var(--line);padding:60px 0 36px}
+  .foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:40px;margin-bottom:46px}
+  .foot-brand{max-width:290px}
+  .foot-brand p{color:var(--mut);font-size:14px;line-height:1.6;margin-top:16px}
+  .foot-col h5{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:16px}
+  .foot-col a{display:block;color:var(--mut);font-size:14.5px;margin-bottom:11px;transition:color .25s}
+  .foot-col a:hover{color:var(--txt)}
+  .foot-bot{display:flex;justify-content:space-between;padding-top:28px;border-top:1px solid var(--line);font-size:13px;color:var(--mut)}
+
+  @media(max-width:880px){
+    .navlinks,.nav-login{display:none}
+    .hero-grid,.how-grid{grid-template-columns:1fr}
+    .mstrip-grid{grid-template-columns:1fr 1fr;gap:28px}
+    .bento{grid-template-columns:1fr}
+    .bx.a,.bx.b,.bx.c,.bx.d,.bx.e{grid-column:auto;grid-row:auto}
+    .hbtns{flex-wrap:wrap}
+  }
+  @media(max-width:560px){.wrap{padding:0 22px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap navin">
+    <div class="logo"><span class="sun"></span> Solstice</div>
+    <div class="navlinks"><a href="#">Platform</a><a href="#">Solutions</a><a href="#">Pricing</a><a href="#">Resources</a></div>
+    <div class="nav-r"><a href="#" class="nav-login">Sign in</a><a href="#" class="nav-cta">Book a demo</a></div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="badge"><span class="d"></span> Now forecasting 4,000+ sites in real time</div>
+      <h1>The grid,<br>finally <span class="hl">legible.</span></h1>
+      <p class="sub">Solstice turns raw meter, market, and weather data into one live picture of your renewable portfolio — so your operators act on signal, not spreadsheets.</p>
+      <div class="hbtns">
+        <a href="#" class="btn-pri">Book a demo</a>
+        <a href="#" class="btn-sec">Read the docs →</a>
+      </div>
+    </div>
+    <div class="hero-vis">
+      <div class="hero-vis-bar"><span class="t mono">portfolio / overview</span><span class="live"><span class="dd"></span> Live</span></div>
+      <div class="hero-vis-img">
+        <!-- AG-IMG: solstice-hero | 1280x880 (16:11) | Dark clean-energy SaaS dashboard on deep green-black background (#0E1410), showing a renewable portfolio overview: a solar generation curve in amber/gold, battery state-of-charge gauges, a map of sites with green status dots, real-time output metrics, leaf-green and solar-amber accents, modern data interface, realistic product screenshot, high detail -->
+        <img src="assets/solstice-hero.png" alt="Solstice portfolio dashboard">
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="mstrip">
+      <div class="mstrip-grid">
+        <div><div class="n" style="color:var(--solar)">4,200</div><div class="l">Sites monitored</div></div>
+        <div><div class="n" style="color:var(--leaf)">2.4 GW</div><div class="l">Capacity under management</div></div>
+        <div><div class="n" style="color:var(--sky)">30s</div><div class="l">Data refresh interval</div></div>
+        <div><div class="n">12%</div><div class="l">Avg. curtailment avoided</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="sec wrap">
+  <div class="sec-tag mono">// one platform</div>
+  <h2>Everything your operations team squints at, in one view.</h2>
+  <p class="sec-sub">Generation, storage, market price, and weather — correlated in real time, with alerts that fire before a problem reaches the P&amp;L.</p>
+  <div class="bento">
+    <div class="bx a">
+      <div class="bx-ic">☀</div>
+      <h3>Live generation forecasting</h3>
+      <p>Site-level output predicted 72 hours out, blending irradiance models with your own historical performance. The forecast tightens itself every thirty seconds.</p>
+      <div class="bx-img">
+        <!-- AG-IMG: solstice-forecast | 800x400 (16:8) | Dark UI panel showing a solar generation forecast chart with a gold actual line and a dashed amber prediction band, green grid lines, on deep green-black background, clean energy data viz detail -->
+        <img src="assets/solstice-forecast.png" alt="Generation forecast">
+      </div>
+    </div>
+    <div class="bx b"><div class="bx-ic">⚡</div><h3>Battery dispatch</h3><p>Charge and discharge schedules optimised against live market price.</p></div>
+    <div class="bx c"><div class="stat mono">12%</div><h3>Less curtailment</h3><p>Average waste avoided across deployed portfolios.</p></div>
+    <div class="bx d"><div class="bx-ic">◎</div><h3>Anomaly alerts</h3><p>Underperforming strings, inverter faults, and drift flagged the moment they diverge from forecast — routed to the right operator, not a shared inbox.</p></div>
+    <div class="bx e"><div class="bx-ic">⇄</div><h3>Open API &amp; exports</h3><p>Stream every metric into your existing SCADA, BI, or trading stack. REST, webhooks, and a typed SDK out of the box.</p></div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="wrap how-grid">
+    <div>
+      <div class="sec-tag mono">// live in days</div>
+      <h2 style="font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.02em;font-weight:600;margin-bottom:40px">From data chaos to one dashboard in a week.</h2>
+      <div class="how-steps">
+        <div class="hstep"><span class="hn mono">01</span><div><h3>Connect your sources</h3><p>Point Solstice at your meters, inverters, and market feed. We handle the protocols — Modbus, OCPP, REST, CSV.</p></div></div>
+        <div class="hstep"><span class="hn mono">02</span><div><h3>We model your fleet</h3><p>Each asset is mapped and baselined automatically. Your historical data trains the forecast from day one.</p></div></div>
+        <div class="hstep"><span class="hn mono">03</span><div><h3>Operators go live</h3><p>Role-based dashboards and alerts roll out to your team. Most portfolios are fully live inside five business days.</p></div></div>
+      </div>
+    </div>
+    <div class="how-img">
+      <!-- AG-IMG: solstice-field | 900x1125 (4:5) | Photograph of a large solar farm at golden hour with rows of panels receding to the horizon, a wind turbine in the soft-focus background, warm amber sunlight, optimistic clean-energy mood, professional renewable energy photography -->
+      <img src="assets/solstice-field.png" alt="Solar farm at golden hour">
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap cta-inner">
+    <h2>See your portfolio<br>the way the <span class="hl">grid</span> does.</h2>
+    <p>Book a 30-minute demo and we'll model one of your live sites on the call.</p>
+    <a href="#" class="btn-pri">Book a demo</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo"><span class="sun"></span> Solstice</div>
+        <p>The operations platform for renewable energy portfolios. Real-time generation, storage, and market intelligence in one view.</p>
+      </div>
+      <div class="foot-col"><h5>Platform</h5><a href="#">Forecasting</a><a href="#">Dispatch</a><a href="#">Alerts</a><a href="#">API</a></div>
+      <div class="foot-col"><h5>Resources</h5><a href="#">Docs</a><a href="#">Case studies</a><a href="#">Status</a></div>
+      <div class="foot-col"><h5>Company</h5><a href="#">About</a><a href="#">Careers</a><a href="#">Contact</a></div>
+    </div>
+    <div class="foot-bot">
+      <span class="mono">© 2026 Solstice Energy Systems</span>
+      <span>Built by Drape Digital</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

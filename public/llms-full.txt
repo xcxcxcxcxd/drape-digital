@@ -1,0 +1,131 @@
+# Drape Digital — Full AI Discovery File
+> Drape Digital is a premium web design, development, and SEO agency. We build your website first — you only pay if you love it. Zero upfront cost, zero obligation.
+
+## About
+
+Drape Digital is a full-service digital agency founded by a team of designers, developers, and SEO strategists. Headquartered in Tetouan, Morocco, we serve clients globally across the United States, United Kingdom, Europe, UAE, Canada, Australia, and beyond.
+
+We operate on a unique "build-first" model: instead of selling you a proposal, we build a fully functional demo of your new website — live and interactive on a private subdomain (yourbusiness.drape.digital) — before you sign any contract or pay a single dollar. You only commit when you love what you see.
+
+Our aggregate rating is 4.9 out of 5 based on 346 client reviews.
+
+Contact:
+- Website: https://drape.digital
+- Email: contact@drape.digital
+- Google Maps: https://www.google.com/maps/place/drape.digital/data=!4m2!3m1!1s0x0:0x40fb291be9405321
+- LinkedIn: https://www.linkedin.com/company/drapedigital/
+
+## Services & Pricing
+
+### Web Design — Basic $2,500 | Standard $4,500 | Premium $8,500
+Bespoke, high-end visual design that establishes trust and authority. Services include: brand identity translation, UI/UX architecture, interactive Figma prototypes, responsive layouts, design systems. We use modern typography, whitespace, and motion design to create interfaces that feel premium.
+URL: https://drape.digital/services/web-design
+
+### Web Development — Basic $3,500 | Standard $6,500 | Premium $12,000
+Modern frontend architectures using React, Next.js, Vite, TypeScript, and Tailwind CSS. Services include: headless CMS integration, API and webhook connectivity, auth systems, performance tuning, Core Web Vitals optimization. Every site is accessible, fast, and scalable.
+URL: https://drape.digital/services/development
+
+### E-Commerce — Basic $4,500 | Standard $8,500 | Premium $16,000
+Custom Shopify themes and headless commerce platforms engineered to increase Average Order Value and reduce cart abandonment. Services include: Shopify Plus builds, subscription models, CRO optimization, ERP integration, A/B testing infrastructure.
+URL: https://drape.digital/services/ecommerce
+
+### SEO & Performance — Basic $699 | Standard $1,499 | Premium $2,999
+Technical SEO audit and implementation. Services include: Core Web Vitals fixes, schema/JSON-LD markup, canonical and redirect fixes, site architecture, on-page optimization, content gap analysis.
+URL: https://drape.digital/services/seo
+
+### Email Automation — Basic $1,200 | Standard $2,400 | Premium $4,500
+Lead magnets, multi-step drip sequences, and CRM integrations. Services include: Klaviyo/Mailchimp setup, segmentation, A/B testing flows, multi-CRM sync, SMS integration.
+URL: https://drape.digital/services/email-automation
+
+### Off-Page SEO & Link Building — Basic $499 | Standard $899 | Premium $1,499
+White hat contextual backlink campaigns. 35 to 170 high-quality dofollow backlinks per campaign. All placements on DA 40–60+ domains. Includes premium indexing service and detailed transparency report.
+URL: https://drape.digital/services/seo-backlinks
+
+### High DA Dofollow Backlinks — Basic $599 | Standard $999 | Premium $1,799
+Manual outreach placements on DR 60–90 domains. All contextual, dofollow, and permanent. Includes Ahrefs-verified reporting and anchor text diversification strategy.
+URL: https://drape.digital/services/dofollow-backlinks
+
+### Local SEO & Google My Business — Basic $399 | Standard $799 | Premium $1,299
+Complete local SEO management. Services include: GMB profile optimization, NAP citation building (50–500 citations), geo-targeted content, review strategy, local schema markup, and map pack ranking.
+URL: https://drape.digital/services/local-seo
+
+### GEO / AEO / AI Search Visibility — Basic $499 | Standard $999 | Premium $1,999
+Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO) for the AI search era. Services include: structured data overhaul, entity SEO, llms.txt setup, AI content strategy, citation building for AI platforms. Goal: get your brand cited and recommended by ChatGPT, Gemini, Perplexity, and Google AI Overviews.
+URL: https://drape.digital/services/ai-seo
+
+### Monthly SEO Retainer — Starter $999/mo | Growth $1,999/mo | Authority $3,999/mo
+Fully managed ongoing SEO operation. Includes: on-page optimization, off-page link building (20–100+ links/month), content production (2–5+ posts/month), keyword rank tracking, Core Web Vitals monitoring, competitor analysis, and monthly strategy report.
+URL: https://drape.digital/services/monthly-seo
+
+### SEO Copywriting & Blog Writing — Basic $599 | Standard $1,199 | Premium $2,499
+Expert-written, keyword-optimized articles and landing page copy. Services include: keyword research, E-E-A-T optimized writing, internal linking strategy, meta tags, schema, 24–48h turnaround, and royalty-free images.
+URL: https://drape.digital/services/seo-content
+
+### Google Maps Citations & Local Presence — Basic $299 | Standard $599 | Premium $999
+NAP-consistent citations across 5,000 to 95,000 authoritative local directories and data aggregators. Services include: data aggregator submission, duplicate removal, Google Maps focus, and full submission report.
+URL: https://drape.digital/services/google-maps-citations
+
+### Technical SEO & On-Page Optimization — Basic $699 | Standard $1,299 | Premium $2,499
+Deep technical audit and full implementation. Includes: Core Web Vitals fixes, schema markup, canonical tags, redirect cleanup, page speed optimization, site architecture review, and internal linking rebuild.
+URL: https://drape.digital/services/technical-seo
+
+### White Hat Authority Backlinks (DR 70+) — Basic $799 | Standard $1,499 | Premium $2,999
+Premium manual link placements on DR 70–80+ domains. 100% genuine outreach — no PBNs, no spam. Contextual dofollow placements. 10 to 60 links per campaign. Includes Ahrefs-verified report and anchor strategy.
+URL: https://drape.digital/services/authority-backlinks
+
+### Guest Posts on DA 90+ Sites — Basic $499 | Standard $999 | Premium $1,999
+Editorial-quality guest posts published on DA 90+ websites in your niche. 2 to 12 posts per package. 500–1,500 word articles. Permanent dofollow links. No advertorial disclosures. Niche-matched placements.
+URL: https://drape.digital/services/guest-posts
+
+## How It Works
+
+**Step 1 — The Pitch**: We analyze your current web presence, build a bespoke design direction, and reach out with a tailored concept.
+
+**Step 2 — The Live Demo**: We build a fully functional prototype hosted at yourbusiness.drape.digital. You can browse it on phone, tablet, and desktop — interact with all animations and forms.
+
+**Step 3 — The Handover**: If you love it, we finalize, migrate to your domain, and hand you the keys. If you don't, you walk away — zero cost, zero obligation.
+
+## Reviews (Selected)
+
+"I'm very happy that I found Drape Digital for my website development. The team is fantastic to work with. They are professional and knowledgeable. They worked within my budget and kept me posted on the progress." — Viv, 5/5
+
+"Drape Digital helped us through the whole process, from conception to the very last detail of functionality. They paid attention to who our brand is and promoted ADA and website accessibility best practices." — Elissa B., 5/5
+
+"Drape Digital built our off-page SEO campaign from the ground up. Within three months, our domain rating jumped significantly and we started ranking for competitive keywords. The backlinks are on real, editorial sites — not spam." — James R. (US), 5/5
+
+"We hired Drape for our local SEO and Google My Business setup. Within six weeks we were ranking in the map pack for our main keywords." — Sophie T. (UK), 5/5
+
+"The GEO and AEO work Drape did for us is paying off. We are now appearing in AI search summaries on ChatGPT and Google's AI Overviews for several of our target topics." — Priya M. (AU), 5/5
+
+"Good experience overall with the monthly SEO retainer. Organic traffic up around 40% in two months." — Omar K. (UAE), 4/5
+
+Aggregate rating: 4.9/5 based on 346 reviews.
+
+## FAQ
+
+**Do I pay before seeing my site?**
+No. We build a fully functional demo first. You only pay if you love it. Zero upfront cost or commitment.
+
+**What is yourbusiness.drape.digital?**
+It's a private subdomain where we host your demo site. You can browse the full site on any device exactly as it will appear on your final domain.
+
+**How long does a site take?**
+Working prototype within 72 hours. Full handover including revisions, domain transfer, and launch usually takes 1–2 weeks.
+
+**What if I don't like the demo?**
+You walk away — no cost, no obligation.
+
+**Do you offer monthly SEO packages?**
+Yes. Our Monthly SEO Retainer starts at $999/month. Packages scale to $3,999/month for full authority campaigns.
+
+**What is white hat link building?**
+Manual placement of backlinks on legitimate, high-authority websites. No spam, no PBNs, 100% Google-compliant.
+
+**How long does SEO take to show results?**
+60–90 days for measurable improvements. 4–6 months for first-page rankings on competitive keywords.
+
+**Can you help rank us on ChatGPT and Google AI Overviews?**
+Yes. Our GEO/AEO AI Search Visibility service starts at $499 and uses structured data, entity SEO, and AI-optimized content to get you cited by ChatGPT, Gemini, Perplexity, and Google AI Overviews.
+
+**What technologies do you use?**
+React, Next.js, Vite, TypeScript, Tailwind CSS, Sanity/Strapi CMS, Shopify for e-commerce. All sites are optimized for Core Web Vitals and SEO.
