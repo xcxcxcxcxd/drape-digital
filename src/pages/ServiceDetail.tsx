@@ -419,7 +419,7 @@ export default function ServiceDetail() {
 
   const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "Service",
+    "@type": ["Service", "Product"],
     "serviceType": service.title,
     "name": service.title,
     "description": service.seoDesc,
