@@ -16,6 +16,20 @@ async function startServer() {
   const app = express();
   const PORT = 3000;
 
+  // Geo-blocking Middleware
+  const BLOCKED_COUNTRIES = ["IN", "PK", "DZ"];
+
+  app.use((req, res, next) => {
+    // Use Vercel's geographic headers or default to US for local dev if missing
+    const country = (req.headers["x-vercel-ip-country"] as string) || "US";
+    
+    if (BLOCKED_COUNTRIES.includes(country.toUpperCase())) {
+      return res.status(403).json({ error: "Access denied from your region." });
+    }
+    
+    next();
+  });
+
   // Global rate limiter
   const globalLimiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
@@ -49,6 +63,11 @@ async function startServer() {
   });
 
   // API Routes
+  app.get("/api/geo", (req, res) => {
+    const country = (req.headers["x-vercel-ip-country"] as string) || "US";
+    res.json({ country });
+  });
+
   app.get("/api/health", (req, res) => {
     res.json({ status: "ok" });
   });
@@ -166,21 +185,19 @@ async function startServer() {
   // ─── Stripe Checkout Session ─────────────────────────────────
   app.post("/api/stripe/checkout", apiLimiter, async (req, res) => {
     try {
-      const { serviceName, packageName, price, slug } = req.body;
+      const { serviceName, packageName, price, currency = "USD", isRecurring = false, slug } = req.body;
 
       if (!serviceName || !packageName || !price) {
         return res.status(400).json({ error: "Missing required fields" });
       }
 
-      // Convert "$1,499" or "$999/mo" to integer cents
-      const numericPrice = Math.round(parseFloat(price.replace(/[^0-9.]/g, "")) * 100);
-
-      const isRecurring = price.includes("/mo");
+      // 'price' from frontend is now already a raw number string
+      const numericPrice = Math.round(parseFloat(price) * 100);
 
       const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = [
         {
           price_data: {
-            currency: "usd",
+            currency: currency.toLowerCase(),
             product_data: {
               name: `${serviceName} — ${packageName} Package`,
               description: `Drape Digital: ${serviceName} (${packageName})`,

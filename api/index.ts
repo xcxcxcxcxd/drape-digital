@@ -12,6 +12,21 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "sk_test_dummy", {
 
 const app = express();
 
+// Geo-blocking Middleware
+const BLOCKED_COUNTRIES = ["IN", "PK", "DZ"];
+
+app.use((req, res, next) => {
+  // Use Vercel's geographic headers or default to US for local dev if missing
+  const country = (req.headers["x-vercel-ip-country"] as string) || "US";
+  
+  if (BLOCKED_COUNTRIES.includes(country.toUpperCase())) {
+    return res.status(403).json({ error: "Access denied from your region." });
+  }
+  
+  next();
+});
+
+
 // Global rate limiter
 const globalLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
@@ -45,6 +60,11 @@ const transporter = nodemailer.createTransport({
 });
 
 // API Routes
+app.get("/api/geo", (req, res) => {
+  const country = (req.headers["x-vercel-ip-country"] as string) || "US";
+  res.json({ country });
+});
+
 app.get("/api/health", (req, res) => {
   res.json({ status: "ok" });
 });
@@ -155,19 +175,18 @@ app.post("/api/quote", apiLimiter, async (req, res) => {
 
 app.post("/api/stripe/checkout", apiLimiter, async (req, res) => {
   try {
-    const { serviceName, packageName, price, slug } = req.body;
+    const { serviceName, packageName, price, currency = "USD", isRecurring = false, slug } = req.body;
 
     if (!serviceName || !packageName || !price) {
       return res.status(400).json({ error: "Missing required fields" });
     }
 
-    const numericPrice = Math.round(parseFloat(price.replace(/[^0-9.]/g, "")) * 100);
-    const isRecurring = price.includes("/mo");
+    const numericPrice = Math.round(parseFloat(price) * 100);
 
     const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = [
       {
         price_data: {
-          currency: "usd",
+          currency: currency.toLowerCase(),
           product_data: {
             name: `${serviceName} — ${packageName} Package`,
             description: `Drape Digital: ${serviceName} (${packageName})`,

@@ -2,13 +2,15 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { Star } from "lucide-react";
+import { useCurrency } from "../lib/CurrencyContext";
 
 const webServices = [
   {
     id: "web-design",
     name: "Web Design",
     desc: "Bespoke, high-end visual design that establishes trust and authority in your market.",
-    price: "From $2,500",
+    basePrice: 2500,
+    priceLabel: "From",
     rating: 5.0,
     reviews: "346",
     category: "Web",
@@ -17,7 +19,8 @@ const webServices = [
     id: "development",
     name: "Web Development",
     desc: "Robust, scalable React and modern frontend architectures for blazing fast performance.",
-    price: "From $3,500",
+    basePrice: 3500,
+    priceLabel: "From",
     rating: 4.9,
     reviews: "2k+",
     category: "Web",
@@ -26,7 +29,8 @@ const webServices = [
     id: "ecommerce",
     name: "E-Commerce",
     desc: "Custom Shopify and modular commerce setups designed to maximize conversion rates.",
-    price: "From $4,500",
+    basePrice: 4500,
+    priceLabel: "From",
     rating: 4.9,
     reviews: "4k+",
     category: "Web",
@@ -35,7 +39,8 @@ const webServices = [
     id: "seo",
     name: "SEO & Performance",
     desc: "Technical SEO, Core Web Vitals optimization, and semantic structuring for organic growth.",
-    price: "From $699",
+    basePrice: 699,
+    priceLabel: "From",
     rating: 5.0,
     reviews: "1.2k+",
     category: "Web",
@@ -44,7 +49,8 @@ const webServices = [
     id: "email-automation",
     name: "Email Automation",
     desc: "Lead magnets, drip sequences, and CRM integrations to capture and convert site visitors.",
-    price: "From $1,200",
+    basePrice: 1200,
+    priceLabel: "From",
     rating: 4.9,
     reviews: "850+",
     category: "Web",
@@ -56,7 +62,8 @@ const seoServices = [
     id: "seo-backlinks",
     name: "Off-Page SEO & Link Building",
     desc: "High-authority white hat backlink campaigns that build domain power and push your rankings to page one.",
-    price: "From $499",
+    basePrice: 499,
+    priceLabel: "From",
     rating: 5.0,
     reviews: "346",
     category: "SEO",
@@ -65,7 +72,8 @@ const seoServices = [
     id: "dofollow-backlinks",
     name: "High DA Dofollow Backlinks",
     desc: "Contextual dofollow placements on DR 60–90 domains. Clean, indexable, and built to compound over time.",
-    price: "From $599",
+    basePrice: 599,
+    priceLabel: "From",
     rating: 4.9,
     reviews: "2k+",
     category: "SEO",
@@ -74,7 +82,8 @@ const seoServices = [
     id: "local-seo",
     name: "Local SEO & Google My Business",
     desc: "Dominate your local market with GMB optimization, citation building, and geo-targeted content strategies.",
-    price: "From $399",
+    basePrice: 399,
+    priceLabel: "From",
     rating: 4.9,
     reviews: "4k+",
     category: "SEO",
@@ -83,7 +92,8 @@ const seoServices = [
     id: "ai-seo",
     name: "GEO / AEO / AI Search Visibility",
     desc: "Get cited by ChatGPT, Gemini, and Perplexity. We build AI-era authority through structured data and AEO signals.",
-    price: "From $499",
+    basePrice: 499,
+    priceLabel: "From",
     rating: 5.0,
     reviews: "500+",
     category: "SEO",
@@ -92,7 +102,9 @@ const seoServices = [
     id: "monthly-seo",
     name: "Monthly SEO Retainer",
     desc: "A fully managed, ongoing SEO operation — on-page, off-page, technical, content, and reporting every month.",
-    price: "From $999/mo",
+    basePrice: 999,
+    priceLabel: "From",
+    priceSuffix: "/mo",
     rating: 4.9,
     reviews: "800+",
     category: "SEO",
@@ -101,7 +113,8 @@ const seoServices = [
     id: "seo-content",
     name: "SEO Copywriting & Blog Writing",
     desc: "Expert-written, keyword-optimized articles and landing page copy engineered to rank and convert.",
-    price: "From $599",
+    basePrice: 599,
+    priceLabel: "From",
     rating: 5.0,
     reviews: "1.5k+",
     category: "SEO",
@@ -110,7 +123,8 @@ const seoServices = [
     id: "google-maps-citations",
     name: "Google Maps Citations",
     desc: "Thousands of NAP-consistent citations across authoritative directories to lock in your local map pack position.",
-    price: "From $299",
+    basePrice: 299,
+    priceLabel: "From",
     rating: 4.9,
     reviews: "2.3k+",
     category: "SEO",
@@ -119,7 +133,8 @@ const seoServices = [
     id: "technical-seo",
     name: "Technical SEO & On-Page Optimization",
     desc: "Full technical audit + fix: Core Web Vitals, schema markup, crawlability, canonicals, and internal linking.",
-    price: "From $699",
+    basePrice: 699,
+    priceLabel: "From",
     rating: 4.9,
     reviews: "950+",
     category: "SEO",
@@ -128,7 +143,8 @@ const seoServices = [
     id: "authority-backlinks",
     name: "White Hat Authority Backlinks",
     desc: "Premium manual link placements on DR 70–80+ domains. Contextual, dofollow, and incredibly powerful.",
-    price: "From $799",
+    basePrice: 799,
+    priceLabel: "From",
     rating: 5.0,
     reviews: "450+",
     category: "SEO",
@@ -137,7 +153,8 @@ const seoServices = [
     id: "guest-posts",
     name: "Guest Posts on DA 90+ Sites",
     desc: "Editorial-quality guest posts published on DA 90+ websites in your niche. High-impact SEO value.",
-    price: "From $499",
+    basePrice: 499,
+    priceLabel: "From",
     rating: 4.9,
     reviews: "1.1k+",
     category: "SEO",
@@ -145,6 +162,8 @@ const seoServices = [
 ];
 
 export default function Services() {
+  const { formatPrice, isLoading } = useCurrency();
+
   return (
     <>
       <Helmet>
@@ -203,7 +222,9 @@ export default function Services() {
                       <Star key={i} size={14} className={i < Math.floor(service.rating) ? "fill-current" : "fill-agency-white/20 text-agency-white/20"} />
                     ))}
                   </div>
-                  <span className="font-mono text-sm text-agency-accent font-bold mt-1">{service.price}</span>
+                  <span className="font-mono text-sm text-agency-accent font-bold mt-1">
+                    {service.priceLabel} {isLoading ? "..." : formatPrice(service.basePrice)}{service.priceSuffix || ""}
+                  </span>
                 </div>
               </div>
             </div>
@@ -243,7 +264,9 @@ export default function Services() {
                       <Star key={i} size={14} className={i < Math.floor(service.rating) ? "fill-current" : "fill-agency-white/20 text-agency-white/20"} />
                     ))}
                   </div>
-                  <span className="font-mono text-sm text-agency-accent font-bold mt-1">{service.price}</span>
+                  <span className="font-mono text-sm text-agency-accent font-bold mt-1">
+                    {service.priceLabel} {isLoading ? "..." : formatPrice(service.basePrice)}{service.priceSuffix || ""}
+                  </span>
                 </div>
               </div>
             </div>

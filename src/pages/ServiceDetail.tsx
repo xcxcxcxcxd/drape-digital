@@ -3,10 +3,13 @@ import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect } from "react";
 import { ArrowRight, CheckCircle2, Loader2, Lock, Star, ChevronDown, ChevronUp } from "lucide-react";
+import { useCurrency } from "../lib/CurrencyContext";
 
 interface Package {
   name: string;
   price: string;
+  basePrice: number;
+  priceSuffix?: string;
   deliverables: string[];
   highlight?: boolean;
 }
@@ -19,6 +22,7 @@ interface ServiceEntry {
   seoDesc: string;
   magnetTitle: string;
   startingPrice: string;
+  baseStartingPrice: number;
   schemaPrice: string;
   packages: Package[];
   faqs?: { q: string; a: string }[];
@@ -33,11 +37,12 @@ const serviceData: Record<string, ServiceEntry> = {
     seoDesc: "Premium custom web design agency focused on stunning aesthetics and conversion.",
     magnetTitle: "Get a Free Design Audit of Your Current Site",
     startingPrice: "From $2,500",
+    baseStartingPrice: 2500,
     schemaPrice: "2500",
     packages: [
-      { name: "Basic", price: "$2,500", deliverables: ["5-page design", "1 revision round", "Mobile responsive", "Figma handoff"] },
-      { name: "Standard", price: "$4,500", highlight: true, deliverables: ["Up to 10 pages", "3 revision rounds", "Animation design", "Design system", "Mobile + tablet"] },
-      { name: "Premium", price: "$8,500", deliverables: ["Unlimited pages", "Unlimited revisions", "Full brand identity", "Interactive prototypes", "Priority delivery"] },
+      { name: "Basic", price: "$2,500", basePrice: 2500, deliverables: ["5-page design", "1 revision round", "Mobile responsive", "Figma handoff"] },
+      { name: "Standard", price: "$4,500", basePrice: 4500, highlight: true, deliverables: ["Up to 10 pages", "3 revision rounds", "Animation design", "Design system", "Mobile + tablet"] },
+      { name: "Premium", price: "$8,500", basePrice: 8500, deliverables: ["Unlimited pages", "Unlimited revisions", "Full brand identity", "Interactive prototypes", "Priority delivery"] },
     ],
     faqs: [
       { q: "How long does a custom web design project take?", a: "A standard web design project takes 2 to 4 weeks depending on the complexity, number of pages, and revision cycles." },
@@ -54,11 +59,12 @@ const serviceData: Record<string, ServiceEntry> = {
     seoDesc: "Expert React and modern stack web development for businesses.",
     magnetTitle: "Download Our Tech Stack Selection Guide",
     startingPrice: "From $3,500",
+    baseStartingPrice: 3500,
     schemaPrice: "3500",
     packages: [
-      { name: "Basic", price: "$3,500", deliverables: ["React / Vite SPA", "Up to 8 pages", "Contact form", "CMS integration"] },
-      { name: "Standard", price: "$6,500", highlight: true, deliverables: ["Next.js + SSR", "Unlimited pages", "API integrations", "Auth system", "Performance audit"] },
-      { name: "Premium", price: "$12,000", deliverables: ["Full-stack app", "Custom backend", "Database design", "DevOps setup", "90-day support"] },
+      { name: "Basic", price: "$3,500", basePrice: 3500, deliverables: ["React / Vite SPA", "Up to 8 pages", "Contact form", "CMS integration"] },
+      { name: "Standard", price: "$6,500", basePrice: 6500, highlight: true, deliverables: ["Next.js + SSR", "Unlimited pages", "API integrations", "Auth system", "Performance audit"] },
+      { name: "Premium", price: "$12,000", basePrice: 12000, deliverables: ["Full-stack app", "Custom backend", "Database design", "DevOps setup", "90-day support"] },
     ],
     faqs: [
       { q: "What technologies do you use for web development?", a: "We specialize in modern frontend stacks including React, Next.js, Vite, and headless CMS platforms for maximum performance and scalability." },
@@ -75,11 +81,12 @@ const serviceData: Record<string, ServiceEntry> = {
     seoDesc: "Custom Shopify development agency building high-converting online stores.",
     magnetTitle: "Get the 10-Point Checkout Conversion Checklist",
     startingPrice: "From $4,500",
+    baseStartingPrice: 4500,
     schemaPrice: "4500",
     packages: [
-      { name: "Basic", price: "$4,500", deliverables: ["Custom Shopify theme", "Up to 50 products", "Payment gateway", "Mobile optimized"] },
-      { name: "Standard", price: "$8,500", highlight: true, deliverables: ["Headless commerce", "Unlimited products", "Subscription model", "CRO setup", "Analytics"] },
-      { name: "Premium", price: "$16,000", deliverables: ["Multi-channel store", "ERP integration", "Custom checkout", "A/B testing setup", "90-day support"] },
+      { name: "Basic", price: "$4,500", basePrice: 4500, deliverables: ["Custom Shopify theme", "Up to 50 products", "Payment gateway", "Mobile optimized"] },
+      { name: "Standard", price: "$8,500", basePrice: 8500, highlight: true, deliverables: ["Headless commerce", "Unlimited products", "Subscription model", "CRO setup", "Analytics"] },
+      { name: "Premium", price: "$16,000", basePrice: 16000, deliverables: ["Multi-channel store", "ERP integration", "Custom checkout", "A/B testing setup", "90-day support"] },
     ],
     faqs: [
       { q: "Do you build custom Shopify themes?", a: "Yes, we design and develop custom Shopify themes tailored to your brand to improve user experience and conversion rates." },
@@ -96,11 +103,12 @@ const serviceData: Record<string, ServiceEntry> = {
     seoDesc: "Improve your rankings with our technical SEO and performance optimization services.",
     magnetTitle: "Request a Free Technical SEO Audit",
     startingPrice: "From $699",
+    baseStartingPrice: 699,
     schemaPrice: "699",
     packages: [
-      { name: "Basic", price: "$699", deliverables: ["Full site audit", "Top 20 fixes", "Meta optimization", "XML sitemap"] },
-      { name: "Standard", price: "$1,499", highlight: true, deliverables: ["Everything in Basic", "Core Web Vitals fix", "Schema markup", "Content gap analysis", "Monthly report"] },
-      { name: "Premium", price: "$2,999", deliverables: ["Full technical overhaul", "Competitor analysis", "Link audit", "AI content strategy", "Priority support"] },
+      { name: "Basic", price: "$699", basePrice: 699, deliverables: ["Full site audit", "Top 20 fixes", "Meta optimization", "XML sitemap"] },
+      { name: "Standard", price: "$1,499", basePrice: 1499, highlight: true, deliverables: ["Everything in Basic", "Core Web Vitals fix", "Schema markup", "Content gap analysis", "Monthly report"] },
+      { name: "Premium", price: "$2,999", basePrice: 2999, deliverables: ["Full technical overhaul", "Competitor analysis", "Link audit", "AI content strategy", "Priority support"] },
     ],
     faqs: [
       { q: "How long does it take to see SEO results?", a: "Typically, you can expect to see measurable SEO improvements within 60 to 90 days, with more significant ranking changes taking 4 to 6 months depending on competition." },
@@ -117,11 +125,12 @@ const serviceData: Record<string, ServiceEntry> = {
     seoDesc: "Capture and convert more leads with automated email marketing setups.",
     magnetTitle: "Get Our Top 3 High-Converting Email Templates",
     startingPrice: "From $1,200",
+    baseStartingPrice: 1200,
     schemaPrice: "1200",
     packages: [
-      { name: "Basic", price: "$1,200", deliverables: ["Lead magnet design", "5-email drip sequence", "Mailchimp / Klaviyo setup", "Opt-in form"] },
-      { name: "Standard", price: "$2,400", highlight: true, deliverables: ["3 lead magnets", "12-email sequence", "CRM integration", "Segmentation", "A/B test setup"] },
-      { name: "Premium", price: "$4,500", deliverables: ["Full funnel build", "Unlimited sequences", "Multi-CRM sync", "SMS integration", "Ongoing optimization"] },
+      { name: "Basic", price: "$1,200", basePrice: 1200, deliverables: ["Lead magnet design", "5-email drip sequence", "Mailchimp / Klaviyo setup", "Opt-in form"] },
+      { name: "Standard", price: "$2,400", basePrice: 2400, highlight: true, deliverables: ["3 lead magnets", "12-email sequence", "CRM integration", "Segmentation", "A/B test setup"] },
+      { name: "Premium", price: "$4,500", basePrice: 4500, deliverables: ["Full funnel build", "Unlimited sequences", "Multi-CRM sync", "SMS integration", "Ongoing optimization"] },
     ],
     faqs: [
       { q: "What email marketing platforms do you support?", a: "We integrate with leading platforms like Klaviyo, Mailchimp, HubSpot, and ActiveCampaign to build robust email automation funnels." },
@@ -138,11 +147,12 @@ const serviceData: Record<string, ServiceEntry> = {
     seoDesc: "Premium white hat off-page SEO and link building service to improve your Google rankings. High DA/DR contextual backlinks from Drape Digital.",
     magnetTitle: "Get a Free Backlink Profile Audit",
     startingPrice: "From $499",
+    baseStartingPrice: 499,
     schemaPrice: "499",
     packages: [
-      { name: "Basic", price: "$499", deliverables: ["35 high-quality backlinks", "DA 40+ domains", "4-day delivery", "Detailed report"] },
-      { name: "Standard", price: "$899", highlight: true, deliverables: ["80 high-quality backlinks", "DA 50+ domains", "Contextual placements", "Indexing service", "Anchor diversity"] },
-      { name: "Premium", price: "$1,499", deliverables: ["170 high-quality backlinks", "DA 60+ domains", "Full campaign strategy", "Monthly drip delivery", "Priority support"] },
+      { name: "Basic", price: "$499", basePrice: 499, deliverables: ["35 high-quality backlinks", "DA 40+ domains", "4-day delivery", "Detailed report"] },
+      { name: "Standard", price: "$899", basePrice: 899, highlight: true, deliverables: ["80 high-quality backlinks", "DA 50+ domains", "Contextual placements", "Indexing service", "Anchor diversity"] },
+      { name: "Premium", price: "$1,499", basePrice: 1499, deliverables: ["170 high-quality backlinks", "DA 60+ domains", "Full campaign strategy", "Monthly drip delivery", "Priority support"] },
     ],
     faqs: [
       { q: "What is white hat link building?", a: "White hat link building involves acquiring backlinks through genuine, manual outreach and high-quality content placement, strictly following search engine guidelines." },
@@ -159,11 +169,12 @@ const serviceData: Record<string, ServiceEntry> = {
     seoDesc: "Build your domain authority with high DA dofollow backlinks. DR 60–90 placements, 100% white hat. Starting from $599.",
     magnetTitle: "Request a Free Domain Authority Analysis",
     startingPrice: "From $599",
+    baseStartingPrice: 599,
     schemaPrice: "599",
     packages: [
-      { name: "Basic", price: "$599", deliverables: ["35 DA 60+ dofollow links", "Contextual placement", "5-day delivery", "Full report"] },
-      { name: "Standard", price: "$999", highlight: true, deliverables: ["75 DA 70+ dofollow links", "Niche-relevant sites", "Indexing included", "Anchor strategy"] },
-      { name: "Premium", price: "$1,799", deliverables: ["160 DA 80+ dofollow links", "DR 70+ guaranteed", "Drip schedule", "Ahrefs tracking", "Priority delivery"] },
+      { name: "Basic", price: "$599", basePrice: 599, deliverables: ["35 DA 60+ dofollow links", "Contextual placement", "5-day delivery", "Full report"] },
+      { name: "Standard", price: "$999", basePrice: 999, highlight: true, deliverables: ["75 DA 70+ dofollow links", "Niche-relevant sites", "Indexing included", "Anchor strategy"] },
+      { name: "Premium", price: "$1,799", basePrice: 1799, deliverables: ["160 DA 80+ dofollow links", "DR 70+ guaranteed", "Drip schedule", "Ahrefs tracking", "Priority delivery"] },
     ],
     faqs: [
       { q: "What does Domain Rating (DR) mean?", a: "Domain Rating (DR) is an Ahrefs metric that predicts how well a website will rank based on its backlink profile. We focus on DR 60-90 sites for maximum impact." },
@@ -180,11 +191,12 @@ const serviceData: Record<string, ServiceEntry> = {
     seoDesc: "Rank higher in local search and Google Maps. Expert local SEO, GMB optimization, and citation building starting from $399.",
     magnetTitle: "Get a Free Local SEO Visibility Report",
     startingPrice: "From $399",
+    baseStartingPrice: 399,
     schemaPrice: "399",
     packages: [
-      { name: "Basic", price: "$399", deliverables: ["GMB profile optimization", "50 citations", "Local keyword audit", "Schema setup"] },
-      { name: "Standard", price: "$799", highlight: true, deliverables: ["Full GMB overhaul", "200 citations", "Review strategy", "Geo content", "Monthly report"] },
-      { name: "Premium", price: "$1,299", deliverables: ["Multi-location setup", "500 citations", "Competitor tracking", "Map pack strategy", "Ongoing management"] },
+      { name: "Basic", price: "$399", basePrice: 399, deliverables: ["GMB profile optimization", "50 citations", "Local keyword audit", "Schema setup"] },
+      { name: "Standard", price: "$799", basePrice: 799, highlight: true, deliverables: ["Full GMB overhaul", "200 citations", "Review strategy", "Geo content", "Monthly report"] },
+      { name: "Premium", price: "$1,299", basePrice: 1299, deliverables: ["Multi-location setup", "500 citations", "Competitor tracking", "Map pack strategy", "Ongoing management"] },
     ],
     faqs: [
       { q: "What is Local SEO?", a: "Local SEO is the process of optimizing your online presence to attract more business from relevant local searches on Google and Google Maps." },
@@ -201,11 +213,12 @@ const serviceData: Record<string, ServiceEntry> = {
     seoDesc: "Get your business cited by ChatGPT, Gemini, and Perplexity. Expert GEO and AEO services to rank in the AI search era. Starting from $499.",
     magnetTitle: "Get Your Free AI Search Visibility Audit",
     startingPrice: "From $499",
+    baseStartingPrice: 499,
     schemaPrice: "499",
     packages: [
-      { name: "Basic", price: "$499", deliverables: ["AI visibility audit", "LLMs.txt setup", "Entity optimization", "Structured data review"] },
-      { name: "Standard", price: "$999", highlight: true, deliverables: ["Full AEO strategy", "AI content writing", "Schema overhaul", "Citation building", "AI crawler setup"] },
-      { name: "Premium", price: "$1,999", deliverables: ["Full GEO campaign", "Monthly AI content", "Competitor gap analysis", "Multi-platform AI presence", "Monthly reporting"] },
+      { name: "Basic", price: "$499", basePrice: 499, deliverables: ["AI visibility audit", "LLMs.txt setup", "Entity optimization", "Structured data review"] },
+      { name: "Standard", price: "$999", basePrice: 999, highlight: true, deliverables: ["Full AEO strategy", "AI content writing", "Schema overhaul", "Citation building", "AI crawler setup"] },
+      { name: "Premium", price: "$1,999", basePrice: 1999, deliverables: ["Full GEO campaign", "Monthly AI content", "Competitor gap analysis", "Multi-platform AI presence", "Monthly reporting"] },
     ],
     faqs: [
       { q: "What is Generative Engine Optimization (GEO)?", a: "GEO involves optimizing your digital presence and content so that AI search engines (like Google AI Overviews and Perplexity) cite and recommend your brand." },
@@ -350,6 +363,7 @@ export default function ServiceDetail() {
   const [captcha, setCaptcha] = useState({ num1: 0, num2: 0, answer: "" });
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [checkoutLoading, setCheckoutLoading] = useState<string | null>(null);
+  const { formatPrice, isLoading, currencyCode, exchangeRate } = useCurrency();
 
   useEffect(() => {
     setCaptcha(prev => ({ ...prev, num1: Math.floor(Math.random() * 10) + 1, num2: Math.floor(Math.random() * 10) + 1 }));
@@ -364,7 +378,9 @@ export default function ServiceDetail() {
         body: JSON.stringify({
           serviceName: service.title,
           packageName: pkg.name,
-          price: pkg.price,
+          price: (pkg.basePrice * exchangeRate).toString(),
+          currency: currencyCode,
+          isRecurring: !!pkg.priceSuffix,
           slug,
         }),
       });
@@ -415,8 +431,8 @@ export default function ServiceDetail() {
     },
     "offers": {
       "@type": "Offer",
-      "price": service.schemaPrice,
-      "priceCurrency": "USD",
+      "price": Math.round(Number(service.schemaPrice) * exchangeRate).toString(),
+      "priceCurrency": currencyCode,
       "availability": "https://schema.org/InStock",
       "priceValidUntil": "2027-12-31",
       "url": canonicalUrl,
@@ -503,7 +519,9 @@ export default function ServiceDetail() {
             </Link>
             <h1 className="text-4xl md:text-8xl font-black tracking-tighter mb-6 leading-[0.9] uppercase">{service.title}</h1>
             <div className="flex items-center gap-3 mb-8 flex-wrap">
-              <span className="font-mono text-agency-accent font-bold text-lg">{service.startingPrice}</span>
+              <span className="font-mono text-agency-accent font-bold text-lg">
+                From {isLoading ? "..." : formatPrice(service.baseStartingPrice)}{service.startingPrice.includes("/mo") ? "/mo" : ""}
+              </span>
               <span className="text-agency-white/30">·</span>
               <div className="flex gap-1 text-agency-accent">
                 {[...Array(5)].map((_, i) => <Star key={i} size={16} className="fill-current" />)}
@@ -563,7 +581,9 @@ export default function ServiceDetail() {
                 )}
                 <div className="mb-6">
                   <p className="text-xs font-bold uppercase tracking-widest text-agency-muted mb-2">{pkg.name}</p>
-                  <p className="text-4xl font-black text-agency-white">{pkg.price}</p>
+                  <p className="text-4xl font-black text-agency-white">
+                    {isLoading ? "..." : formatPrice(pkg.basePrice)}{pkg.priceSuffix || ""}
+                  </p>
                 </div>
                 <ul className="space-y-3 flex-grow mb-8">
                   {pkg.deliverables.map((item, i) => (
