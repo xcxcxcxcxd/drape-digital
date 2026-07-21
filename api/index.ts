@@ -73,7 +73,7 @@ app.post("/api/contact", apiLimiter, async (req, res) => {
       html: `
   <div style="font-family: Inter, Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333; background-color: #ffffff; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden;">
     <div style="background-color: #000; padding: 24px; text-align: center;">
-      <img src="https://drape.digital/assets/email-logo.png" alt="Drape Digital" style="max-height: 32px;" />
+      <h1 style="color: #ffffff; font-family: Inter, Arial, sans-serif; font-size: 24px; font-weight: bold; margin: 0; letter-spacing: -1px;">drape<span style="color: #00D1FF;">.</span>digital</h1>
     </div>
     <div style="padding: 40px 30px;">
       <h2 style="color: #111; margin-top: 0;">Hi ${name},</h2>
@@ -124,7 +124,7 @@ app.post("/api/quote", apiLimiter, async (req, res) => {
       html: `
   <div style="font-family: Inter, Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333; background-color: #ffffff; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden;">
     <div style="background-color: #000; padding: 24px; text-align: center;">
-      <img src="https://drape.digital/assets/email-logo.png" alt="Drape Digital" style="max-height: 32px;" />
+      <h1 style="color: #ffffff; font-family: Inter, Arial, sans-serif; font-size: 24px; font-weight: bold; margin: 0; letter-spacing: -1px;">drape<span style="color: #00D1FF;">.</span>digital</h1>
     </div>
     <div style="padding: 40px 30px;">
       <h2 style="color: #111; margin-top: 0;">Hi there,</h2>
@@ -231,7 +231,7 @@ app.post("/api/stripe/webhook", async (req, res) => {
           html: `
   <div style="font-family: Inter, Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333; background-color: #ffffff; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden;">
     <div style="background-color: #000; padding: 24px; text-align: center;">
-      <img src="https://drape.digital/assets/email-logo.png" alt="Drape Digital" style="max-height: 32px;" />
+      <h1 style="color: #ffffff; font-family: Inter, Arial, sans-serif; font-size: 24px; font-weight: bold; margin: 0; letter-spacing: -1px;">drape<span style="color: #00D1FF;">.</span>digital</h1>
     </div>
     <div style="padding: 40px 30px;">
       <h2 style="color: #111; margin-top: 0;">Thank you for choosing Drape Digital!</h2>
