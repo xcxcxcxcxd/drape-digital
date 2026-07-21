@@ -70,12 +70,27 @@ app.post("/api/contact", apiLimiter, async (req, res) => {
       to: email,
       bcc: "drape.digital+d8a1d0a4c8@invite.trustpilot.com",
       subject: "Thank you for contacting Drape Digital",
-      html: `<p>Hi ${name},</p>
-             <p>Thanks for reaching out! We've received your request and our team is currently reviewing your details.</p>
-             <p>We'll get back to you within 24 hours regarding your custom demo build.</p>
-             <br>
-             <p>Best regards,</p>
-             <p><strong>Drape Digital Team</strong></p>`,
+      html: `
+  <div style="font-family: Inter, Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333; background-color: #ffffff; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden;">
+    <div style="background-color: #000; padding: 24px; text-align: center;">
+      <img src="https://drape.digital/assets/email-logo.png" alt="Drape Digital" style="max-height: 32px;" />
+    </div>
+    <div style="padding: 40px 30px;">
+      <h2 style="color: #111; margin-top: 0;">Hi ${name},</h2>
+      <p style="font-size: 16px; line-height: 1.6; color: #444;">Thanks for reaching out! We've successfully received your request, and our team is currently reviewing your details.</p>
+      <p style="font-size: 16px; line-height: 1.6; color: #444;">At Drape Digital, we build your custom demo <strong>before you pay anything</strong>. We will get back to you within 24 hours regarding the next steps for your build.</p>
+      <p style="font-size: 16px; line-height: 1.6; color: #444;">In the meantime, feel free to browse some of our recent work or reply directly to this email if you have any immediate questions.</p>
+      <div style="margin-top: 32px; margin-bottom: 32px;">
+        <a href="https://drape.digital/#portfolio" style="background-color: #111; color: #fff; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 15px; display: inline-block;">View Our Recent Work</a>
+      </div>
+      <p style="font-size: 16px; line-height: 1.6; color: #444; margin-bottom: 0;">Best regards,<br/><strong>The Drape Digital Team</strong></p>
+    </div>
+    <div style="background-color: #f9fafb; padding: 24px; text-align: center; font-size: 13px; color: #6b7280; border-top: 1px solid #eaeaea;">
+      <p style="margin: 0;">Drape Digital Agency, Tetouan, Morocco</p>
+      <p style="margin: 8px 0 0 0;"><a href="https://drape.digital" style="color: #111; text-decoration: underline;">drape.digital</a> | <a href="https://www.linkedin.com/company/drapedigital/" style="color: #111; text-decoration: underline;">LinkedIn</a></p>
+    </div>
+  </div>
+`,
     });
 
     res.status(200).json({ success: true, message: "Message sent successfully" });
@@ -106,15 +121,29 @@ app.post("/api/quote", apiLimiter, async (req, res) => {
       to: email,
       bcc: "drape.digital+d8a1d0a4c8@invite.trustpilot.com",
       subject: `Your Requested Resource: ${service} by Drape Digital`,
-      html: `<p>Hi there,</p>
-             <p>Thank you for your interest in our <strong>${service}</strong> expertise.</p>
-             <p>Here is the resource you requested. Our team has put together these insights to help you scale and optimize your digital presence.</p>
-             <p>A member of our team is manually reviewing your request and will follow up shortly with your tailored resource.</p>
-             <br>
-             <p>If you're interested in requesting a risk-free demo build, simply reply to this email.</p>
-             <br>
-             <p>Best regards,</p>
-             <p><strong>Drape Digital Team</strong></p>`,
+      html: `
+  <div style="font-family: Inter, Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333; background-color: #ffffff; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden;">
+    <div style="background-color: #000; padding: 24px; text-align: center;">
+      <img src="https://drape.digital/assets/email-logo.png" alt="Drape Digital" style="max-height: 32px;" />
+    </div>
+    <div style="padding: 40px 30px;">
+      <h2 style="color: #111; margin-top: 0;">Hi there,</h2>
+      <p style="font-size: 16px; line-height: 1.6; color: #444;">Thank you for your interest in our <strong>${service}</strong> expertise.</p>
+      <p style="font-size: 16px; line-height: 1.6; color: #444;">Our team has put together these exclusive insights to help you scale and optimize your digital presence. A member of our team is manually reviewing your request and will follow up shortly with your tailored resource.</p>
+      <div style="background-color: #f3f4f6; padding: 20px; border-left: 4px solid #111; margin: 24px 0; border-radius: 0 6px 6px 0;">
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #374151;"><strong>Ready to see it in action?</strong> Request a completely risk-free, custom demo build. We build first, you pay only if you love it.</p>
+      </div>
+      <div style="margin-top: 32px; margin-bottom: 32px;">
+        <a href="mailto:contact@drape.digital?subject=Demo%20Request" style="background-color: #111; color: #fff; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 15px; display: inline-block;">Request Your Free Demo</a>
+      </div>
+      <p style="font-size: 16px; line-height: 1.6; color: #444; margin-bottom: 0;">Best regards,<br/><strong>The Drape Digital Team</strong></p>
+    </div>
+    <div style="background-color: #f9fafb; padding: 24px; text-align: center; font-size: 13px; color: #6b7280; border-top: 1px solid #eaeaea;">
+      <p style="margin: 0;">Drape Digital Agency, Tetouan, Morocco</p>
+      <p style="margin: 8px 0 0 0;"><a href="https://drape.digital" style="color: #111; text-decoration: underline;">drape.digital</a> | <a href="https://www.linkedin.com/company/drapedigital/" style="color: #111; text-decoration: underline;">LinkedIn</a></p>
+    </div>
+  </div>
+`,
     });
 
     res.status(200).json({ success: true, message: "Quote request received" });
@@ -200,13 +229,26 @@ app.post("/api/stripe/webhook", async (req, res) => {
           bcc: "drape.digital+d8a1d0a4c8@invite.trustpilot.com",
           subject: `Payment Confirmed — ${serviceName} (${packageName})`,
           html: `
-            <p>Thank you for choosing Drape Digital!</p>
-            <p>We've received your payment for <strong>${serviceName} — ${packageName} Package</strong>.</p>
-            <p>Our team will be in touch within 24 hours to kick off your project.</p>
-            <br>
-            <p>Best regards,</p>
-            <p><strong>Drape Digital Team</strong></p>
-          `,
+  <div style="font-family: Inter, Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333; background-color: #ffffff; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden;">
+    <div style="background-color: #000; padding: 24px; text-align: center;">
+      <img src="https://drape.digital/assets/email-logo.png" alt="Drape Digital" style="max-height: 32px;" />
+    </div>
+    <div style="padding: 40px 30px;">
+      <h2 style="color: #111; margin-top: 0;">Thank you for choosing Drape Digital!</h2>
+      <p style="font-size: 16px; line-height: 1.6; color: #444;">We're thrilled to partner with you. We have successfully received your payment for the <strong>${serviceName} — ${packageName} Package</strong>.</p>
+      <p style="font-size: 16px; line-height: 1.6; color: #444;">Our team is already preparing everything on our end, and we will be in touch within the next 24 hours to kick off your project.</p>
+      <p style="font-size: 16px; line-height: 1.6; color: #444;">If you need to share any assets, brand guidelines, or additional details right away, simply reply to this email.</p>
+      <div style="margin-top: 32px; margin-bottom: 32px;">
+        <a href="https://drape.digital" style="background-color: #111; color: #fff; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 15px; display: inline-block;">Return to Site</a>
+      </div>
+      <p style="font-size: 16px; line-height: 1.6; color: #444; margin-bottom: 0;">Best regards,<br/><strong>The Drape Digital Team</strong></p>
+    </div>
+    <div style="background-color: #f9fafb; padding: 24px; text-align: center; font-size: 13px; color: #6b7280; border-top: 1px solid #eaeaea;">
+      <p style="margin: 0;">Drape Digital Agency, Tetouan, Morocco</p>
+      <p style="margin: 8px 0 0 0;"><a href="https://drape.digital" style="color: #111; text-decoration: underline;">drape.digital</a> | <a href="https://www.linkedin.com/company/drapedigital/" style="color: #111; text-decoration: underline;">LinkedIn</a></p>
+    </div>
+  </div>
+`,
         });
 
         await transporter.sendMail({
