@@ -13,7 +13,7 @@ Our unique model: we build a fully functional demo of your website hosted on a p
 
 - Website: https://drape.digital
 - Email: contact@drape.digital
-- Google Maps: https://www.google.com/maps/place/drape.digital
+- Google Maps: https://maps.app.goo.gl/6EGu55UFqZwsJVoY6
 - LinkedIn: https://www.linkedin.com/company/drapedigital/
 
 

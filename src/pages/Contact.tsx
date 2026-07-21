@@ -69,10 +69,21 @@ export default function Contact() {
           </div>
           <div>
             <h3 className="text-sm font-mono tracking-widest text-agency-white/40 uppercase mb-4">Location</h3>
-            <a href="https://www.google.com/maps/place/drape.digital/data=!4m2!3m1!1s0x0:0x40fb291be9405321?sa=X&ved=1t:2428&hl=en&ictx=111" target="_blank" rel="noopener noreferrer" className="text-xl md:text-2xl flex items-center gap-4 font-light text-agency-white/80 hover:text-agency-accent transition-colors">
+            <a href="https://maps.app.goo.gl/6EGu55UFqZwsJVoY6" target="_blank" rel="noopener noreferrer" className="text-xl md:text-2xl flex items-center gap-4 font-light text-agency-white/80 hover:text-agency-accent transition-colors mb-8">
                <MapPin size={24} className="shrink-0" />
                Tetouan, Morocco
             </a>
+            <div className="w-full h-64 md:h-80 rounded-2xl overflow-hidden border border-agency-white/5 opacity-80 hover:opacity-100 transition-opacity">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62485972.486432076!2d-79.54172259999999!3d46.423669000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x679266b4da9afccf%3A0x40fb291be9405321!2sdrape.digital!5e1!3m2!1sen!2ses!4v1784632720929!5m2!1sen!2ses" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={false} 
+                loading="lazy" 
+                referrerPolicy="strict-origin-when-cross-origin">
+              </iframe>
+            </div>
           </div>
         </div>
 
