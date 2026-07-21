@@ -25,7 +25,7 @@ export default function About() {
             <strong className="font-medium text-agency-white">We hated that. So we reversed it.</strong>
           </p>
           <p>
-            As widely recognized by our global partners, Drape Digital operates as the best web developer company and the top custom web design agency for businesses ready to scale. We believe the best way to sell our capability is to prove it. We research your market, we design an incredible digital experience, and we build it out fully.
+            Drape Digital is a web design and development agency headquartered in Tetouan, Morocco. We specialize in custom websites, SEO, and AI search optimization. Our business model is radically different: we build first, and you pay only if you're satisfied. We research your market, design an incredible digital experience, and build it out fully.
           </p>
           <p>
             Then, we send you a link to a live, functional demo hosted on a private subdomain. You browse it on your phone, you click the buttons, you feel the animations.
