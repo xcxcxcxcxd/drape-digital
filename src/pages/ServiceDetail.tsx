@@ -21,6 +21,7 @@ interface ServiceEntry {
   startingPrice: string;
   schemaPrice: string;
   packages: Package[];
+  faqs?: { q: string; a: string }[];
 }
 
 const serviceData: Record<string, ServiceEntry> = {
@@ -38,6 +39,12 @@ const serviceData: Record<string, ServiceEntry> = {
       { name: "Standard", price: "$4,500", highlight: true, deliverables: ["Up to 10 pages", "3 revision rounds", "Animation design", "Design system", "Mobile + tablet"] },
       { name: "Premium", price: "$8,500", deliverables: ["Unlimited pages", "Unlimited revisions", "Full brand identity", "Interactive prototypes", "Priority delivery"] },
     ],
+    faqs: [
+      { q: "How long does a custom web design project take?", a: "A standard web design project takes 2 to 4 weeks depending on the complexity, number of pages, and revision cycles." },
+      { q: "Do you offer responsive web design?", a: "Yes, all our web designs are fully responsive and optimized for mobile, tablet, and desktop devices." },
+      { q: "Will my website be SEO-friendly?", a: "Absolutely. Our web design process includes foundational technical SEO to ensure search engines can easily crawl and index your pages." },
+      { q: "Do I own the website design once it's finished?", a: "Yes, once the project is paid in full, you retain full ownership of the design assets and the final website." },
+    ],
   },
   "development": {
     title: "Web Development",
@@ -52,6 +59,12 @@ const serviceData: Record<string, ServiceEntry> = {
       { name: "Basic", price: "$3,500", deliverables: ["React / Vite SPA", "Up to 8 pages", "Contact form", "CMS integration"] },
       { name: "Standard", price: "$6,500", highlight: true, deliverables: ["Next.js + SSR", "Unlimited pages", "API integrations", "Auth system", "Performance audit"] },
       { name: "Premium", price: "$12,000", deliverables: ["Full-stack app", "Custom backend", "Database design", "DevOps setup", "90-day support"] },
+    ],
+    faqs: [
+      { q: "What technologies do you use for web development?", a: "We specialize in modern frontend stacks including React, Next.js, Vite, and headless CMS platforms for maximum performance and scalability." },
+      { q: "Do you provide website maintenance and support?", a: "Yes, our development packages include support periods, and we offer ongoing maintenance retainers for continuous updates and security." },
+      { q: "Can you integrate third-party APIs?", a: "Yes, we routinely integrate CRMs, payment gateways, marketing tools, and other third-party APIs into our custom web applications." },
+      { q: "Will my web app be fast and secure?", a: "We prioritize Core Web Vitals and follow strict security best practices to ensure your web application is lightning-fast and secure." },
     ],
   },
   "ecommerce": {
@@ -68,6 +81,12 @@ const serviceData: Record<string, ServiceEntry> = {
       { name: "Standard", price: "$8,500", highlight: true, deliverables: ["Headless commerce", "Unlimited products", "Subscription model", "CRO setup", "Analytics"] },
       { name: "Premium", price: "$16,000", deliverables: ["Multi-channel store", "ERP integration", "Custom checkout", "A/B testing setup", "90-day support"] },
     ],
+    faqs: [
+      { q: "Do you build custom Shopify themes?", a: "Yes, we design and develop custom Shopify themes tailored to your brand to improve user experience and conversion rates." },
+      { q: "Can you migrate my store to Shopify?", a: "Yes, we offer seamless e-commerce migration services from platforms like WooCommerce or Magento to Shopify." },
+      { q: "Do you help with Conversion Rate Optimization (CRO)?", a: "Our e-commerce development includes built-in CRO best practices, optimized checkouts, and fast load times to maximize your Average Order Value (AOV)." },
+      { q: "Are your e-commerce websites mobile-friendly?", a: "100%. A majority of e-commerce traffic comes from mobile devices, so we employ a mobile-first approach for all online stores." },
+    ],
   },
   "seo": {
     title: "SEO & Performance",
@@ -82,6 +101,12 @@ const serviceData: Record<string, ServiceEntry> = {
       { name: "Basic", price: "$699", deliverables: ["Full site audit", "Top 20 fixes", "Meta optimization", "XML sitemap"] },
       { name: "Standard", price: "$1,499", highlight: true, deliverables: ["Everything in Basic", "Core Web Vitals fix", "Schema markup", "Content gap analysis", "Monthly report"] },
       { name: "Premium", price: "$2,999", deliverables: ["Full technical overhaul", "Competitor analysis", "Link audit", "AI content strategy", "Priority support"] },
+    ],
+    faqs: [
+      { q: "How long does it take to see SEO results?", a: "Typically, you can expect to see measurable SEO improvements within 60 to 90 days, with more significant ranking changes taking 4 to 6 months depending on competition." },
+      { q: "What is included in a technical SEO audit?", a: "Our technical SEO audit covers Core Web Vitals, site architecture, crawlability, indexability, XML sitemaps, canonical tags, and schema markup." },
+      { q: "Do you guarantee first-page Google rankings?", a: "No reputable agency can guarantee #1 rankings. However, we implement industry-leading technical SEO strategies that maximize your chances of ranking on the first page." },
+      { q: "Is schema markup important for SEO?", a: "Yes, schema markup (JSON-LD) helps search engines better understand your content, which can lead to rich snippets and improved click-through rates." },
     ],
   },
   "email-automation": {
@@ -98,6 +123,12 @@ const serviceData: Record<string, ServiceEntry> = {
       { name: "Standard", price: "$2,400", highlight: true, deliverables: ["3 lead magnets", "12-email sequence", "CRM integration", "Segmentation", "A/B test setup"] },
       { name: "Premium", price: "$4,500", deliverables: ["Full funnel build", "Unlimited sequences", "Multi-CRM sync", "SMS integration", "Ongoing optimization"] },
     ],
+    faqs: [
+      { q: "What email marketing platforms do you support?", a: "We integrate with leading platforms like Klaviyo, Mailchimp, HubSpot, and ActiveCampaign to build robust email automation funnels." },
+      { q: "Can you design lead magnets?", a: "Yes, we design high-converting lead magnets and pair them with optimized opt-in forms to grow your subscriber list." },
+      { q: "What is an email drip campaign?", a: "A drip campaign is an automated sequence of emails sent to subscribers over time to nurture leads and guide them toward a purchase." },
+      { q: "Do you offer A/B testing for emails?", a: "Yes, we set up A/B testing for subject lines, content, and send times to continuously improve your open and click-through rates." },
+    ],
   },
   "seo-backlinks": {
     title: "Off-Page SEO & Link Building",
@@ -112,6 +143,12 @@ const serviceData: Record<string, ServiceEntry> = {
       { name: "Basic", price: "$499", deliverables: ["35 high-quality backlinks", "DA 40+ domains", "4-day delivery", "Detailed report"] },
       { name: "Standard", price: "$899", highlight: true, deliverables: ["80 high-quality backlinks", "DA 50+ domains", "Contextual placements", "Indexing service", "Anchor diversity"] },
       { name: "Premium", price: "$1,499", deliverables: ["170 high-quality backlinks", "DA 60+ domains", "Full campaign strategy", "Monthly drip delivery", "Priority support"] },
+    ],
+    faqs: [
+      { q: "What is white hat link building?", a: "White hat link building involves acquiring backlinks through genuine, manual outreach and high-quality content placement, strictly following search engine guidelines." },
+      { q: "Are the backlinks dofollow?", a: "Yes, our off-page SEO campaigns focus exclusively on acquiring contextual, dofollow backlinks that pass link equity to your domain." },
+      { q: "Will these backlinks harm my website?", a: "No, because we do not use Private Blog Networks (PBNs) or spammy tactics. Our placements are on real, authoritative websites." },
+      { q: "Do I get a report of the built links?", a: "Absolutely. We provide a detailed transparency report containing all the URLs where your backlinks have been successfully placed." },
     ],
   },
   "dofollow-backlinks": {
@@ -128,6 +165,12 @@ const serviceData: Record<string, ServiceEntry> = {
       { name: "Standard", price: "$999", highlight: true, deliverables: ["75 DA 70+ dofollow links", "Niche-relevant sites", "Indexing included", "Anchor strategy"] },
       { name: "Premium", price: "$1,799", deliverables: ["160 DA 80+ dofollow links", "DR 70+ guaranteed", "Drip schedule", "Ahrefs tracking", "Priority delivery"] },
     ],
+    faqs: [
+      { q: "What does Domain Rating (DR) mean?", a: "Domain Rating (DR) is an Ahrefs metric that predicts how well a website will rank based on its backlink profile. We focus on DR 60-90 sites for maximum impact." },
+      { q: "How do you acquire high DA dofollow backlinks?", a: "We secure high DA backlinks through targeted, manual outreach to webmasters, editors, and journalists in your specific industry." },
+      { q: "Are the link placements permanent?", a: "Yes, the contextual dofollow backlinks we build are permanent placements within editorial content." },
+      { q: "Do you use Private Blog Networks (PBNs)?", a: "We strictly avoid PBNs and link farms. Every link we build comes from a legitimate, traffic-generating website." },
+    ],
   },
   "local-seo": {
     title: "Local SEO & Google My Business",
@@ -142,6 +185,12 @@ const serviceData: Record<string, ServiceEntry> = {
       { name: "Basic", price: "$399", deliverables: ["GMB profile optimization", "50 citations", "Local keyword audit", "Schema setup"] },
       { name: "Standard", price: "$799", highlight: true, deliverables: ["Full GMB overhaul", "200 citations", "Review strategy", "Geo content", "Monthly report"] },
       { name: "Premium", price: "$1,299", deliverables: ["Multi-location setup", "500 citations", "Competitor tracking", "Map pack strategy", "Ongoing management"] },
+    ],
+    faqs: [
+      { q: "What is Local SEO?", a: "Local SEO is the process of optimizing your online presence to attract more business from relevant local searches on Google and Google Maps." },
+      { q: "How does Google My Business impact Local SEO?", a: "An optimized Google My Business (GMB) profile is critical for appearing in the Google Local Pack (Map Pack), driving immediate local foot traffic and calls." },
+      { q: "What are local citations?", a: "Local citations are online mentions of your business's Name, Address, and Phone number (NAP). Consistent citations build trust with Google's algorithm." },
+      { q: "Can you help me rank in the Google Map Pack?", a: "Yes, our local SEO service focuses on GMB optimization, geo-targeted content, and citation building specifically designed to improve your Map Pack rankings." },
     ],
   },
   "ai-seo": {
@@ -158,6 +207,12 @@ const serviceData: Record<string, ServiceEntry> = {
       { name: "Standard", price: "$999", highlight: true, deliverables: ["Full AEO strategy", "AI content writing", "Schema overhaul", "Citation building", "AI crawler setup"] },
       { name: "Premium", price: "$1,999", deliverables: ["Full GEO campaign", "Monthly AI content", "Competitor gap analysis", "Multi-platform AI presence", "Monthly reporting"] },
     ],
+    faqs: [
+      { q: "What is Generative Engine Optimization (GEO)?", a: "GEO involves optimizing your digital presence and content so that AI search engines (like Google AI Overviews and Perplexity) cite and recommend your brand." },
+      { q: "How do I get my business on ChatGPT?", a: "By implementing Answer Engine Optimization (AEO), structuring your data, and publishing authoritative entity-based content, we increase the likelihood of ChatGPT citing your business." },
+      { q: "What is an llms.txt file?", a: "An llms.txt file provides a structured, AI-readable summary of your website's content, making it easier for Large Language Models to crawl and understand your business." },
+      { q: "Does AI SEO replace traditional SEO?", a: "No, AI SEO complements traditional SEO. While standard SEO focuses on search engine results pages (SERPs), AI SEO ensures visibility in AI-generated answers and chatbots." },
+    ],
   },
   "monthly-seo": {
     title: "Monthly SEO Retainer",
@@ -172,6 +227,12 @@ const serviceData: Record<string, ServiceEntry> = {
       { name: "Starter", price: "$999/mo", deliverables: ["Technical SEO fixes", "20 backlinks/mo", "2 blog posts/mo", "Monthly report"] },
       { name: "Growth", price: "$1,999/mo", highlight: true, deliverables: ["Everything in Starter", "50 backlinks/mo", "5 blog posts/mo", "Competitor tracking", "Quarterly strategy call"] },
       { name: "Authority", price: "$3,999/mo", deliverables: ["Full SEO management", "100+ backlinks/mo", "Daily monitoring", "Dedicated strategist", "Weekly reporting"] },
+    ],
+    faqs: [
+      { q: "What is included in a monthly SEO retainer?", a: "Our monthly SEO retainers include ongoing technical SEO monitoring, on-page optimization, content production, white-hat link building, and monthly performance reporting." },
+      { q: "Is there a minimum contract length for monthly SEO?", a: "We typically recommend a minimum commitment of 3 to 6 months because SEO is a long-term strategy, but we offer flexible agreements." },
+      { q: "Will I receive regular SEO reports?", a: "Yes, we provide comprehensive monthly strategy reports detailing keyword rankings, traffic growth, and the exact backlinks and content we've produced." },
+      { q: "Do you handle both on-page and off-page SEO?", a: "Yes, our monthly packages are fully managed, meaning we handle all technical, on-page, and off-page SEO tasks for you." },
     ],
   },
   "seo-content": {
@@ -188,6 +249,12 @@ const serviceData: Record<string, ServiceEntry> = {
       { name: "Standard", price: "$1,199", highlight: true, deliverables: ["12 SEO articles", "Up to 2,500 words", "Internal linking", "Images included", "24h turnaround"] },
       { name: "Premium", price: "$2,499", deliverables: ["30 articles/month", "Landing page copy", "Full content calendar", "Topic cluster strategy", "Priority delivery"] },
     ],
+    faqs: [
+      { q: "What makes an article SEO-optimized?", a: "An SEO-optimized article targets specific keywords, follows E-E-A-T guidelines, uses proper heading structures (H1, H2, H3), and answers user intent clearly." },
+      { q: "Who writes the SEO content?", a: "Our content is written by expert copywriters and SEO specialists who understand how to write compelling copy that ranks on search engines." },
+      { q: "Do you provide images with the blog posts?", a: "Yes, our standard and premium SEO content packages include high-quality, royalty-free images with optimized alt text." },
+      { q: "Can you write landing page copy?", a: "Absolutely. We write conversion-focused landing page copy designed to rank organically while driving leads and sales." },
+    ],
   },
   "google-maps-citations": {
     title: "Google Maps Citations & Local Presence",
@@ -202,6 +269,12 @@ const serviceData: Record<string, ServiceEntry> = {
       { name: "Basic", price: "$299", deliverables: ["5,000 citations", "Tier-1 directories", "NAP consistency check", "Full report"] },
       { name: "Standard", price: "$599", highlight: true, deliverables: ["19,000 citations", "Data aggregators", "Duplicate removal", "Google Maps focus", "7-day delivery"] },
       { name: "Premium", price: "$999", deliverables: ["95,000 citations", "Full local web coverage", "Niche directories", "Ongoing monitoring", "Priority delivery"] },
+    ],
+    faqs: [
+      { q: "Why is NAP consistency important?", a: "NAP (Name, Address, Phone number) consistency across all online directories proves to Google that your business information is accurate, which boosts your local rankings." },
+      { q: "Do you submit to data aggregators?", a: "Yes, we submit your business information to major local data aggregators to ensure broad and consistent distribution across the local search ecosystem." },
+      { q: "How many citations do I need to rank locally?", a: "The number depends on your competition, but our packages range from 5,000 to 95,000 authoritative directory submissions to ensure maximum local coverage." },
+      { q: "Will you fix my existing incorrect citations?", a: "Yes, our service includes duplicate removal and correcting inaccurate business listings across local directories." },
     ],
   },
   "technical-seo": {
@@ -218,6 +291,12 @@ const serviceData: Record<string, ServiceEntry> = {
       { name: "Standard", price: "$1,299", highlight: true, deliverables: ["Everything in Basic", "Full implementation", "Schema markup", "Page speed fixes", "Sitemap & robots.txt"] },
       { name: "Premium", price: "$2,499", deliverables: ["Complete on-page overhaul", "Site architecture redesign", "Internal linking rebuild", "Monthly monitoring", "Priority support"] },
     ],
+    faqs: [
+      { q: "What are Core Web Vitals?", a: "Core Web Vitals are specific page speed and user experience metrics used by Google to evaluate how fast and stable your website is." },
+      { q: "Do you fix page speed issues?", a: "Yes, our technical SEO implementation includes aggressive page speed optimization, image compression, and code minification." },
+      { q: "What is a canonical tag?", a: "A canonical tag tells search engines which version of a URL represents the master copy of a page, preventing duplicate content issues." },
+      { q: "Can technical SEO improve my current rankings?", a: "Absolutely. Fixing technical errors, improving crawlability, and adding schema markup often results in quick and noticeable ranking improvements." },
+    ],
   },
   "authority-backlinks": {
     title: "White Hat Authority Backlinks (DR 70+)",
@@ -233,6 +312,12 @@ const serviceData: Record<string, ServiceEntry> = {
       { name: "Standard", price: "$1,499", highlight: true, deliverables: ["25 DR 70+ links", "Niche-relevant sites", "Contextual copy", "Indexing service", "Full report"] },
       { name: "Premium", price: "$2,999", deliverables: ["60 DR 70+ links", "DR 80+ target", "Anchor strategy", "Drip delivery", "Priority support"] },
     ],
+    faqs: [
+      { q: "What makes a backlink 'high authority'?", a: "A high-authority backlink comes from a trusted website with a strong backlink profile of its own, typically measured by a Domain Rating (DR) of 70 or higher." },
+      { q: "Do you guarantee DR 70+ placements?", a: "Yes, our Authority Backlinks service specifically targets and guarantees placements on domains with a DR of 70 or above." },
+      { q: "How long do these links stay live?", a: "Our manual outreach ensures that the backlinks we place are permanent, editorial links housed within relevant content." },
+      { q: "Can I choose the anchor text?", a: "We develop an anchor text strategy to ensure a natural link profile, but we welcome your input on target keywords and preferred anchors." },
+    ],
   },
   "guest-posts": {
     title: "Guest Posts on DA 90+ Sites",
@@ -247,6 +332,12 @@ const serviceData: Record<string, ServiceEntry> = {
       { name: "Basic", price: "$499", deliverables: ["2 DA 90+ guest posts", "500-word articles", "1 dofollow link each", "Placement report"] },
       { name: "Standard", price: "$999", highlight: true, deliverables: ["5 DA 90+ guest posts", "800-word articles", "Niche matching", "Anchor diversity", "7-day delivery"] },
       { name: "Premium", price: "$1,999", deliverables: ["12 DA 90+ guest posts", "1,500-word articles", "Premium site selection", "Link indexing", "Priority delivery"] },
+    ],
+    faqs: [
+      { q: "What is a guest post in SEO?", a: "A guest post involves writing and publishing an article on another website to build relationships, drive referral traffic, and earn high-quality backlinks." },
+      { q: "Are the guest posts placed on real websites?", a: "Yes, we strictly publish on real, high-traffic websites with genuine audiences, completely avoiding PBNs or link farms." },
+      { q: "Do the guest posts have advertorial disclaimers?", a: "No, we negotiate editorial placements that blend naturally with the host site's content, meaning no 'sponsored' or 'advertorial' tags are applied." },
+      { q: "How long are the guest post articles?", a: "Depending on the package, our editorial guest posts range from 500 to 1,500+ words to ensure they provide real value to readers." },
     ],
   },
 };
@@ -339,7 +430,7 @@ export default function ServiceDetail() {
     },
   };
 
-  const faqs = [
+  const faqs = service?.faqs || [
     {
       q: `What is the timeline for your ${service.title} service?`,
       a: "Our standard turnaround time depends on the package selected. Basic packages typically complete within 1-2 weeks, while more complex Premium implementations may take 3-6 weeks. We prioritize quality and thoroughness over rushing.",

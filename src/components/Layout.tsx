@@ -179,9 +179,8 @@ export function Layout({ children }: { children: ReactNode }) {
             </div>
             <div className="flex items-center gap-4">
               <a href="https://www.linkedin.com/company/drapedigital/" target="_blank" rel="noopener noreferrer" className="text-xs text-agency-white/40 hover:text-agency-white transition-colors">LinkedIn</a>
-              <span className="flex items-center gap-1.5 text-xs text-agency-white/30 border border-agency-white/10 rounded-full px-3 py-1">
-                <svg width="12" height="12" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-60"><path d="M6.5 7C5.67 7 5 7.67 5 8.5v15c0 .83.67 1.5 1.5 1.5h19c.83 0 1.5-.67 1.5-1.5v-15c0-.83-.67-1.5-1.5-1.5H6.5z" fill="#635BFF"/><path d="M13.5 19.5l-3-8h2l2 5.5 2-5.5h2l-3 8h-2z" fill="white"/></svg>
-                Secure checkout by Stripe
+              <span className="flex items-center gap-2 text-xs text-agency-white/30 border border-agency-white/10 rounded-full px-3 py-1">
+                Secure checkout by <img src="/assets/stripe-logo.png" alt="Stripe" className="h-3.5 opacity-80" />
               </span>
             </div>
           </div>

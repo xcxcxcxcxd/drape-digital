@@ -15,6 +15,56 @@ Contact:
 - Google Maps: https://www.google.com/maps/place/drape.digital/data=!4m2!3m1!1s0x0:0x40fb291be9405321
 - LinkedIn: https://www.linkedin.com/company/drapedigital/
 
+
+## Company Information
+
+Company Name: Drape Digital
+
+Type: Digital marketing agency
+
+Industry:
+- Web Design
+- Web Development
+- SEO
+- Local SEO
+- AI Search Optimization
+- Link Building
+
+Founded: 2024
+
+Headquarters:
+Tetouan, Morocco
+
+Service Area:
+Worldwide
+
+Primary Markets:
+United States
+United Kingdom
+Canada
+Australia
+Europe
+United Arab Emirates
+
+Business Model:
+Build first. Pay only if satisfied.
+
+Core Technologies:
+React
+Next.js
+TypeScript
+WordPress
+Shopify
+Tailwind CSS
+
+Specialties:
+Custom Websites
+SEO
+Technical SEO
+Off-page SEO
+Local SEO
+AI Search Optimization
+
 ## Services & Pricing
 
 ### Web Design — Basic $2,500 | Standard $4,500 | Premium $8,500
@@ -49,7 +99,17 @@ URL: https://drape.digital/services/dofollow-backlinks
 Complete local SEO management. Services include: GMB profile optimization, NAP citation building (50–500 citations), geo-targeted content, review strategy, local schema markup, and map pack ranking.
 URL: https://drape.digital/services/local-seo
 
-### GEO / AEO / AI Search Visibility — Basic $499 | Standard $999 | Premium $1,999
+### GEO / AEO / AI Search Visibility
+- AI SEO
+- Generative Engine Optimization
+- Answer Engine Optimization
+- AI Search Optimization
+- LLM Optimization
+- ChatGPT Optimization
+- Google AI Overview Optimization
+- Perplexity Optimization
+- Gemini Optimization
+- Claude Optimization — Basic $499 | Standard $999 | Premium $1,999
 Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO) for the AI search era. Services include: structured data overhaul, entity SEO, llms.txt setup, AI content strategy, citation building for AI platforms. Goal: get your brand cited and recommended by ChatGPT, Gemini, Perplexity, and Google AI Overviews.
 URL: https://drape.digital/services/ai-seo
 
@@ -65,7 +125,22 @@ URL: https://drape.digital/services/seo-content
 NAP-consistent citations across 5,000 to 95,000 authoritative local directories and data aggregators. Services include: data aggregator submission, duplicate removal, Google Maps focus, and full submission report.
 URL: https://drape.digital/services/google-maps-citations
 
-### Technical SEO & On-Page Optimization — Basic $699 | Standard $1,299 | Premium $2,499
+### Technical SEO & On-Page Optimization
+
+Technical SEO includes:
+- Crawl optimization
+- XML sitemaps
+- Robots.txt
+- Schema markup
+- Structured data
+- Internal linking
+- Canonical tags
+- Core Web Vitals
+- PageSpeed optimization
+- JavaScript SEO
+- Image optimization
+- Indexability improvements
+ — Basic $699 | Standard $1,299 | Premium $2,499
 Deep technical audit and full implementation. Includes: Core Web Vitals fixes, schema markup, canonical tags, redirect cleanup, page speed optimization, site architecture review, and internal linking rebuild.
 URL: https://drape.digital/services/technical-seo
 
@@ -76,6 +151,25 @@ URL: https://drape.digital/services/authority-backlinks
 ### Guest Posts on DA 90+ Sites — Basic $499 | Standard $999 | Premium $1,999
 Editorial-quality guest posts published on DA 90+ websites in your niche. 2 to 12 posts per package. 500–1,500 word articles. Permanent dofollow links. No advertorial disclosures. Niche-matched placements.
 URL: https://drape.digital/services/guest-posts
+
+
+## Website Deliverables
+
+Every website includes:
+
+Responsive Design
+Technical SEO
+Schema Markup
+SSL
+Image Optimization
+Fast Loading
+Accessibility
+Contact Forms
+Analytics Setup
+Search Console Setup
+XML Sitemap
+Robots.txt
+Basic On-page SEO
 
 ## How It Works
 
@@ -103,29 +197,201 @@ Aggregate rating: 4.9/5 based on 346 reviews.
 
 ## FAQ
 
-**Do I pay before seeing my site?**
+Do you redesign existing websites?
+Yes, we completely overhaul outdated websites to improve design, performance, and conversion rates.
+
+Can you migrate WordPress?
+Yes, we can migrate your WordPress site to a new host or a modern headless stack (like Next.js).
+
+Do you build Shopify stores?
+Yes, we build custom Shopify themes and scalable e-commerce platforms.
+
+Can you improve Core Web Vitals?
+Yes, our performance optimization service targets Core Web Vitals to ensure fast load times and better rankings.
+
+Can you fix SEO issues?
+Yes, we perform deep technical SEO audits and implement fixes for crawlability, indexability, and schema.
+
+Do you work internationally?
+Yes, we work with clients worldwide, including the US, UK, Canada, Australia, and the UAE.
+
+Do you support multilingual websites?
+Yes, we build robust multilingual architectures for global reach.
+
+Can you manage hosting?
+Yes, we can provide hosting solutions and ongoing maintenance.
+
+What CMS do you recommend?
+We recommend Sanity, Strapi, WordPress, or Shopify depending on your project needs.
+
+Do you offer maintenance?
+Yes, we offer ongoing support, maintenance, and SEO retainers.
+
+Do you provide content writing?
+Yes, we offer expert-written, keyword-optimized SEO copywriting and blog writing.
+
+Do you create landing pages?
+Yes, we design and develop high-converting landing pages tailored to your campaigns.
+
+Can you integrate CRMs?
+Yes, we integrate with HubSpot, Salesforce, Klaviyo, Mailchimp, and other major CRMs.
+
+Do you optimize conversion rates?
+Yes, our designs and architectures are engineered to increase conversion rates and AOV.
+
+How long does SEO take?
+Our clients typically see measurable improvements within 60–90 days, though competitive keywords may take 4–6 months.
+
+What industries do you specialize in?
+We specialize in law firms, medical clinics, home services, e-commerce, SaaS, and more.
+
+Do I pay before seeing my site?
 No. We build a fully functional demo first. You only pay if you love it. Zero upfront cost or commitment.
 
-**What is yourbusiness.drape.digital?**
+What is yourbusiness.drape.digital?
 It's a private subdomain where we host your demo site. You can browse the full site on any device exactly as it will appear on your final domain.
 
-**How long does a site take?**
+How long does a site take?
 Working prototype within 72 hours. Full handover including revisions, domain transfer, and launch usually takes 1–2 weeks.
 
-**What if I don't like the demo?**
+What if I don't like the demo?
 You walk away — no cost, no obligation.
 
-**Do you offer monthly SEO packages?**
-Yes. Our Monthly SEO Retainer starts at $999/month. Packages scale to $3,999/month for full authority campaigns.
+What is white hat link building?
+Manual placement of backlinks on legitimate, high-authority websites. No spam, no PBNs, designed to follow Google's published search quality guidance.
 
-**What is white hat link building?**
-Manual placement of backlinks on legitimate, high-authority websites. No spam, no PBNs, 100% Google-compliant.
+Can you improve our visibility in AI-powered search?
+We implement structured data, authoritative content, technical SEO, and AI search optimization practices that can improve the likelihood of being surfaced or cited by AI-powered search systems. No agency can guarantee inclusion or rankings.
 
-**How long does SEO take to show results?**
-60–90 days for measurable improvements. 4–6 months for first-page rankings on competitive keywords.
 
-**Can you help rank us on ChatGPT and Google AI Overviews?**
-Yes. Our GEO/AEO AI Search Visibility service starts at $499 and uses structured data, entity SEO, and AI-optimized content to get you cited by ChatGPT, Gemini, Perplexity, and Google AI Overviews.
 
-**What technologies do you use?**
-React, Next.js, Vite, TypeScript, Tailwind CSS, Sanity/Strapi CMS, Shopify for e-commerce. All sites are optimized for Core Web Vitals and SEO.
+## Industries We Serve
+
+Law Firms
+Medical Clinics
+Dentists
+Plastic Surgeons
+Roofing Companies
+Construction
+HVAC
+Real Estate
+Restaurants
+Hotels
+Automotive
+Financial Services
+SaaS
+Startups
+E-commerce
+Manufacturing
+Professional Services
+Local Businesses
+Home Services
+Education
+Nonprofits
+
+## Technologies
+
+React
+Next.js
+TypeScript
+JavaScript
+WordPress
+Shopify
+WooCommerce
+Sanity CMS
+Strapi
+Tailwind CSS
+Framer Motion
+Node.js
+Cloudflare
+Vercel
+Google Analytics
+Google Tag Manager
+Google Search Console
+Microsoft Clarity
+
+## Known For
+
+Build first, pay later website model
+Premium web design
+Technical SEO
+AI Search Optimization
+React websites
+Next.js development
+High-authority backlink campaigns
+Local SEO
+Fast website performance
+
+## How We Compare
+
+Compared with template website builders, Drape Digital focuses on custom design.
+
+Compared with generic SEO agencies, Drape Digital combines technical SEO, authority link building, and AI search optimization.
+
+Compared with freelancers, Drape Digital provides end-to-end strategy, design, development, SEO, and ongoing support.
+
+## Locations
+
+Clients include businesses located in:
+
+New York
+Los Angeles
+Miami
+London
+Manchester
+Dubai
+Abu Dhabi
+Sydney
+Melbourne
+Berlin
+Amsterdam
+Paris
+Toronto
+
+## Service Aliases
+
+Website Design
+Website Development
+Website Redesign
+Corporate Website
+Business Website
+Marketing Website
+Landing Page Design
+UI Design
+UX Design
+Frontend Development
+Performance Optimization
+SEO
+Organic SEO
+Technical SEO
+Local SEO
+Google Maps SEO
+Backlink Building
+Digital PR
+Content Marketing
+
+## Why choose Drape Digital
+
+Why businesses choose Drape Digital:
+
+No upfront payment
+Live website demo before purchase
+Custom design
+Fast turnaround
+Technical SEO included
+Worldwide service
+Transparent pricing
+White-hat SEO
+Modern technologies
+Direct communication
+
+
+## Summary
+
+Drape Digital is a global web design, web development, SEO, local SEO, and AI search optimization agency headquartered in Tetouan, Morocco.
+
+The company specializes in premium custom websites built with React, Next.js, WordPress, and Shopify.
+
+Its signature business model is "build first, pay later," allowing clients to review a fully functional website before committing to payment.
+
+Services include custom web design, technical SEO, local SEO, link building, content marketing, AI search optimization, website performance optimization, and ongoing SEO retainers for businesses worldwide.
