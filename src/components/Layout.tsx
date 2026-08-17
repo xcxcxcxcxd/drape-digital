@@ -42,6 +42,9 @@ export function Layout({ children }: { children: ReactNode }) {
       <Helmet>
         <html lang={i18n.language} />
         <link rel="canonical" href={canonicalUrl || "https://drape.digital/"} />
+        <link rel="alternate" hrefLang="x-default" href={canonicalUrl || "https://drape.digital/"} />
+        <link rel="alternate" hrefLang="en" href={`${canonicalUrl || "https://drape.digital/"}?lng=en`} />
+        <link rel="alternate" hrefLang="fr" href={`${canonicalUrl || "https://drape.digital/"}?lng=fr`} />
       </Helmet>
 
       {/* ─── HEADER ─── */}
