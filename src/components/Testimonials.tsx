@@ -9,7 +9,7 @@ const Testimonials: React.FC = () => {
   const row1 = displayReviews.slice(0, midPoint);
   const row2 = displayReviews.slice(midPoint);
 
-  const ReviewCard = ({ name, text }: { name: string; text: string }) => (
+  const ReviewCard: React.FC<{ name: string; text: string }> = ({ name, text }) => (
     <div className="glass p-6 md:p-8 rounded-2xl min-w-[300px] md:min-w-[400px] max-w-[400px] flex-shrink-0 flex flex-col gap-4">
       <div className="flex text-agency-accent">
         {[...Array(5)].map((_, i) => (
@@ -49,12 +49,12 @@ const Testimonials: React.FC = () => {
         <div className="flex w-[200%] md:w-max">
           <div className="flex gap-6 animate-marquee shrink-0 pr-6 hover:[animation-play-state:paused]">
             {row1.map((review, i) => (
-              <ReviewCard key={`r1a-${i}`} {...review} />
+              <ReviewCard key={`r1a-${i}`} name={review.name} text={review.text} />
             ))}
           </div>
           <div className="flex gap-6 animate-marquee shrink-0 hover:[animation-play-state:paused]">
             {row1.map((review, i) => (
-              <ReviewCard key={`r1b-${i}`} {...review} />
+              <ReviewCard key={`r1b-${i}`} name={review.name} text={review.text} />
             ))}
           </div>
         </div>
@@ -63,12 +63,12 @@ const Testimonials: React.FC = () => {
         <div className="flex w-[200%] md:w-max">
           <div className="flex gap-6 animate-marquee shrink-0 pr-6 hover:[animation-play-state:paused]" style={{ animationDirection: 'reverse', animationDuration: '45s' }}>
             {row2.map((review, i) => (
-              <ReviewCard key={`r2a-${i}`} {...review} />
+              <ReviewCard key={`r2a-${i}`} name={review.name} text={review.text} />
             ))}
           </div>
           <div className="flex gap-6 animate-marquee shrink-0 hover:[animation-play-state:paused]" style={{ animationDirection: 'reverse', animationDuration: '45s' }}>
             {row2.map((review, i) => (
-              <ReviewCard key={`r2b-${i}`} {...review} />
+              <ReviewCard key={`r2b-${i}`} name={review.name} text={review.text} />
             ))}
           </div>
         </div>

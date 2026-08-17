@@ -1,18 +1,23 @@
 @import "tailwindcss";
 
 @theme {
+  /* Core palette — dark premium base, emergency-trade accent */
   --color-agency-black: #050505;
   --color-agency-white: #ffffff;
-  --color-agency-accent: #00D1FF; /* Cyan */
-  --color-agency-accent-dark: #0066FF; /* Blue */
+  --color-agency-accent: #FF6B00;       /* Emergency amber/orange */
+  --color-agency-accent-dark: #E05500;  /* Darker amber for hover/gradient */
+  --color-agency-accent-light: #FF8A33; /* Lighter amber for highlights */
   --color-agency-gray: #111111;
+  --color-agency-gray-light: #1a1a1a;
   --color-agency-muted: #9ca3af;
-  
+  --color-agency-green: #22c55e;        /* For success states / confirmation */
+
   --font-sans: "Inter", sans-serif;
   --font-display: "Inter", sans-serif;
-  --font-mono: monospace;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
 
   --animate-marquee: marquee 40s linear infinite;
+  --animate-pulse-slow: pulse-slow 3s ease-in-out infinite;
 }
 
 @keyframes marquee {
@@ -20,30 +25,102 @@
   to { transform: translateX(-50%); }
 }
 
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
 @layer base {
   body {
     @apply bg-agency-black text-agency-white font-sans antialiased overflow-x-hidden selection:bg-agency-accent selection:text-agency-black;
   }
+
+  /* Tighter heading defaults */
+  h1, h2, h3, h4 {
+    @apply tracking-tight leading-tight;
+  }
+}
+
+@utility accent-gradient {
+  background: linear-gradient(135deg, var(--color-agency-accent-dark) 0%, var(--color-agency-accent) 100%);
 }
 
 @layer utilities {
+  /* Glass card */
   .glass {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.08);
   }
-  
-  .accent-gradient {
-    background: linear-gradient(135deg, var(--color-agency-accent-dark) 0%, var(--color-agency-accent) 100%);
-  }
-  
+
+  /* Text outline for display headings */
   .text-outline {
     color: transparent;
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
   }
+
+  /* Section prose — constrained width, rhythm matching Copy Engine rules */
+  .section-prose {
+    @apply max-w-2xl text-lg leading-relaxed text-agency-white/80;
+  }
+  .section-prose p {
+    @apply mb-6;
+  }
+
+  /* Trust strip — horizontal proof bar */
+  .trust-strip {
+    @apply flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-agency-muted;
+  }
+  .trust-strip span::before {
+    content: "·";
+    @apply mr-6 text-agency-accent/50;
+  }
+  .trust-strip span:first-child::before {
+    content: none;
+    margin-right: 0;
+  }
+
+  /* Phone frame mockup */
+  .phone-frame {
+    @apply relative mx-auto;
+    max-width: 320px;
+    border-radius: 2.5rem;
+    border: 3px solid rgba(255, 255, 255, 0.15);
+    background: #000;
+    padding: 12px;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.05),
+      0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+  .phone-frame-inner {
+    @apply rounded-[2rem] overflow-hidden;
+  }
+
+  /* Sticky CTA pill — fixed to bottom of viewport on mobile */
+  .cta-sticky {
+    @apply fixed bottom-6 left-1/2 -translate-x-1/2 z-50
+           px-8 py-4 accent-gradient rounded-full
+           font-bold text-sm tracking-tight
+           shadow-xl shadow-agency-accent/30
+           transition-all duration-300;
+  }
+
+  /* Section divider */
+  .section-divider {
+    @apply border-t border-agency-white/5;
+  }
 }
 
-/* Lenis smooth scrolling requires this */
+@utility pricing-card {
+  @apply bg-agency-gray rounded-2xl border border-agency-white/5 p-8 md:p-10
+         transition-all duration-300 hover:border-agency-accent/30;
+}
+
+@utility pricing-card-featured {
+  @apply bg-agency-gray rounded-2xl p-8 md:p-10 transition-all duration-300 hover:border-agency-accent/30 border border-agency-accent/50 relative;
+}
+
+/* Lenis smooth scrolling */
 html.lenis, html.lenis body {
   height: auto;
 }

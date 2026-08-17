@@ -99,21 +99,21 @@ async function startServer() {
         html: `
   <div style="font-family: Inter, Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333; background-color: #ffffff; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden;">
     <div style="background-color: #000; padding: 24px; text-align: center;">
-      <h1 style="color: #ffffff; font-family: Inter, Arial, sans-serif; font-size: 24px; font-weight: bold; margin: 0; letter-spacing: -1px;">drape<span style="color: #00D1FF;">.</span>digital</h1>
+      <h1 style="color: #ffffff; font-family: Inter, Arial, sans-serif; font-size: 24px; font-weight: bold; margin: 0; letter-spacing: -1px;">drape<span style="color: #FF6B00;">.</span>digital</h1>
     </div>
     <div style="padding: 40px 30px;">
       <h2 style="color: #111; margin-top: 0;">Hi ${name},</h2>
-      <p style="font-size: 16px; line-height: 1.6; color: #444;">Thanks for reaching out! We've successfully received your request, and our team is currently reviewing your details.</p>
-      <p style="font-size: 16px; line-height: 1.6; color: #444;">At Drape Digital, we build your custom demo <strong>before you pay anything</strong>. We will get back to you within 24 hours regarding the next steps for your build.</p>
-      <p style="font-size: 16px; line-height: 1.6; color: #444;">In the meantime, feel free to browse some of our recent work or reply directly to this email if you have any immediate questions.</p>
+      <p style="font-size: 16px; line-height: 1.6; color: #444;">Thanks for reaching out! We've successfully received your request.</p>
+      <p style="font-size: 16px; line-height: 1.6; color: #444;">At Drape Digital, we build websites for emergency call-out trades. We build the homepage first and you see it live before you pay anything.</p>
+      <p style="font-size: 16px; line-height: 1.6; color: #444;">We will get back to you within 24 hours.</p>
       <div style="margin-top: 32px; margin-bottom: 32px;">
-        <a href="https://drape.digital/#portfolio" style="background-color: #111; color: #fff; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 15px; display: inline-block;">View Our Recent Work</a>
+        <a href="https://drape.digital/work" style="background-color: #111; color: #fff; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 15px; display: inline-block;">View Our Recent Work</a>
       </div>
       <p style="font-size: 16px; line-height: 1.6; color: #444; margin-bottom: 0;">Best regards,<br/><strong>The Drape Digital Team</strong></p>
     </div>
     <div style="background-color: #f9fafb; padding: 24px; text-align: center; font-size: 13px; color: #6b7280; border-top: 1px solid #eaeaea;">
       <p style="margin: 0;">Drape Digital Agency, Tetouan, Morocco</p>
-      <p style="margin: 8px 0 0 0;"><a href="https://drape.digital" style="color: #111; text-decoration: underline;">drape.digital</a> | <a href="https://www.linkedin.com/company/drapedigital/" style="color: #111; text-decoration: underline;">LinkedIn</a></p>
+      <p style="margin: 8px 0 0 0;"><a href="https://drape.digital" style="color: #111; text-decoration: underline;">drape.digital</a></p>
     </div>
   </div>
 `,
@@ -153,23 +153,23 @@ async function startServer() {
         html: `
   <div style="font-family: Inter, Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333; background-color: #ffffff; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden;">
     <div style="background-color: #000; padding: 24px; text-align: center;">
-      <h1 style="color: #ffffff; font-family: Inter, Arial, sans-serif; font-size: 24px; font-weight: bold; margin: 0; letter-spacing: -1px;">drape<span style="color: #00D1FF;">.</span>digital</h1>
+      <h1 style="color: #ffffff; font-family: Inter, Arial, sans-serif; font-size: 24px; font-weight: bold; margin: 0; letter-spacing: -1px;">drape<span style="color: #FF6B00;">.</span>digital</h1>
     </div>
     <div style="padding: 40px 30px;">
       <h2 style="color: #111; margin-top: 0;">Hi there,</h2>
       <p style="font-size: 16px; line-height: 1.6; color: #444;">Thank you for your interest in our <strong>${service}</strong> expertise.</p>
-      <p style="font-size: 16px; line-height: 1.6; color: #444;">Our team has put together these exclusive insights to help you scale and optimize your digital presence. A member of our team is manually reviewing your request and will follow up shortly with your tailored resource.</p>
-      <div style="background-color: #f3f4f6; padding: 20px; border-left: 4px solid #111; margin: 24px 0; border-radius: 0 6px 6px 0;">
+      <p style="font-size: 16px; line-height: 1.6; color: #444;">A member of our team is manually reviewing your request and will follow up shortly with your tailored resource.</p>
+      <div style="background-color: #f3f4f6; padding: 20px; border-left: 4px solid #FF6B00; margin: 24px 0; border-radius: 0 6px 6px 0;">
         <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #374151;"><strong>Ready to see it in action?</strong> Request a completely risk-free, custom demo build. We build first, you pay only if you love it.</p>
       </div>
       <div style="margin-top: 32px; margin-bottom: 32px;">
-        <a href="mailto:contact@drape.digital?subject=Demo%20Request" style="background-color: #111; color: #fff; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 15px; display: inline-block;">Request Your Free Demo</a>
+        <a href="https://drape.digital/free-homepage" style="background-color: #111; color: #fff; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 15px; display: inline-block;">Get a Free Homepage</a>
       </div>
       <p style="font-size: 16px; line-height: 1.6; color: #444; margin-bottom: 0;">Best regards,<br/><strong>The Drape Digital Team</strong></p>
     </div>
     <div style="background-color: #f9fafb; padding: 24px; text-align: center; font-size: 13px; color: #6b7280; border-top: 1px solid #eaeaea;">
       <p style="margin: 0;">Drape Digital Agency, Tetouan, Morocco</p>
-      <p style="margin: 8px 0 0 0;"><a href="https://drape.digital" style="color: #111; text-decoration: underline;">drape.digital</a> | <a href="https://www.linkedin.com/company/drapedigital/" style="color: #111; text-decoration: underline;">LinkedIn</a></p>
+      <p style="margin: 8px 0 0 0;"><a href="https://drape.digital" style="color: #111; text-decoration: underline;">drape.digital</a></p>
     </div>
   </div>
 `,
@@ -178,6 +178,53 @@ async function startServer() {
       res.status(200).json({ success: true, message: "Quote request received" });
     } catch (error) {
       console.error("Error sending quote email:", error);
+      res.status(500).json({ error: "Failed to send request" });
+    }
+  });
+
+  // ─── Free Homepage Request Handler ──────────────────────────────────
+  app.post("/api/free-homepage", apiLimiter, async (req, res) => {
+    try {
+      const { name, email, phone, businessName, trade, currentSite } = req.body;
+
+      if (!name || !email || !businessName || !trade) {
+        return res.status(400).json({ error: "Missing required fields" });
+      }
+
+      // Notify agency
+      await transporter.sendMail({
+        from: `"Drape Digital Website" <contact@drape.digital>`,
+        replyTo: email,
+        to: process.env.AGENCY_EMAIL || "contact@drape.digital",
+        subject: `Free Homepage Request: ${businessName} (${trade})`,
+        text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'N/A'}\nBusiness: ${businessName}\nTrade: ${trade}\nSite: ${currentSite || 'N/A'}`,
+      });
+
+      // Autoresponder to lead
+      await transporter.sendMail({
+        from: `"Drape Digital" <contact@drape.digital>`,
+        to: email,
+        subject: "Your free homepage request",
+        html: `
+  <div style="font-family: Inter, Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333; background-color: #ffffff; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden;">
+    <div style="background-color: #000; padding: 24px; text-align: center;">
+      <h1 style="color: #ffffff; font-family: Inter, Arial, sans-serif; font-size: 24px; font-weight: bold; margin: 0; letter-spacing: -1px;">drape<span style="color: #FF6B00;">.</span>digital</h1>
+    </div>
+    <div style="padding: 40px 30px;">
+      <h2 style="color: #111; margin-top: 0;">Hi ${name},</h2>
+      <p style="font-size: 16px; line-height: 1.6; color: #444;">We've received your request for a free homepage for <strong>${businessName}</strong>.</p>
+      <p style="font-size: 16px; line-height: 1.6; color: #444;">We'll review your details and reach out within 24 hours to schedule the 15-minute intro call. On that call, we just need to confirm your prices and service area.</p>
+      <p style="font-size: 16px; line-height: 1.6; color: #444;">After the call, we'll build the page and send you the live link within three days.</p>
+      <p style="font-size: 16px; line-height: 1.6; color: #444;">Speak soon.</p>
+      <p style="font-size: 16px; line-height: 1.6; color: #444; margin-bottom: 0;">Best,<br/><strong>The Drape Digital Team</strong></p>
+    </div>
+  </div>
+`,
+      });
+
+      res.status(200).json({ success: true, message: "Request received" });
+    } catch (error) {
+      console.error("Error sending free homepage email:", error);
       res.status(500).json({ error: "Failed to send request" });
     }
   });
@@ -262,13 +309,12 @@ async function startServer() {
             html: `
   <div style="font-family: Inter, Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333; background-color: #ffffff; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden;">
     <div style="background-color: #000; padding: 24px; text-align: center;">
-      <h1 style="color: #ffffff; font-family: Inter, Arial, sans-serif; font-size: 24px; font-weight: bold; margin: 0; letter-spacing: -1px;">drape<span style="color: #00D1FF;">.</span>digital</h1>
+      <h1 style="color: #ffffff; font-family: Inter, Arial, sans-serif; font-size: 24px; font-weight: bold; margin: 0; letter-spacing: -1px;">drape<span style="color: #FF6B00;">.</span>digital</h1>
     </div>
     <div style="padding: 40px 30px;">
-      <h2 style="color: #111; margin-top: 0;">Thank you for choosing Drape Digital!</h2>
-      <p style="font-size: 16px; line-height: 1.6; color: #444;">We're thrilled to partner with you. We have successfully received your payment for the <strong>${serviceName} — ${packageName} Package</strong>.</p>
-      <p style="font-size: 16px; line-height: 1.6; color: #444;">Our team is already preparing everything on our end, and we will be in touch within the next 24 hours to kick off your project.</p>
-      <p style="font-size: 16px; line-height: 1.6; color: #444;">If you need to share any assets, brand guidelines, or additional details right away, simply reply to this email.</p>
+      <h2 style="color: #111; margin-top: 0;">Payment Confirmed</h2>
+      <p style="font-size: 16px; line-height: 1.6; color: #444;">We have successfully received your payment for the <strong>${serviceName} — ${packageName}</strong>.</p>
+      <p style="font-size: 16px; line-height: 1.6; color: #444;">Our team is already preparing everything on our end, and we will be in touch within the next 24 hours.</p>
       <div style="margin-top: 32px; margin-bottom: 32px;">
         <a href="https://drape.digital" style="background-color: #111; color: #fff; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 15px; display: inline-block;">Return to Site</a>
       </div>
@@ -276,7 +322,7 @@ async function startServer() {
     </div>
     <div style="background-color: #f9fafb; padding: 24px; text-align: center; font-size: 13px; color: #6b7280; border-top: 1px solid #eaeaea;">
       <p style="margin: 0;">Drape Digital Agency, Tetouan, Morocco</p>
-      <p style="margin: 8px 0 0 0;"><a href="https://drape.digital" style="color: #111; text-decoration: underline;">drape.digital</a> | <a href="https://www.linkedin.com/company/drapedigital/" style="color: #111; text-decoration: underline;">LinkedIn</a></p>
+      <p style="margin: 8px 0 0 0;"><a href="https://drape.digital" style="color: #111; text-decoration: underline;">drape.digital</a></p>
     </div>
   </div>
 `,
