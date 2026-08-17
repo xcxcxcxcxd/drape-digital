@@ -34,7 +34,7 @@
     <meta property="og:url" content="https://drape.digital/" />
     <meta property="og:title" content="Drape Digital | Custom Website Design for Emergency Trades & Locksmiths" />
     <meta property="og:description" content="Affordable custom website design services for locksmith businesses and emergency trades. View your live demo before you pay. See our prices." />
-    <meta property="og:image" content="https://drape.digital/og-image.png" />
+    <meta property="og:image" content="https://drape.digital/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Drape Digital" />
@@ -44,7 +44,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Drape Digital | Custom Website Design for Emergency Trades & Locksmiths" />
     <meta name="twitter:description" content="Affordable custom website design services for locksmith businesses and emergency trades. View your live demo before you pay. See our prices." />
-    <meta name="twitter:image" content="https://drape.digital/og-image.png" />
+    <meta name="twitter:image" content="https://drape.digital/og-image.jpg" />
 
     <!-- ─── Fonts ─────────────────────────────────────────────── -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,11 +64,11 @@
           "url": "https://drape.digital",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://drape.digital/og-image.png",
+            "url": "https://drape.digital/og-image.jpg",
             "width": 1200,
             "height": 630
           },
-          "image": "https://drape.digital/og-image.png",
+          "image": "https://drape.digital/og-image.jpg",
           "description": "Drape Digital is a premium web development and marketing agency specializing in emergency-trade businesses worldwide. Based in Spain, we build high-converting sites for locksmiths, towing, and HVAC professionals.",
           "foundingDate": "2023",
           "founder": {
@@ -99,7 +99,7 @@
           "name": "Drape Digital",
           "description": "We build and rank websites for emergency call-out trades. Locksmiths, towing, garage doors, HVAC.",
           "url": "https://drape.digital",
-          "image": "https://drape.digital/og-image.png",
+          "image": "https://drape.digital/og-image.jpg",
           "priceRange": "$$$",
           "areaServed": [
             { "@type": "Country", "name": "United States" },
@@ -131,31 +131,88 @@
           }
         },
         {
-          "@type": "Service",
+          "@type": "Product",
           "name": "The Call Machine Package",
           "description": "8-12 page website, click-to-call, GBP setup, and call tracking for emergency trades.",
-          "provider": { "@id": "https://drape.digital/#organization" },
-          "url": "https://drape.digital/pricing",
-          "serviceType": "Web Design",
-          "offers": { "@type": "Offer", "price": "997", "priceCurrency": "USD" }
+          "image": "https://drape.digital/og-image.jpg",
+          "sku": "PKG-CALL-MACHINE",
+          "brand": { "@type": "Brand", "name": "Drape Digital" },
+          "offers": { 
+            "@type": "Offer", 
+            "price": "997", 
+            "priceCurrency": "USD",
+            "url": "https://drape.digital/pricing",
+            "validFrom": "2024-01-01T00:00:00Z",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "d" },
+                "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "d" }
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "returnPolicyCategory": "https://schema.org/RefundNone"
+            }
+          }
         },
         {
-          "@type": "Service",
+          "@type": "Product",
           "name": "Coverage Package",
           "description": "Everything in The Call Machine plus location pages, monthly GBP posting, and review SMS flow.",
-          "provider": { "@id": "https://drape.digital/#organization" },
-          "url": "https://drape.digital/pricing",
-          "serviceType": "Local SEO",
-          "offers": { "@type": "Offer", "price": "1497", "priceCurrency": "USD" }
+          "image": "https://drape.digital/og-image.jpg",
+          "sku": "PKG-COVERAGE",
+          "brand": { "@type": "Brand", "name": "Drape Digital" },
+          "offers": { 
+            "@type": "Offer", 
+            "price": "1497", 
+            "priceCurrency": "USD",
+            "url": "https://drape.digital/pricing",
+            "validFrom": "2024-01-01T00:00:00Z",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "d" },
+                "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "d" }
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "returnPolicyCategory": "https://schema.org/RefundNone"
+            }
+          }
         },
         {
-          "@type": "Service",
+          "@type": "Product",
           "name": "Full Book Package",
           "description": "Coverage package plus Google Ads and Local Services Ads management.",
-          "provider": { "@id": "https://drape.digital/#organization" },
-          "url": "https://drape.digital/pricing",
-          "serviceType": "Search Engine Marketing",
-          "offers": { "@type": "Offer", "price": "1997", "priceCurrency": "USD" }
+          "image": "https://drape.digital/og-image.jpg",
+          "sku": "PKG-FULL-BOOK",
+          "brand": { "@type": "Brand", "name": "Drape Digital" },
+          "offers": { 
+            "@type": "Offer", 
+            "price": "1997", 
+            "priceCurrency": "USD",
+            "url": "https://drape.digital/pricing",
+            "validFrom": "2024-01-01T00:00:00Z",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "d" },
+                "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "d" }
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "returnPolicyCategory": "https://schema.org/RefundNone"
+            }
+          }
         }
       ]
     }
