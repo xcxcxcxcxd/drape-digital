@@ -1,16 +1,64 @@
-import { useEffect } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useSearchParams, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion } from "motion/react";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { CheckCircle2, ArrowRight, Loader2 } from "lucide-react";
 
 export default function PaymentSuccess() {
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const service = searchParams.get("service") || "your service";
+  const sessionId = searchParams.get("session_id");
+
+  const [status, setStatus] = useState<"loading" | "success" | "error">("loading");
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+
+    if (!sessionId) {
+      navigate("/");
+      return;
+    }
+
+    // Verify session with the backend
+    const verifySession = async () => {
+      try {
+        const res = await fetch(`/api/stripe/verify-session?session_id=${sessionId}`);
+        const data = await res.json();
+        
+        if (data.status === "paid") {
+          setStatus("success");
+        } else {
+          // If not paid, redirect to failure
+          navigate("/payment-failed");
+        }
+      } catch (error) {
+        console.error("Verification failed", error);
+        setStatus("error");
+      }
+    };
+
+    verifySession();
+  }, [sessionId, navigate]);
+
+  if (status === "loading") {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center px-6">
+        <Loader2 size={48} className="text-agency-accent animate-spin mb-4" />
+        <h2 className="text-xl font-bold tracking-tight">Verifying payment...</h2>
+      </div>
+    );
+  }
+
+  if (status === "error") {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
+        <h2 className="text-2xl font-bold tracking-tight mb-4 text-red-500">Verification Error</h2>
+        <p className="text-agency-white/60 mb-8 max-w-md">We couldn't verify your payment status. Please contact support.</p>
+        <Link to="/contact" className="accent-gradient text-agency-black px-8 py-4 rounded-full font-bold text-sm uppercase">Contact Support</Link>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -50,15 +98,15 @@ export default function PaymentSuccess() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/"
-              className="accent-gradient text-agency-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-tight flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
+              className="accent-gradient text-agency-black px-8 py-4 rounded-full font-bold text-sm uppercase tracking-tight flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
             >
               Back to Home <ArrowRight size={16} />
             </Link>
             <Link
-              to="/services"
+              to="/pricing"
               className="border border-agency-white/20 text-agency-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-tight hover:bg-agency-white/5 transition-colors"
             >
-              View All Services
+              View Pricing
             </Link>
           </div>
 

@@ -232,9 +232,9 @@ async function startServer() {
   // ─── Stripe Checkout Session ─────────────────────────────────
   app.post("/api/stripe/checkout", apiLimiter, async (req, res) => {
     try {
-      const { serviceName, packageName, price, currency = "USD", isRecurring = false, slug } = req.body;
+      const { serviceName, packageName, price, currency = "USD", isRecurring = false, slug, customerName, customerEmail, customerPhone, businessName } = req.body;
 
-      if (!serviceName || !packageName || !price) {
+      if (!serviceName || !packageName || !price || !customerEmail || !customerName) {
         return res.status(400).json({ error: "Missing required fields" });
       }
 
@@ -259,15 +259,20 @@ async function startServer() {
       ];
 
       const session = await stripe.checkout.sessions.create({
+        customer_email: customerEmail,
         payment_method_types: ["card"],
         mode: isRecurring ? "subscription" : "payment",
         line_items: lineItems,
         success_url: `https://drape.digital/payment-success?session_id={CHECKOUT_SESSION_ID}&service=${encodeURIComponent(serviceName)}`,
-        cancel_url: `https://drape.digital/services/${slug}`,
+        cancel_url: `https://drape.digital/payment-failed`,
         metadata: {
           serviceName,
           packageName,
           slug,
+          customerName,
+          customerEmail,
+          customerPhone: customerPhone || "N/A",
+          businessName: businessName || "N/A",
         },
       });
 
@@ -275,6 +280,21 @@ async function startServer() {
     } catch (error: any) {
       console.error("Stripe checkout error:", error);
       res.status(500).json({ error: error.message || "Failed to create checkout session" });
+    }
+  });
+
+  // ─── Stripe Verify Session ───────────────────────────────────
+  app.get("/api/stripe/verify-session", apiLimiter, async (req, res) => {
+    try {
+      const sessionId = req.query.session_id as string;
+      if (!sessionId) {
+        return res.status(400).json({ error: "Missing session_id" });
+      }
+      const session = await stripe.checkout.sessions.retrieve(sessionId);
+      res.json({ status: session.payment_status });
+    } catch (error) {
+      console.error("Session verification error:", error);
+      res.status(500).json({ error: "Failed to verify session" });
     }
   });
 
@@ -295,9 +315,12 @@ async function startServer() {
 
     if (event.type === "checkout.session.completed") {
       const session = event.data.object as Stripe.Checkout.Session;
-      const customerEmail = session.customer_details?.email || "";
+      const customerEmail = session.customer_details?.email || session.metadata?.customerEmail || "";
       const serviceName = session.metadata?.serviceName || "our service";
       const packageName = session.metadata?.packageName || "";
+      const customerName = session.metadata?.customerName || "N/A";
+      const customerPhone = session.metadata?.customerPhone || "N/A";
+      const businessName = session.metadata?.businessName || "N/A";
 
       if (customerEmail) {
         try {
@@ -333,10 +356,53 @@ async function startServer() {
             from: `"Drape Digital Website" <contact@drape.digital>`,
             to: process.env.AGENCY_EMAIL || "contact@drape.digital",
             subject: `New Payment: ${serviceName} — ${packageName}`,
-            text: `New payment received.\nService: ${serviceName}\nPackage: ${packageName}\nCustomer: ${customerEmail}\nSession: ${session.id}`,
+            text: `New payment received.\n\nCustomer Details:\nName: ${customerName}\nEmail: ${customerEmail}\nPhone: ${customerPhone}\nBusiness: ${businessName}\n\nService: ${serviceName}\nPackage: ${packageName}\nSession: ${session.id}`,
           });
         } catch (mailErr) {
           console.error("Failed to send confirmation email:", mailErr);
+        }
+      }
+    } else if (event.type === "payment_intent.payment_failed" || event.type === "invoice.payment_failed") {
+      const dataObject = event.data.object as any;
+      const customerEmail = dataObject.customer_email || dataObject.receipt_email || "";
+      const customerId = dataObject.customer;
+
+      let emailToSend = customerEmail;
+
+      if (!emailToSend && customerId) {
+        try {
+          const customer = await stripe.customers.retrieve(customerId as string) as Stripe.Customer;
+          emailToSend = customer.email || "";
+        } catch (e) {
+          console.error("Could not retrieve customer email for failed payment.");
+        }
+      }
+
+      if (emailToSend) {
+        try {
+          await transporter.sendMail({
+            from: `"Drape Digital" <contact@drape.digital>`,
+            to: emailToSend,
+            subject: "Payment Failed — Drape Digital",
+            html: `
+  <div style="font-family: Inter, Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333; background-color: #ffffff; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden;">
+    <div style="background-color: #000; padding: 24px; text-align: center;">
+      <h1 style="color: #ffffff; font-family: Inter, Arial, sans-serif; font-size: 24px; font-weight: bold; margin: 0; letter-spacing: -1px;">drape<span style="color: #FF6B00;">.</span>digital</h1>
+    </div>
+    <div style="padding: 40px 30px;">
+      <h2 style="color: #111; margin-top: 0;">Payment Declined</h2>
+      <p style="font-size: 16px; line-height: 1.6; color: #444;">We attempted to process your recent payment, but unfortunately it failed.</p>
+      <p style="font-size: 16px; line-height: 1.6; color: #444;">Your project or subscription will remain paused until the payment goes through. Please update your billing details or use a different payment method.</p>
+      <div style="margin-top: 32px; margin-bottom: 32px;">
+        <a href="https://drape.digital/pricing" style="background-color: #111; color: #fff; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 15px; display: inline-block;">Try Again / Return to Site</a>
+      </div>
+      <p style="font-size: 16px; line-height: 1.6; color: #444; margin-bottom: 0;">Best regards,<br/><strong>The Drape Digital Team</strong></p>
+    </div>
+  </div>
+`,
+          });
+        } catch (mailErr) {
+          console.error("Failed to send failure email:", mailErr);
         }
       }
     }

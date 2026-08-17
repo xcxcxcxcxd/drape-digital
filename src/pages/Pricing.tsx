@@ -1,11 +1,10 @@
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-// Added i18n import handled below
-import { motion } from "motion/react";
-import { ArrowRight, CheckCircle2, Phone, Loader2 } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import { ArrowRight, CheckCircle2, Phone, Loader2, X } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-// Tiers are now loaded via i18n
 type Tier = {
   name: string;
   tagline: string;
@@ -19,27 +18,44 @@ type Tier = {
   featured?: boolean;
 };
 
-import { useTranslation, Trans } from "react-i18next";
-
 export default function Pricing() {
   const { t } = useTranslation();
   const tiers = t("pricing.tiers", { returnObjects: true }) as Tier[];
   const [loadingTier, setLoadingTier] = useState<string | null>(null);
 
-  const handleCheckout = async (e: React.MouseEvent, tierName: string, priceString: string) => {
+  // Intake Modal State
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedTier, setSelectedTier] = useState<{name: string, price: string} | null>(null);
+  const [formData, setFormData] = useState({
+    customerName: "",
+    customerEmail: "",
+    customerPhone: "",
+    businessName: ""
+  });
+
+  const openIntakeModal = (e: React.MouseEvent, tierName: string, priceString: string) => {
     e.preventDefault();
-    setLoadingTier(tierName);
+    setSelectedTier({ name: tierName, price: priceString });
+    setModalOpen(true);
+  };
+
+  const handleCheckout = async (e: FormEvent) => {
+    e.preventDefault();
+    if (!selectedTier) return;
+    
+    setLoadingTier(selectedTier.name);
     try {
-      const numericPrice = priceString.replace(/\D/g, "");
+      const numericPrice = selectedTier.price.replace(/\D/g, "");
       const res = await fetch("/api/stripe/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           serviceName: "Website Build",
-          packageName: tierName,
+          packageName: selectedTier.name,
           price: numericPrice,
           currency: "USD",
           slug: "pricing",
+          ...formData
         }),
       });
       const data = await res.json();
@@ -54,12 +70,103 @@ export default function Pricing() {
       setLoadingTier(null);
     }
   };
+
   return (
     <>
       <Helmet>
         <title>{t("pricing.seoTitle")}</title>
         <meta name="description" content={t("pricing.seoDesc")} />
       </Helmet>
+
+      {/* ─── INTAKE MODAL ─── */}
+      <AnimatePresence>
+        {modalOpen && selectedTier && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-zinc-950/80 backdrop-blur-sm"
+          >
+            <motion.div 
+              initial={{ scale: 0.95, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 20 }}
+              className="bg-agency-gray border border-agency-white/10 rounded-3xl p-8 max-w-md w-full relative shadow-2xl"
+            >
+              <button 
+                onClick={() => setModalOpen(false)}
+                className="absolute top-6 right-6 text-agency-white/50 hover:text-agency-white"
+              >
+                <X size={20} />
+              </button>
+              
+              <h3 className="text-2xl font-bold mb-2">Let's get started</h3>
+              <p className="text-agency-white/50 text-sm mb-6">
+                Fill in your details below. You will be redirected to secure checkout for the <strong className="text-agency-white">{selectedTier.name}</strong> package ({selectedTier.price}).
+              </p>
+
+              <form onSubmit={handleCheckout} className="space-y-4">
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-widest text-agency-white/50 mb-2">Full Name</label>
+                  <input 
+                    required 
+                    type="text" 
+                    value={formData.customerName}
+                    onChange={(e) => setFormData({...formData, customerName: e.target.value})}
+                    className="w-full bg-zinc-950 border border-agency-white/10 rounded-xl px-4 py-3 text-agency-white focus:outline-none focus:border-agency-accent" 
+                    placeholder="John Doe" 
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-widest text-agency-white/50 mb-2">Email Address</label>
+                  <input 
+                    required 
+                    type="email" 
+                    value={formData.customerEmail}
+                    onChange={(e) => setFormData({...formData, customerEmail: e.target.value})}
+                    className="w-full bg-zinc-950 border border-agency-white/10 rounded-xl px-4 py-3 text-agency-white focus:outline-none focus:border-agency-accent" 
+                    placeholder="john@example.com" 
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-widest text-agency-white/50 mb-2">Phone Number</label>
+                  <input 
+                    required 
+                    type="tel" 
+                    value={formData.customerPhone}
+                    onChange={(e) => setFormData({...formData, customerPhone: e.target.value})}
+                    className="w-full bg-zinc-950 border border-agency-white/10 rounded-xl px-4 py-3 text-agency-white focus:outline-none focus:border-agency-accent" 
+                    placeholder="(555) 012-3456" 
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-widest text-agency-white/50 mb-2">Business Name / Trade</label>
+                  <input 
+                    required 
+                    type="text" 
+                    value={formData.businessName}
+                    onChange={(e) => setFormData({...formData, businessName: e.target.value})}
+                    className="w-full bg-zinc-950 border border-agency-white/10 rounded-xl px-4 py-3 text-agency-white focus:outline-none focus:border-agency-accent" 
+                    placeholder="Apex Locks" 
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={loadingTier === selectedTier.name}
+                  className="w-full flex items-center justify-center gap-2 py-4 rounded-xl font-bold tracking-tight transition-all accent-gradient text-agency-black shadow-lg shadow-agency-accent/20 hover:shadow-agency-accent/40 mt-6"
+                >
+                  {loadingTier === selectedTier.name ? (
+                    <><Loader2 size={16} className="animate-spin" /> Redirecting to Checkout...</>
+                  ) : (
+                    <>Continue to Payment <ArrowRight size={16} /></>
+                  )}
+                </button>
+              </form>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* ─── HEADER ─── */}
       <section className="pt-28 md:pt-36 pb-16 px-6">
@@ -149,7 +256,7 @@ export default function Pricing() {
 
                 <div className="mt-auto flex flex-col gap-3 w-full">
                   <button
-                    onClick={(e) => handleCheckout(e, tier.name, tier.setup)}
+                    onClick={(e) => openIntakeModal(e, tier.name, tier.setup)}
                     disabled={loadingTier === tier.name}
                     className={`w-full flex items-center justify-center gap-2 py-4 rounded-full font-bold text-sm tracking-tight transition-all ${
                       tier.featured
