@@ -12,7 +12,7 @@ export default function Work() {
       </Helmet>
 
       {/* ─── HERO ─── */}
-      <section className="pt-36 pb-20 px-6">
+      <section className="pt-28 md:pt-36 pb-20 px-6">
         <div className="container mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -148,7 +148,7 @@ export default function Work() {
       </section>
 
       {/* ─── CTA ─── */}
-      <section className="py-28 text-center px-6 section-divider">
+      <section className="py-16 md:py-28 text-center px-6 section-divider">
         <motion.div
           initial={{ opacity: 0, scale: 0.97 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -163,7 +163,7 @@ export default function Work() {
             We'll build your homepage for free. Live on a real URL.
           </p>
           <Link
-            to="/free-homepage"
+            to="/contact"
             className="inline-flex items-center gap-2 px-10 py-5 accent-gradient rounded-full font-bold tracking-tight shadow-xl shadow-agency-accent/20 hover:shadow-agency-accent/40 transition-all text-lg group"
           >
             Get a free homepage

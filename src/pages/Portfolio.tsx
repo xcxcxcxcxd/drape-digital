@@ -29,7 +29,7 @@ export default function Portfolio() {
         <meta name="description" content="View our portfolio of custom website designs and high-converting e-commerce sites." />
       </Helmet>
 
-      <section className="pt-40 pb-20 px-6 container mx-auto">
+      <section className="pt-32 md:pt-40 pb-20 px-6 container mx-auto">
         <h1 className="text-5xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-8 uppercase leading-[0.9] text-center md:text-left">Select Work.</h1>
         <p className="text-xl md:text-2xl text-agency-muted max-w-2xl font-light text-center md:text-left">
           A collection of digital experiences designed to convert, perform, and establish market dominance.
@@ -73,7 +73,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section className="py-32 bg-agency-white text-agency-black text-center px-6">
+      <section className="py-20 md:py-32 bg-agency-white text-agency-black text-center px-6">
          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tight mb-8">Ready for your own site?</h2>
          <a href="/contact" className="text-xl inline-flex items-center gap-2 border-b-2 border-agency-black pb-1 hover:pr-4 transition-all hover:text-agency-black/70 hover:border-agency-black/70">
            Request a demo <ArrowRight />

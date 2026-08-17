@@ -96,7 +96,7 @@ export default function Contact() {
         <meta name="description" content="Book a 15-minute strategy call. $10 refundable deposit to filter spam. We build websites for emergency call-out trades." />
       </Helmet>
 
-      <section className="min-h-screen pt-36 pb-20 px-6">
+      <section className="min-h-screen pt-28 md:pt-36 pb-20 px-6">
         <div className="container mx-auto max-w-5xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             

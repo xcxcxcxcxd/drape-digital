@@ -64,7 +64,7 @@ export function Layout({ children }: { children: ReactNode }) {
               </Link>
             ))}
             <Link
-              to="/free-homepage"
+              to="/contact"
               className="px-6 py-3 accent-gradient rounded-full text-xs font-bold uppercase tracking-widest hover:opacity-90 transition-opacity"
             >
               Free Homepage
@@ -114,7 +114,7 @@ export function Layout({ children }: { children: ReactNode }) {
               className="mt-8"
             >
               <Link
-                to="/free-homepage"
+                to="/contact"
                 className="px-8 py-4 accent-gradient text-agency-white text-lg font-bold rounded-full"
               >
                 Get a Free Homepage
@@ -130,7 +130,7 @@ export function Layout({ children }: { children: ReactNode }) {
       </main>
 
       {/* ─── FOOTER ─── */}
-      <footer className="bg-agency-gray py-20 border-t border-agency-white/10 z-10 relative">
+      <footer className="bg-agency-gray py-16 md:py-20 border-t border-agency-white/10 z-10 relative">
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             {/* Brand */}

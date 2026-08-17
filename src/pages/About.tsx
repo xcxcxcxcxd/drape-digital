@@ -11,7 +11,7 @@ export default function About() {
         <meta name="description" content="Based in Morocco, working UK/US/Canada hours. We build websites for emergency call-out trades." />
       </Helmet>
 
-      <section className="pt-36 pb-24 px-6 min-h-screen">
+      <section className="pt-28 md:pt-36 pb-24 px-6 min-h-screen">
         <div className="container mx-auto max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -46,7 +46,7 @@ export default function About() {
             <div className="mt-16 pt-16 border-t border-agency-white/10">
               <h2 className="text-2xl font-bold mb-6">Ready to see your new site?</h2>
               <Link
-                to="/free-homepage"
+                to="/contact"
                 className="inline-flex items-center gap-2 px-8 py-4 accent-gradient rounded-full font-bold text-sm tracking-tight shadow-xl shadow-agency-accent/20 hover:shadow-agency-accent/40 transition-all group"
               >
                 Get a free homepage

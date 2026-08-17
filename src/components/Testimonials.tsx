@@ -30,7 +30,7 @@ const Testimonials: React.FC = () => {
   );
 
   return (
-    <section className="py-24 overflow-hidden relative">
+    <section className="py-16 md:py-24 overflow-hidden relative">
       <div className="container mx-auto px-6 mb-16 text-center">
         <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight mb-4">
           Trusted by <span className="bg-gradient-to-r from-agency-accent-dark to-agency-accent text-transparent bg-clip-text">Founders</span>

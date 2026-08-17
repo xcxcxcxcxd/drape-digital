@@ -57,7 +57,7 @@ export default function FreeHomepage() {
         <meta name="description" content="We'll rebuild your homepage for free. Live on a real URL. You see it before you pay anything. For locksmiths, towing, garage doors, HVAC, and emergency trades." />
       </Helmet>
 
-      <section className="min-h-screen pt-32 pb-20 px-6">
+      <section className="min-h-screen pt-28 md:pt-32 pb-20 px-6">
         <div className="container mx-auto max-w-5xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* ─── LEFT: Pitch ─── */}

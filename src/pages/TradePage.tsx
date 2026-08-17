@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowRight, CheckCircle2, ChevronDown, ChevronUp } from "lucide-react";
+import { ArrowRight, CheckCircle2, ChevronDown, ChevronUp, Loader2 } from "lucide-react";
 import { getTradeBySlug } from "../data/tradeData";
 import React, { useState } from "react";
 import NotFound from "./NotFound";
@@ -9,6 +9,36 @@ import NotFound from "./NotFound";
 export default function TradePage() {
   const { slug } = useParams<{ slug: string }>();
   const trade = slug ? getTradeBySlug(slug) : undefined;
+  const [loadingTier, setLoadingTier] = useState<string | null>(null);
+
+  const handleCheckout = async (e: React.MouseEvent, tierName: string, priceString: string) => {
+    e.preventDefault();
+    setLoadingTier(tierName);
+    try {
+      const numericPrice = priceString.replace(/\D/g, "");
+      const res = await fetch("/api/stripe/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          serviceName: "Website Build",
+          packageName: tierName,
+          price: numericPrice,
+          currency: "USD",
+          slug: slug,
+        }),
+      });
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        alert("Payment initialization failed.");
+        setLoadingTier(null);
+      }
+    } catch {
+      alert("Payment initialization failed.");
+      setLoadingTier(null);
+    }
+  };
 
   if (!trade) return <NotFound />;
 
@@ -20,7 +50,7 @@ export default function TradePage() {
       </Helmet>
 
       {/* ─── HERO ─── */}
-      <section className="pt-36 pb-20 px-6">
+      <section className="pt-28 md:pt-36 pb-20 px-6">
         <div className="container mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -38,7 +68,7 @@ export default function TradePage() {
               {trade.heroSub}
             </p>
             <Link
-              to="/free-homepage"
+              to="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 accent-gradient rounded-full font-bold text-sm tracking-tight shadow-xl shadow-agency-accent/20 hover:shadow-agency-accent/40 transition-all group"
             >
               Get a free homepage
@@ -49,7 +79,7 @@ export default function TradePage() {
       </section>
 
       {/* ─── THE ECONOMICS ─── */}
-      <section className="py-20 section-divider">
+      <section className="py-16 md:py-20 section-divider">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -86,7 +116,7 @@ export default function TradePage() {
       </section>
 
       {/* ─── THE PROBLEM ─── */}
-      <section className="py-20 section-divider">
+      <section className="py-16 md:py-20 section-divider">
         <div className="container mx-auto px-6 max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -105,7 +135,7 @@ export default function TradePage() {
       </section>
 
       {/* ─── JOB-SPECIFIC PAGES ─── */}
-      <section className="py-20 section-divider">
+      <section className="py-16 md:py-20 section-divider">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -141,7 +171,7 @@ export default function TradePage() {
       </section>
 
       {/* ─── THREE TIERS BRIEF ─── */}
-      <section className="py-20 section-divider">
+      <section className="py-16 md:py-20 section-divider">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -199,7 +229,7 @@ export default function TradePage() {
                 </div>
                 <span className="text-sm text-agency-white/50 mb-4 block">{tier.monthly}</span>
                 <p className="text-agency-white/60 text-sm mb-6 leading-relaxed">{tier.desc}</p>
-                <ul className="space-y-2">
+                <ul className="space-y-2 mb-8 flex-1">
                   {tier.includes.map((item, j) => (
                     <li key={j} className="flex items-center gap-2 text-sm text-agency-white/70">
                       <CheckCircle2 size={14} className="text-agency-accent shrink-0" />
@@ -207,6 +237,29 @@ export default function TradePage() {
                     </li>
                   ))}
                 </ul>
+                <div className="mt-auto flex flex-col gap-3 w-full">
+                  <button
+                    onClick={(e) => handleCheckout(e, tier.name, tier.price)}
+                    disabled={loadingTier === tier.name}
+                    className={`w-full flex items-center justify-center gap-2 py-4 rounded-full font-bold text-sm tracking-tight transition-all ${
+                      tier.featured
+                        ? "accent-gradient shadow-lg shadow-agency-accent/20 hover:shadow-agency-accent/40 text-agency-black"
+                        : "bg-agency-accent text-agency-black hover:bg-agency-accent-dark"
+                    }`}
+                  >
+                    {loadingTier === tier.name ? (
+                      <><Loader2 size={16} className="animate-spin" /> Redirecting...</>
+                    ) : (
+                      <>Pay {tier.price} Setup Fee</>
+                    )}
+                  </button>
+                  <Link
+                    to="/contact"
+                    className="w-full text-center py-4 rounded-full font-bold text-sm tracking-tight transition-all bg-agency-white/5 border border-agency-white/10 hover:bg-agency-white/10 text-agency-white"
+                  >
+                    Book strategy call ($10)
+                  </Link>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -220,7 +273,7 @@ export default function TradePage() {
       </section>
 
       {/* ─── FAQ ─── */}
-      <section className="py-20 section-divider">
+      <section className="py-16 md:py-20 section-divider">
         <div className="container mx-auto px-6 max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -241,7 +294,7 @@ export default function TradePage() {
       </section>
 
       {/* ─── CTA ─── */}
-      <section className="py-28 text-center px-6">
+      <section className="py-16 md:py-28 text-center px-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.97 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -256,7 +309,7 @@ export default function TradePage() {
             We'll build your homepage for free. Live on a real URL. No card, no contract.
           </p>
           <Link
-            to="/free-homepage"
+            to="/contact"
             className="inline-flex items-center gap-2 px-10 py-5 accent-gradient rounded-full font-bold tracking-tight shadow-xl shadow-agency-accent/20 hover:shadow-agency-accent/40 transition-all text-lg group"
           >
             Get a free homepage

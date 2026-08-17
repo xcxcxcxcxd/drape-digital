@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
         <meta name="description" content="Drape Digital's Privacy Policy — how we collect, use, and protect your personal data." />
         <link rel="canonical" href="https://drape.digital/privacy-policy" />
       </Helmet>
-      <section className="pt-40 pb-24 px-6 container mx-auto max-w-4xl">
+      <section className="pt-32 md:pt-40 pb-24 px-6 container mx-auto max-w-4xl">
         <h1 className="text-5xl md:text-7xl font-black tracking-tighter uppercase mb-4 leading-tight">Privacy Policy</h1>
         <p className="text-agency-muted text-sm mb-16">Last updated: 20 July 2026</p>
 

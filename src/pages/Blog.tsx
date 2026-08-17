@@ -11,7 +11,7 @@ export default function Blog() {
         <meta name="description" content="Local SEO, Google Ads, and conversion strategies for emergency trades. Real numbers, no filler." />
       </Helmet>
 
-      <section className="pt-36 pb-20 px-6">
+      <section className="pt-28 md:pt-36 pb-20 px-6">
         <div className="container mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

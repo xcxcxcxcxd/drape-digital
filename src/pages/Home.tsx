@@ -16,7 +16,7 @@ export default function Home() {
       </Helmet>
 
       {/* ─── HERO ─── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-16">
+      <section className="relative min-h-[100dvh] lg:min-h-screen flex flex-col justify-center overflow-hidden pt-32 pb-16">
         {/* Background glow */}
         <div className="absolute -top-48 -right-48 w-96 h-96 lg:w-[500px] lg:h-[500px] bg-agency-accent/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute -bottom-48 -left-48 w-96 h-96 lg:w-[400px] lg:h-[400px] bg-agency-accent-dark/8 rounded-full blur-[120px] pointer-events-none" />
@@ -42,7 +42,7 @@ export default function Home() {
             </p>
 
             <Link
-              to="/free-homepage"
+              to="/contact"
               id="hero-cta"
               className="inline-flex items-center gap-2 px-8 py-4 accent-gradient rounded-full font-bold text-sm tracking-tight shadow-xl shadow-agency-accent/20 hover:shadow-agency-accent/40 transition-all duration-300 group"
             >
@@ -60,7 +60,7 @@ export default function Home() {
       </section>
 
       {/* ─── THE PROBLEM ─── */}
-      <section className="py-24 md:py-32 section-divider" id="the-problem">
+      <section className="py-16 md:py-24 md:py-20 md:py-32 section-divider" id="the-problem">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -90,7 +90,7 @@ export default function Home() {
       </section>
 
       {/* ─── WHAT WE BUILD INSTEAD ─── */}
-      <section className="py-24 md:py-32 section-divider" id="what-we-build">
+      <section className="py-16 md:py-24 md:py-20 md:py-32 section-divider" id="what-we-build">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -153,7 +153,7 @@ export default function Home() {
       </section>
 
       {/* ─── HOW THE FREE HOMEPAGE WORKS ─── */}
-      <section className="py-24 md:py-32 section-divider" id="how-it-works">
+      <section className="py-16 md:py-24 md:py-20 md:py-32 section-divider" id="how-it-works">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -205,7 +205,7 @@ export default function Home() {
       </section>
 
       {/* ─── TRADES WE BUILD FOR ─── */}
-      <section className="py-24 md:py-32 section-divider" id="trades">
+      <section className="py-16 md:py-24 md:py-20 md:py-32 section-divider" id="trades">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -258,7 +258,7 @@ export default function Home() {
       </section>
 
       {/* ─── WHAT WE DON'T DO ─── */}
-      <section className="py-24 md:py-32 section-divider" id="what-we-dont-do">
+      <section className="py-16 md:py-24 md:py-20 md:py-32 section-divider" id="what-we-dont-do">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -283,7 +283,7 @@ export default function Home() {
       </section>
 
       {/* ─── BOTTOM CTA ─── */}
-      <section className="py-28 md:py-40 relative z-10 text-center px-6">
+      <section className="py-16 md:py-28 md:py-24 md:py-40 relative z-10 text-center px-6">
         <div className="absolute inset-0 bg-gradient-to-b from-agency-black via-agency-accent/[0.03] to-agency-black pointer-events-none" />
         <motion.div
           initial={{ opacity: 0, scale: 0.97 }}
@@ -299,7 +299,7 @@ export default function Home() {
             No card. No contract. We'll tell you on the call if we don't think we can help.
           </p>
           <Link
-            to="/free-homepage"
+            to="/contact"
             id="bottom-cta"
             className="inline-flex items-center gap-2 px-10 py-5 accent-gradient rounded-full font-bold tracking-tight shadow-xl shadow-agency-accent/20 hover:shadow-agency-accent/40 transition-all duration-300 text-lg group"
           >

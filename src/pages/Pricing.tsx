@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import { ArrowRight, CheckCircle2, Phone } from "lucide-react";
+import { ArrowRight, CheckCircle2, Phone, Loader2 } from "lucide-react";
 
 const tiers = [
   {
@@ -72,6 +73,36 @@ const tiers = [
 ];
 
 export default function Pricing() {
+  const [loadingTier, setLoadingTier] = useState<string | null>(null);
+
+  const handleCheckout = async (e: React.MouseEvent, tierName: string, priceString: string) => {
+    e.preventDefault();
+    setLoadingTier(tierName);
+    try {
+      const numericPrice = priceString.replace(/\D/g, "");
+      const res = await fetch("/api/stripe/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          serviceName: "Website Build",
+          packageName: tierName,
+          price: numericPrice,
+          currency: "USD",
+          slug: "pricing",
+        }),
+      });
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        alert("Payment initialization failed.");
+        setLoadingTier(null);
+      }
+    } catch {
+      alert("Payment initialization failed.");
+      setLoadingTier(null);
+    }
+  };
   return (
     <>
       <Helmet>
@@ -80,7 +111,7 @@ export default function Pricing() {
       </Helmet>
 
       {/* ─── HEADER ─── */}
-      <section className="pt-36 pb-16 px-6">
+      <section className="pt-28 md:pt-36 pb-16 px-6">
         <div className="container mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -166,16 +197,29 @@ export default function Pricing() {
                   </div>
                 )}
 
-                <Link
-                  to="/free-homepage"
-                  className={`w-full text-center py-4 rounded-full font-bold text-sm tracking-tight transition-all ${
-                    tier.featured
-                      ? "accent-gradient shadow-lg shadow-agency-accent/20 hover:shadow-agency-accent/40"
-                      : "bg-agency-white/5 border border-agency-white/10 hover:bg-agency-white/10"
-                  }`}
-                >
-                  Get started
-                </Link>
+                <div className="mt-auto flex flex-col gap-3 w-full">
+                  <button
+                    onClick={(e) => handleCheckout(e, tier.name, tier.setup)}
+                    disabled={loadingTier === tier.name}
+                    className={`w-full flex items-center justify-center gap-2 py-4 rounded-full font-bold text-sm tracking-tight transition-all ${
+                      tier.featured
+                        ? "accent-gradient shadow-lg shadow-agency-accent/20 hover:shadow-agency-accent/40 text-agency-black"
+                        : "bg-agency-accent text-agency-black hover:bg-agency-accent-dark"
+                    }`}
+                  >
+                    {loadingTier === tier.name ? (
+                      <><Loader2 size={16} className="animate-spin" /> Redirecting...</>
+                    ) : (
+                      <>Pay {tier.setup} Setup Fee</>
+                    )}
+                  </button>
+                  <Link
+                    to="/contact"
+                    className="w-full text-center py-4 rounded-full font-bold text-sm tracking-tight transition-all bg-agency-white/5 border border-agency-white/10 hover:bg-agency-white/10 text-agency-white"
+                  >
+                    Book strategy call ($10)
+                  </Link>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -183,7 +227,7 @@ export default function Pricing() {
       </section>
 
       {/* ─── CALL ROUTING ADD-ON ─── */}
-      <section className="py-20 section-divider">
+      <section className="py-16 md:py-20 section-divider">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -247,7 +291,7 @@ export default function Pricing() {
       </section>
 
       {/* ─── CTA ─── */}
-      <section className="py-28 text-center px-6">
+      <section className="py-16 md:py-28 text-center px-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.97 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -260,7 +304,7 @@ export default function Pricing() {
             We'll build it, you'll see it live. Then pick a tier or walk away. No pressure.
           </p>
           <Link
-            to="/free-homepage"
+            to="/contact"
             className="inline-flex items-center gap-2 px-10 py-5 accent-gradient rounded-full font-bold tracking-tight shadow-xl shadow-agency-accent/20 hover:shadow-agency-accent/40 transition-all text-lg group"
           >
             Get a free homepage

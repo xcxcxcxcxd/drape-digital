@@ -38,7 +38,7 @@ export default function HowItWorks() {
         <meta name="description" content="We build your site first. You see it live before you pay. 4-step process: call, build, review, decide. No contract, no deposit." />
       </Helmet>
 
-      <section className="pt-36 pb-16 px-6">
+      <section className="pt-28 md:pt-36 pb-16 px-6">
         <div className="container mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -86,7 +86,7 @@ export default function HowItWorks() {
         </div>
       </section>
 
-      <section className="py-28 text-center px-6">
+      <section className="py-16 md:py-28 text-center px-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.97 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -99,7 +99,7 @@ export default function HowItWorks() {
             No card. No contract. Just a 15-minute call.
           </p>
           <Link
-            to="/free-homepage"
+            to="/contact"
             className="inline-flex items-center gap-2 px-10 py-5 accent-gradient rounded-full font-bold tracking-tight shadow-xl shadow-agency-accent/20 hover:shadow-agency-accent/40 transition-all text-lg group"
           >
             Get a free homepage

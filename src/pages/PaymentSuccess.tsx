@@ -19,7 +19,7 @@ export default function PaymentSuccess() {
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
-      <section className="min-h-screen flex items-center justify-center px-6 py-40">
+      <section className="min-h-screen flex items-center justify-center px-6 py-24 md:py-40">
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}

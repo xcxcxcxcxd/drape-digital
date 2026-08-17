@@ -18,7 +18,7 @@ export default function BlogPost() {
         <meta name="description" content={post.excerpt} />
       </Helmet>
 
-      <article className="pt-36 pb-20 px-6">
+      <article className="pt-28 md:pt-36 pb-20 px-6">
         <div className="container mx-auto max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
