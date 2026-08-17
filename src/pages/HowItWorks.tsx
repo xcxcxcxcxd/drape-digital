@@ -30,7 +30,11 @@ const steps = [
   },
 ];
 
+import { useTranslation } from "react-i18next";
+
 export default function HowItWorks() {
+  const { t } = useTranslation();
+  const steps = t("howItWorks.steps", { returnObjects: true }) as Step[];
   return (
     <>
       <Helmet>
@@ -46,10 +50,10 @@ export default function HowItWorks() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[0.95] mb-6">
-              See it before<br />you pay for it.
+              {t("howItWorks.header.title")}<br />{t("howItWorks.header.titleBr")}
             </h1>
             <p className="text-lg text-agency-white/60 max-w-xl">
-              Most agencies sell you a promise. We sell you the finished product. Here's exactly how.
+              {t("howItWorks.header.subtitle")}
             </p>
           </motion.div>
         </div>
@@ -94,15 +98,15 @@ export default function HowItWorks() {
           transition={{ duration: 0.8 }}
           className="max-w-3xl mx-auto"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to start?</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">{t("howItWorks.cta.title")}</h2>
           <p className="text-lg text-agency-white/50 mb-10">
-            No card. No contract. Just a 15-minute call.
+            {t("howItWorks.cta.subtitle")}
           </p>
           <Link
             to="/contact"
             className="inline-flex items-center gap-2 px-10 py-5 accent-gradient rounded-full font-bold tracking-tight shadow-xl shadow-agency-accent/20 hover:shadow-agency-accent/40 transition-all text-lg group"
           >
-            Get a free homepage
+            {t("howItWorks.cta.btn")}
             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </motion.div>

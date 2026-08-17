@@ -70,7 +70,7 @@ export default function TermsOfService() {
 
           <div>
             <h2 className="text-2xl font-bold text-agency-white mb-3">9. Governing Law</h2>
-            <p>These Terms are governed by the laws of Morocco. Any disputes shall be subject to the exclusive jurisdiction of the courts of Tetouan, Morocco, unless otherwise required by applicable consumer protection law in your jurisdiction.</p>
+            <p>These Terms are governed by the laws of Spain. Any disputes shall be subject to the exclusive jurisdiction of the courts of Spain, Spain, unless otherwise required by applicable consumer protection law in your jurisdiction.</p>
           </div>
 
           <div>

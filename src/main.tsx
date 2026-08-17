@@ -2,6 +2,7 @@ import React, {StrictMode} from 'react';
 import {createRoot} from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
+import './i18n';
 
 class ErrorBoundary extends React.Component<React.PropsWithChildren<{}>, {hasError: boolean, error: Error | null}> {
   state = { hasError: false, error: null };

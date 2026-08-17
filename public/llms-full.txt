@@ -3,7 +3,7 @@
 
 ## About
 
-Drape Digital is a full-service digital agency founded by a team of designers, developers, and SEO strategists. Headquartered in Tetouan, Morocco, we serve clients globally across the United States, United Kingdom, Europe, UAE, Canada, Australia, and beyond.
+Drape Digital is a full-service digital agency founded by a team of designers, developers, and SEO strategists. Headquartered in Spain, Spain, we serve clients globally across the United States, United Kingdom, Europe, UAE, Canada, Australia, and beyond.
 
 We operate on a unique "build-first" model: instead of selling you a proposal, we build a fully functional demo of your new website — live and interactive on a private subdomain (yourbusiness.drape.digital) — before you sign any contract or pay a single dollar. You only commit when you love what you see.
 
@@ -33,7 +33,7 @@ Industry:
 Founded: 2024
 
 Headquarters:
-Tetouan, Morocco
+Spain, Spain
 
 Service Area:
 Worldwide
@@ -388,7 +388,7 @@ Direct communication
 
 ## Summary
 
-Drape Digital is a global web design, web development, SEO, local SEO, and AI search optimization agency headquartered in Tetouan, Morocco.
+Drape Digital is a global web design, web development, SEO, local SEO, and AI search optimization agency headquartered in Spain, Spain.
 
 The company specializes in premium custom websites built with React, Next.js, WordPress, and Shopify.
 

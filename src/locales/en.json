@@ -1,0 +1,480 @@
+{
+  "nav": {
+    "work": "Work",
+    "locksmith": "Locksmith Websites",
+    "pricing": "Pricing",
+    "about": "About",
+    "freeHomepage": "Book a Call"
+  },
+  "hero": {
+    "title": "Websites for locksmiths who need the <1>phone to ring</1>",
+    "subtitle": "We build the site first. You see it live, on a real URL, before you pay anything. If it's not better than what you've got, walk away and keep the pages.",
+    "cta": "Book a strategy call",
+    "trust1": "Built for emergency trades",
+    "trust2": "Demo-first — see it before you pay",
+    "trust3": "Based in Spain, working with top specialists globally"
+  },
+  "footer": {
+    "tagline": "We build and rank websites for emergency call-out trades. Locksmiths, towing, garage doors, HVAC. Demo-first — you see it before you pay.",
+    "trades": "Trades",
+    "locksmith": "Locksmith Websites",
+    "towing": "Towing Websites",
+    "garage": "Garage Door Websites",
+    "hvac": "HVAC Websites",
+    "company": "Company",
+    "howItWorks": "How It Works",
+    "pricing": "Pricing",
+    "work": "Our Work",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Book a Call",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "refund": "Refund Policy",
+    "cookie": "Cookie Policy",
+    "rights": "Drape Digital. All rights reserved."
+  },
+  "home": {
+    "problem": {
+      "title": "The problem",
+      "p1": "Your customer is standing outside their own front door. It's raining. They've got one hand on a phone and four tabs open.",
+      "p2": "They're not reading your About page. They're looking for two things: can you actually get in, and what will it cost. Whichever site answers first gets the call.",
+      "p3": "Most trade sites answer neither. Big photo of a door. \"Quality service since 2009.\" Phone number in the footer, in grey."
+    },
+    "solution": {
+      "title": "What we build instead",
+      "priceTitle": "Price on the screen",
+      "priceDesc": "Not \"competitive rates\" — the actual call-out fee. Your customer wants a number. Give them one.",
+      "arrivalTitle": "Arrival window on the screen",
+      "arrivalDesc": "Real one, from your dispatch log. \"25 minutes in central, 40 minutes outer suburbs.\" Specifics beat promises.",
+      "callTitle": "A call button that never leaves",
+      "callDesc": "Fixed to the bottom of the viewport. Follows the thumb down the page. One tap to call, on every screen.",
+      "pagesTitle": "Pages for the jobs people actually search",
+      "pagesDesc": "Broken key extraction. Transponder programming. Panic bar repair. Someone typing \"push pull paddle repair\" is ready to pay today.",
+      "footer": "Separate pages for the areas you cover, with real detail about the buildings there. Not 200 spun copies of the same paragraph. Google's been catching that for two years."
+    },
+    "process": {
+      "title": "How it works",
+      "step1": "Fifteen minutes on the phone. We ask about your prices, your patch, the jobs you turn down.",
+      "step2": "We build a homepage. Three working days.",
+      "step3": "You look at it, live, on a real link. No login, no deck.",
+      "step4": "Like it, we finish the site. Don't, keep the files and we'll leave you alone."
+    },
+    "trades": {
+      "title": "One site architecture. Every emergency trade.",
+      "subtitle": "A lead is worth £150–£800. The customer decides in under 90 seconds. 100% of the buying happens on a phone. That's locksmiths, towing, garage doors, HVAC — same machine.",
+      "learnMore": "Learn more"
+    },
+    "dont": {
+      "title": "What we don't do",
+      "p1": "We don't do logos, brand books, or social media management. We don't do e-commerce. We don't do SEO for national brands.",
+      "p2": "If you need a site that wins a design award, we're the wrong shop. Ours are built for a wet thumb on a cracked screen at 11pm."
+    },
+    "cta": {
+      "title": "Book a strategy call",
+      "subtitle": "No card. No contract. We'll tell you on the call if we don't think we can help.",
+      "btn": "Book a strategy call"
+    }
+  },
+  "pricing": {
+    "header": {
+      "title": "Real prices.",
+      "subtitle": "No custom quotes.",
+      "desc": "Pick a tier. If none of them fit, we'll tell you on the call. We'd rather lose a sale than build something that doesn't work for your business."
+    },
+    "tiers": [
+      {
+        "name": "The Call Machine",
+        "tagline": "Get the phone ringing",
+        "setup": "$997",
+        "monthly": "$299",
+        "monthlySuffix": "/mo",
+        "soldTo": "The guy with no site or a 2014 site.",
+        "timeline": "2 weeks",
+        "includes": [
+          "8–12 page website",
+          "Click-to-call fixed to viewport",
+          "LocalBusiness schema markup",
+          "Google Business Profile setup",
+          "Call tracking number",
+          "Mobile-first design",
+          "Basic on-page SEO"
+        ],
+        "doesNot": [
+          "Location pages",
+          "Ongoing SEO",
+          "Google Ads"
+        ]
+      },
+      {
+        "name": "Coverage",
+        "tagline": "Rank locally, month by month",
+        "setup": "$1,497",
+        "monthly": "$599",
+        "monthlySuffix": "/mo",
+        "soldTo": "The guy who has a site and can't work out why the phone doesn't ring.",
+        "timeline": "Ongoing after 2-week build",
+        "featured": true,
+        "includes": [
+          "Everything in The Call Machine",
+          "Location pages (1–2 per month)",
+          "Monthly job-photo posting to GBP",
+          "Review collection SMS flow",
+          "Monthly one-page call report",
+          "NAP citation cleanup",
+          "Quarterly site health audit"
+        ],
+        "doesNot": [
+          "Google Ads management",
+          "Local Services Ads"
+        ]
+      },
+      {
+        "name": "Full Book",
+        "tagline": "Ads + organic. Fill the schedule.",
+        "setup": "$1,997",
+        "monthly": "$997",
+        "monthlySuffix": "/mo + ad spend",
+        "soldTo": "The guy with two vans who wants four.",
+        "timeline": "Ongoing",
+        "includes": [
+          "Everything in Coverage",
+          "Google Ads setup & management",
+          "Local Services Ads management",
+          "Bid optimisation",
+          "Click-fraud monitoring",
+          "Monthly ROI report (calls, cost per lead)",
+          "Ad creative A/B testing"
+        ],
+        "doesNot": []
+      }
+    ],
+    "card": {
+      "mostPopular": "Most popular",
+      "setupLabel": "setup",
+      "timelineLabel": "Timeline",
+      "includesLabel": "Includes",
+      "doesNotLabel": "Does not include",
+      "paySetup": "Pay {{setup}} Setup Fee",
+      "redirecting": "Redirecting...",
+      "bookCall": "Book strategy call ($10)"
+    },
+    "addon": {
+      "title": "Call routing add-on",
+      "price": "$79/mo",
+      "desc": "bolt onto any tier",
+      "p": "Missed calls after 6pm are your biggest leak. We set up a tracked number with out-of-hours routing and missed-call auto-text-back. The customer gets \"Got your call. A locksmith will ring you back in 15 minutes.\" instead of voicemail. That one text recovers calls that would otherwise go to your competitor.",
+      "items": [
+        "Tracked phone number",
+        "Out-of-hours call routing",
+        "Missed-call auto-text-back",
+        "Monthly call log with source attribution"
+      ]
+    },
+    "note": {
+      "title": "A note on ad spend",
+      "p": "Full Book's $997/mo is the management fee. Ad spend is separate and goes directly to Google — we recommend starting at $500–$1,500/mo. We'll tell you on the call whether your market and budget make ads viable before we take your money. If they don't, we'll say so."
+    },
+    "cta": {
+      "title": "Start your build",
+      "subtitle": "We'll build it, you'll see it live. Then pick a tier or walk away. No pressure.",
+      "btn": "Book a strategy call"
+    },
+    "seoTitle": "How Much Does a Custom Website Cost for a Locksmith Business? | Drape Digital",
+    "seoDesc": "Clear, affordable custom website design costs for locksmiths, towing, and HVAC. Discover our 3 tiers with no hidden fees."
+  },
+  "howItWorks": {
+    "header": {
+      "title": "See it before",
+      "titleBr": "you pay for it.",
+      "subtitle": "Most agencies sell you a promise. We sell you the finished product. Here's exactly how."
+    },
+    "steps": [
+      {
+        "step": "01",
+        "title": "15-minute call",
+        "desc": "We ask about your prices, your patch, the jobs you turn down. That's it. No pitch, no deck. We're writing down the facts that go on your site.",
+        "time": "15 minutes"
+      },
+      {
+        "step": "02",
+        "title": "We build your homepage",
+        "desc": "Three working days. A real page, live on a real URL, with your name, your number, and your actual prices on it. Not a mockup — a working site.",
+        "time": "3 working days"
+      },
+      {
+        "step": "03",
+        "title": "You see it live",
+        "desc": "We send you a link. You open it on your phone, your laptop, whatever. No login. No PDF. Click the buttons. Show it to someone you trust.",
+        "time": "Take your time"
+      },
+      {
+        "step": "04",
+        "title": "Your call",
+        "desc": "Like it? We finish the site — the rest of the pages, the SEO, the GBP setup. Don't like it? Keep the files and we'll leave you alone. No follow-up emails.",
+        "time": "No pressure"
+      }
+    ],
+    "cta": {
+      "title": "Ready to start?",
+      "subtitle": "No card. No contract. Just a 15-minute call.",
+      "btn": "Book a strategy call"
+    }
+  },
+  "tradesData": {
+    "locksmith-websites": {
+      "trade": "Locksmith",
+      "tradeNoun": "locksmiths",
+      "tradePlural": "Locksmith Websites",
+      "heroH1": "Websites for locksmiths who need the phone to ring",
+      "heroSub": "We build the site first. You see it live, on a real URL, before you pay anything. If it's not better than what you've got, walk away and keep the pages.",
+      "leadValue": "£150–£800",
+      "decisionTime": "under 90 seconds",
+      "buyingChannel": "phone, one thumb, probably raining",
+      "seoTitle": "Locksmith Custom Website Design | Drape Digital",
+      "seoDesc": "Top-rated custom website design services for locksmith businesses. See essential features, integrated booking, and real costs before you pay.",
+      "problemSection": {
+        "scenario": "Your customer is standing outside their own front door. It's raining. They've got one hand on a phone and four tabs open.",
+        "searchBehavior": "They're not reading your About page. They're looking for two things: can you actually get in, and what will it cost. Whichever site answers first gets the call.",
+        "whatsBroken": "Most locksmith sites answer neither. Big photo of a door. \"Quality service since 2009.\" Phone number in the footer, in grey."
+      },
+      "exampleJobs": [
+        "Broken key extraction",
+        "Transponder programming",
+        "Panic bar repair",
+        "Lock rekeying",
+        "Master key systems",
+        "Push-pull paddle repair",
+        "High-security lock install",
+        "Storefront lock replacement"
+      ],
+      "exampleAreas": [
+        "Downtown",
+        "West End",
+        "Suburbs",
+        "Industrial parks"
+      ],
+      "faq": [
+        {
+          "q": "do you only build sites for locksmiths",
+          "a": "No. We build for any emergency call-out trade — towing, garage doors, HVAC, plumbers, electricians. Locksmiths are where we started, so we know the vertical cold."
+        },
+        {
+          "q": "how long until I see something",
+          "a": "Three working days for the homepage. We build it on a live URL before we ask for anything."
+        },
+        {
+          "q": "what if I already have a website",
+          "a": "We'll rebuild your homepage for free. If it's better than what you've got, we talk about finishing the site. If not, keep the files."
+        },
+        {
+          "q": "do you do Google Ads for locksmiths",
+          "a": "Yes, in Tier 3. We manage Google Ads and Local Services Ads. Locksmith clicks run $40–$80, so budget matters — we'll tell you if your area isn't worth it."
+        },
+        {
+          "q": "can you help with a suspended Google Business Profile",
+          "a": "We've done reinstatements. Locksmith GBP suspensions are common — Google flags the category. We know the process, but can't guarantee Google's timeline."
+        },
+        {
+          "q": "what don't you do",
+          "a": "Logos, brand books, social media, e-commerce, national SEO. We build sites that make phones ring for local trades. That's it."
+        }
+      ]
+    },
+    "towing-websites": {
+      "trade": "Towing",
+      "tradeNoun": "towing companies",
+      "tradePlural": "Towing Websites",
+      "heroH1": "Websites for towing companies that need calls, not clicks",
+      "heroSub": "We build the site first. You see it live before you pay. If it doesn't look like it'll win calls off your competitor's site, walk away.",
+      "leadValue": "£100–£500",
+      "decisionTime": "under 60 seconds",
+      "buyingChannel": "phone, roadside, stressed",
+      "seoTitle": "Towing Company Website Design & SEO | Drape Digital",
+      "seoDesc": "We build and rank websites for towing companies. Demo-first — see your site live before you pay. Click-to-call, local SEO, dispatch-ready.",
+      "problemSection": {
+        "scenario": "Your customer is standing on a hard shoulder. Car won't start. It's dark, it's cold, and they've got three tabs open on a phone with 12% battery.",
+        "searchBehavior": "They don't care about your fleet photos. They want to know: can you get here, how fast, and what's it going to cost to move a 2019 Honda Civic three miles.",
+        "whatsBroken": "Most towing sites show a stock photo of a flatbed. \"24/7 Towing Services.\" No price, no ETA, no area map. The customer calls whichever number they see first."
+      },
+      "exampleJobs": [
+        "Roadside assistance",
+        "Flatbed towing",
+        "Motorcycle towing",
+        "Long-distance towing",
+        "Accident recovery",
+        "Jump start service",
+        "Lockout assistance",
+        "Winch-out service"
+      ],
+      "exampleAreas": [
+        "Highways",
+        "Downtown",
+        "Industrial",
+        "Residential"
+      ],
+      "faq": [
+        {
+          "q": "do you build sites for towing companies specifically",
+          "a": "Yes. Towing, locksmiths, garage doors, HVAC — any emergency trade where the customer calls from a phone in a panic. Same economics, same site architecture."
+        },
+        {
+          "q": "how fast can I get a site up",
+          "a": "Homepage in three working days. Full site in two weeks. We build it live on a real URL before you pay anything."
+        },
+        {
+          "q": "do you handle Google Ads for towing",
+          "a": "In Tier 3, yes. Towing clicks are expensive. We'll tell you upfront if your market and budget make ads viable before we take your money."
+        },
+        {
+          "q": "what about dispatch integration",
+          "a": "We don't build dispatch software. We build the site that makes the phone ring. If you need dispatch, we'll recommend someone, but that's not our lane."
+        },
+        {
+          "q": "can you rank me for 'towing near me'",
+          "a": "That's a map pack result — it depends on your Google Business Profile, reviews, and proximity. Our Tier 2 builds the location pages and GBP presence that feed that ranking. Takes 4–6 months."
+        },
+        {
+          "q": "I only cover a small area, is it worth it",
+          "a": "If you're doing 3+ jobs a day, yes. One extra call a day at your average tow fee pays for the site in a week. If your area is too thin, we'll tell you."
+        }
+      ]
+    },
+    "garage-door-websites": {
+      "trade": "Garage Door",
+      "tradeNoun": "garage door companies",
+      "tradePlural": "Garage Door Websites",
+      "heroH1": "Websites for garage door companies that convert on the first visit",
+      "heroSub": "We build the site first. You see it live on a real URL. If it's not better than what you've got, walk away and keep the pages.",
+      "leadValue": "£200–£1,200",
+      "decisionTime": "under 2 minutes",
+      "buyingChannel": "phone, standing in the garage, door won't close",
+      "seoTitle": "Garage Door Website Design & SEO | Drape Digital",
+      "seoDesc": "Websites for garage door repair and installation companies. Demo-first — we build it, you see it live, then decide. Local SEO, click-to-call, real pricing.",
+      "problemSection": {
+        "scenario": "Your customer's garage door is stuck open. It's 7am, they need to get to work, and the car is trapped inside. They're searching on their phone in the driveway.",
+        "searchBehavior": "They want three things: can you fix it today, how much is a spring replacement, and are you actually nearby. Everything else is noise.",
+        "whatsBroken": "Most garage door sites are a gallery of doors nobody asked to see. No prices, no service area, no emergency number above the fold. The call goes to whoever answers those questions."
+      },
+      "exampleJobs": [
+        "Spring replacement",
+        "Opener installation",
+        "Panel replacement",
+        "Cable repair",
+        "Off-track repair",
+        "Roller replacement",
+        "Weatherseal replacement",
+        "New garage door install"
+      ],
+      "exampleAreas": [
+        "Residential suburbs",
+        "New builds",
+        "Industrial parks"
+      ],
+      "faq": [
+        {
+          "q": "do you build sites for garage door companies",
+          "a": "Yes. Garage door repair is an emergency trade — same buying pattern as locksmith or towing. Customer's on a phone, door's broken, they call whoever looks like they can fix it today."
+        },
+        {
+          "q": "what makes your sites different from a Wix template",
+          "a": "Specific job pages that rank for what people actually search — 'garage door spring replacement [city]' not 'our services.' Real prices on the page. A call button that follows the thumb."
+        },
+        {
+          "q": "can you show pricing on the site if my prices vary",
+          "a": "Yes. 'Spring replacement from £85' is better than nothing. We use the 'from' price for common jobs. Customers know the final bill depends on the job — they just want to know the ballpark."
+        },
+        {
+          "q": "what if I do installs too, not just repair",
+          "a": "We build pages for both. Repair pages are emergency-conversion pages. Install pages are more considered — different layout, before/after photos, longer copy. Same site, two modes."
+        },
+        {
+          "q": "do I really need location pages",
+          "a": "If you serve more than one town, yes. 'Garage door repair [town name]' is how people search. One page per area you actually serve, with real detail about the buildings there."
+        },
+        {
+          "q": "what don't you do",
+          "a": "We don't build e-commerce sites to sell doors online. We don't do social media. We don't do national SEO. We build sites that make local phones ring."
+        }
+      ]
+    },
+    "hvac-websites": {
+      "trade": "HVAC",
+      "tradeNoun": "HVAC companies",
+      "tradePlural": "HVAC Websites",
+      "heroH1": "Websites for HVAC companies that turn search into service calls",
+      "heroSub": "We build the site first. You see it live before you pay anything. No contract, no deposit — just a working site with your name on it.",
+      "leadValue": "£150–£2,000",
+      "decisionTime": "under 3 minutes",
+      "buyingChannel": "phone, house is too hot or too cold, needs it fixed today",
+      "seoTitle": "HVAC Website Design & SEO | Drape Digital",
+      "seoDesc": "Websites for HVAC companies — heating, cooling, emergency repair. Demo-first model. We build your site live before you pay. Local SEO and call tracking included.",
+      "problemSection": {
+        "scenario": "It's August. The AC died at 2pm. Your customer's house is 35°C and they've got a toddler. They're on their phone searching 'emergency AC repair' and they'll call the first number that looks real.",
+        "searchBehavior": "They don't care about your NATE certifications. They want to know: can you come today, what's the diagnostic fee, and do you work on their brand of unit.",
+        "whatsBroken": "Most HVAC sites list every service ever invented. 'Heating, cooling, ventilation, indoor air quality, ductwork, maintenance plans.' Nobody reads it. The customer wants one answer: when can you get here."
+      },
+      "exampleJobs": [
+        "AC repair",
+        "Furnace repair",
+        "Heat pump install",
+        "Ductwork repair",
+        "Thermostat replacement",
+        "Refrigerant recharge",
+        "Boiler service",
+        "Emergency heating repair"
+      ],
+      "exampleAreas": [
+        "Residential",
+        "Commercial",
+        "New construction"
+      ],
+      "faq": [
+        {
+          "q": "do you build HVAC websites specifically",
+          "a": "Yes. HVAC is an emergency trade in summer and winter. Same site architecture as locksmith or towing — phone-first, price on the page, call button fixed to the viewport."
+        },
+        {
+          "q": "what about maintenance plan signups",
+          "a": "We can add a maintenance plan page, but it's not the priority. The site is built to convert emergency calls first. Maintenance upsell happens on the second visit or via email follow-up."
+        },
+        {
+          "q": "can you rank me for 'AC repair near me'",
+          "a": "That's the goal. Tier 2 builds location pages one area at a time, manages your Google Business Profile, and posts real job photos monthly. Map pack rankings take 4–6 months of consistent work."
+        },
+        {
+          "q": "do you do Google Ads for HVAC",
+          "a": "In Tier 3. HVAC clicks are seasonal — expensive in July, cheaper in March. We'll show you the monthly cost before you commit and tell you if your area is too competitive for your budget."
+        },
+        {
+          "q": "I do residential and commercial — can the site handle both",
+          "a": "Yes. Separate sections. Commercial leads search differently — 'commercial HVAC contractor [city]' — so they get their own pages. Residential is the emergency funnel."
+        },
+        {
+          "q": "what if I'm just starting out and have no reviews",
+          "a": "We set up a review collection SMS flow in Tier 2. After every job, your customer gets a text with a direct link to leave a Google review. Three months of this changes everything."
+        }
+      ]
+    }
+  },
+  "tradePage": {
+    "whyTitle": "Why {{tradeNoun}} need a different kind of site",
+    "leadValue": "Lead value",
+    "decisionTime": "Decision time",
+    "buyingChannel": "Buying channel",
+    "problemTitle": "The problem",
+    "pagesTitle": "Pages for the jobs people actually search",
+    "pagesDesc": "Each of these becomes its own page on your site — ranking for the specific problem your customer is typing into their phone right now.",
+    "tiersTitle": "Three tiers. Real prices.",
+    "tiersDesc": "No custom quotes. No hourly billing. Pick a tier.",
+    "seePricing": "See full pricing details →",
+    "faqTitle": "Questions",
+    "ctaTitle": "See what your site would look like",
+    "ctaDesc": "We'll build your homepage for free. Live on a real URL. No card, no contract.",
+    "ctaBtn": "Book a strategy call",
+    "paySetup": "Pay {{price}} Setup Fee",
+    "bookCall": "Book strategy call ($10)",
+    "redirecting": "Redirecting..."
+  }
+}

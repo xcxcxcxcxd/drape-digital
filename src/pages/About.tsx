@@ -8,7 +8,7 @@ export default function About() {
     <>
       <Helmet>
         <title>About | Drape Digital</title>
-        <meta name="description" content="Based in Morocco, working UK/US/Canada hours. We build websites for emergency call-out trades." />
+        <meta name="description" content="Based in Spain, working UK/US/Canada hours. We build websites for emergency call-out trades." />
       </Helmet>
 
       <section className="pt-28 md:pt-36 pb-24 px-6 min-h-screen">
@@ -36,7 +36,7 @@ export default function About() {
                 That requires a very specific, ruthless type of website architecture. A wet thumb on a cracked screen at 11pm doesn't care about a "Quality Service Since 2009" paragraph. They care about two things: can you get here, and what will it cost.
               </p>
               <p>
-                We're based in Morocco, but we work UK, US, and Canada hours. We run a demo-first model because it kills the biggest objection in this market: "the last web guy took my £2k and disappeared." 
+                We're based in Spain, but we work UK, US, and Canada hours. We run a demo-first model because it kills the biggest objection in this market: "the last web guy took my £2k and disappeared." 
               </p>
               <p>
                 We build the homepage first, and you see it live on a real URL before you pay anything. If it's not better than what you've got, you walk away and keep the pages.

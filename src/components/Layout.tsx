@@ -2,12 +2,18 @@ import { ReactNode, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export function Layout({ children }: { children: ReactNode }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { t, i18n } = useTranslation();
+
+  const toggleLanguage = () => {
+    i18n.changeLanguage(i18n.language === 'en' ? 'fr' : 'en');
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,15 +31,16 @@ export function Layout({ children }: { children: ReactNode }) {
   const canonicalUrl = `https://drape.digital${location.pathname === "/" ? "" : location.pathname}`;
 
   const navLinks = [
-    { name: "Work", href: "/work" },
-    { name: "Locksmith Websites", href: "/locksmith-websites" },
-    { name: "Pricing", href: "/pricing" },
-    { name: "About", href: "/about" },
+    { name: t("nav.work"), href: "/work" },
+    { name: t("nav.locksmith"), href: "/locksmith-websites" },
+    { name: t("nav.pricing"), href: "/pricing" },
+    { name: t("nav.about"), href: "/about" },
   ];
 
   return (
     <div className="flex flex-col min-h-screen bg-agency-black selection:bg-agency-accent selection:text-agency-black">
       <Helmet>
+        <html lang={i18n.language} />
         <link rel="canonical" href={canonicalUrl || "https://drape.digital/"} />
       </Helmet>
 
@@ -67,18 +74,35 @@ export function Layout({ children }: { children: ReactNode }) {
               to="/contact"
               className="px-6 py-3 accent-gradient rounded-full text-xs font-bold uppercase tracking-widest hover:opacity-90 transition-opacity"
             >
-              Free Homepage
+              {t("nav.freeHomepage")}
             </Link>
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center gap-2 text-agency-white/60 hover:text-agency-white transition-colors"
+              aria-label="Toggle language"
+            >
+              <Globe size={18} />
+              <span className="text-xs font-bold uppercase">{i18n.language === 'fr' ? 'FR' : 'EN'}</span>
+            </button>
           </nav>
 
           {/* Mobile Nav Toggle */}
-          <button
-            className="lg:hidden z-50 p-2 text-agency-white"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="lg:hidden z-50 flex items-center gap-4">
+            <button
+              onClick={toggleLanguage}
+              className="text-agency-white/60 hover:text-agency-white transition-colors"
+              aria-label="Toggle language"
+            >
+              <Globe size={20} />
+            </button>
+            <button
+              className="p-2 text-agency-white"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -101,6 +125,7 @@ export function Layout({ children }: { children: ReactNode }) {
               >
                 <Link
                   to={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
                   className="text-3xl font-bold text-agency-white hover:text-agency-accent transition-colors"
                 >
                   {link.name}
@@ -115,9 +140,10 @@ export function Layout({ children }: { children: ReactNode }) {
             >
               <Link
                 to="/contact"
+                onClick={() => setIsMobileMenuOpen(false)}
                 className="px-8 py-4 accent-gradient text-agency-white text-lg font-bold rounded-full"
               >
-                Get a Free Homepage
+                {t("nav.freeHomepage")}
               </Link>
             </motion.div>
           </motion.div>
@@ -139,50 +165,49 @@ export function Layout({ children }: { children: ReactNode }) {
                 drape<span className="text-agency-accent/50">.digital</span>
               </Link>
               <p className="text-agency-white/50 mt-4 text-sm leading-relaxed">
-                We build and rank websites for emergency call-out trades. Locksmiths, towing, garage doors, HVAC.
-                Demo-first — you see it before you pay.
+                {t("footer.tagline")}
               </p>
             </div>
 
             {/* Trades We Serve */}
             <div>
-              <h4 className="text-sm font-bold uppercase tracking-widest text-agency-white/40 mb-6">Trades</h4>
+              <h4 className="text-sm font-bold uppercase tracking-widest text-agency-white/40 mb-6">{t("footer.trades")}</h4>
               <ul className="space-y-3">
-                <li><Link to="/locksmith-websites" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">Locksmith Websites</Link></li>
-                <li><Link to="/towing-websites" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">Towing Websites</Link></li>
-                <li><Link to="/garage-door-websites" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">Garage Door Websites</Link></li>
-                <li><Link to="/hvac-websites" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">HVAC Websites</Link></li>
+                <li><Link to="/locksmith-websites" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">{t("footer.locksmith")}</Link></li>
+                <li><Link to="/towing-websites" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">{t("footer.towing")}</Link></li>
+                <li><Link to="/garage-door-websites" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">{t("footer.garage")}</Link></li>
+                <li><Link to="/hvac-websites" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">{t("footer.hvac")}</Link></li>
               </ul>
             </div>
 
             {/* Company */}
             <div>
-              <h4 className="text-sm font-bold uppercase tracking-widest text-agency-white/40 mb-6">Company</h4>
+              <h4 className="text-sm font-bold uppercase tracking-widest text-agency-white/40 mb-6">{t("footer.company")}</h4>
               <ul className="space-y-3">
-                <li><Link to="/how-it-works" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">How It Works</Link></li>
-                <li><Link to="/pricing" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">Pricing</Link></li>
-                <li><Link to="/work" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">Our Work</Link></li>
-                <li><Link to="/blog" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">Blog</Link></li>
-                <li><Link to="/about" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">About</Link></li>
-                <li><Link to="/contact" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">Book a Call</Link></li>
+                <li><Link to="/how-it-works" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">{t("footer.howItWorks")}</Link></li>
+                <li><Link to="/pricing" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">{t("footer.pricing")}</Link></li>
+                <li><Link to="/work" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">{t("footer.work")}</Link></li>
+                <li><Link to="/blog" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">{t("footer.blog")}</Link></li>
+                <li><Link to="/about" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">{t("footer.about")}</Link></li>
+                <li><Link to="/contact" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">{t("footer.contact")}</Link></li>
               </ul>
             </div>
 
             {/* Legal */}
             <div>
-              <h4 className="text-sm font-bold uppercase tracking-widest text-agency-white/40 mb-6">Legal</h4>
+              <h4 className="text-sm font-bold uppercase tracking-widest text-agency-white/40 mb-6">{t("footer.legal")}</h4>
               <ul className="space-y-3">
-                <li><Link to="/privacy-policy" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">Privacy Policy</Link></li>
-                <li><Link to="/terms-of-service" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">Terms of Service</Link></li>
-                <li><Link to="/refund-policy" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">Refund Policy</Link></li>
-                <li><Link to="/cookie-policy" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">Cookie Policy</Link></li>
+                <li><Link to="/privacy-policy" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">{t("footer.privacy")}</Link></li>
+                <li><Link to="/terms-of-service" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">{t("footer.terms")}</Link></li>
+                <li><Link to="/refund-policy" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">{t("footer.refund")}</Link></li>
+                <li><Link to="/cookie-policy" className="text-agency-white/60 hover:text-agency-white transition-colors text-sm">{t("footer.cookie")}</Link></li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-agency-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-sm text-agency-white/40">
-              &copy; {new Date().getFullYear()} Drape Digital. All rights reserved.
+              &copy; {new Date().getFullYear()} {t("footer.rights")}
             </p>
             <div className="flex items-center gap-6">
               <a href="https://www.linkedin.com/company/drapedigital/" target="_blank" rel="noopener noreferrer" className="text-xs text-agency-white/40 hover:text-agency-white transition-colors">LinkedIn</a>

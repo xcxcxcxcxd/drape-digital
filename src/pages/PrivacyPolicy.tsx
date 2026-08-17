@@ -89,7 +89,7 @@ export default function PrivacyPolicy() {
 
           <div>
             <h2 className="text-2xl font-bold text-agency-white mb-3">9. International Transfers</h2>
-            <p>Your data may be transferred to and processed in countries outside your country of residence, including Morocco and the United States. We ensure appropriate safeguards are in place for such transfers.</p>
+            <p>Your data may be transferred to and processed in countries outside your country of residence, including Spain and the United States. We ensure appropriate safeguards are in place for such transfers.</p>
           </div>
 
           <div>

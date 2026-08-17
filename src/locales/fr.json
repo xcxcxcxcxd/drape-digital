@@ -1,0 +1,480 @@
+{
+  "nav": {
+    "work": "Réalisations",
+    "locksmith": "Sites pour Serruriers",
+    "pricing": "Tarifs",
+    "about": "À Propos",
+    "freeHomepage": "Réserver un Appel"
+  },
+  "hero": {
+    "title": "Des sites pour serruriers qui font <1>sonner le téléphone</1>",
+    "subtitle": "Nous construisons le site en premier. Vous le voyez en direct, sur une vraie URL, avant de payer. Si ce n'est pas mieux que ce que vous avez, repartez sans frais.",
+    "cta": "Réserver un appel stratégique",
+    "trust1": "Conçu pour les métiers d'urgence",
+    "trust2": "Démo d'abord — voyez avant de payer",
+    "trust3": "Basé au Maroc, horaires Canada/US/UK"
+  },
+  "footer": {
+    "tagline": "Nous créons et référençons des sites pour les artisans de l'urgence. Serruriers, dépannage, portes de garage, CVC. Démo d'abord — voyez avant de payer.",
+    "trades": "Métiers",
+    "locksmith": "Sites de Serruriers",
+    "towing": "Sites de Remorquage",
+    "garage": "Sites de Portes de Garage",
+    "hvac": "Sites CVC (Chauffage/Clim)",
+    "company": "Entreprise",
+    "howItWorks": "Comment ça marche",
+    "pricing": "Tarifs",
+    "work": "Réalisations",
+    "blog": "Blog",
+    "about": "À Propos",
+    "contact": "Réserver un Appel",
+    "legal": "Légal",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions de Service",
+    "refund": "Politique de Remboursement",
+    "cookie": "Politique des Cookies",
+    "rights": "Drape Digital. Tous droits réservés."
+  },
+  "home": {
+    "problem": {
+      "title": "Le problème",
+      "p1": "Votre client est devant sa porte verrouillée. Il pleut. Il a son téléphone dans une main et quatre onglets ouverts.",
+      "p2": "Il ne lit pas votre page À Propos. Il cherche deux choses : pouvez-vous ouvrir, et combien ça coûte. Le premier site qui répond obtient l'appel.",
+      "p3": "La plupart des sites ne répondent à aucun des deux. Grosse photo de porte. \"Service de qualité depuis 2009.\" Numéro en bas de page, en gris."
+    },
+    "solution": {
+      "title": "Ce que nous construisons",
+      "priceTitle": "Le prix à l'écran",
+      "priceDesc": "Pas de \"tarifs compétitifs\" — le vrai prix du déplacement. Votre client veut un chiffre. Donnez-le lui.",
+      "arrivalTitle": "Délai d'arrivée à l'écran",
+      "arrivalDesc": "Le vrai délai. \"25 minutes en centre-ville, 40 en banlieue.\" Les détails battent les promesses.",
+      "callTitle": "Un bouton d'appel fixe",
+      "callDesc": "Fixé en bas de l'écran. Suit le pouce tout au long de la page. Un clic pour appeler, partout.",
+      "pagesTitle": "Des pages pour les vraies recherches",
+      "pagesDesc": "Extraction de clé cassée. Programmation de transpondeur. Quelqu'un qui tape ça est prêt à payer aujourd'hui.",
+      "footer": "Des pages séparées pour vos zones d'intervention, avec de vrais détails. Pas 200 copies du même texte."
+    },
+    "process": {
+      "title": "Comment ça marche",
+      "step1": "15 minutes au téléphone. On discute de vos prix, votre zone, les chantiers que vous refusez.",
+      "step2": "Nous construisons la page d'accueil. Trois jours ouvrés.",
+      "step3": "Vous la regardez, en ligne, sur un vrai lien. Pas de mot de passe.",
+      "step4": "Ça vous plaît, on finit le site. Sinon, gardez les fichiers et on en reste là."
+    },
+    "trades": {
+      "title": "Une architecture. Tous les métiers d'urgence.",
+      "subtitle": "Un prospect vaut entre 150€ et 800€. Le client décide en moins de 90 secondes. 100% des achats se font sur téléphone. Serruriers, remorquage, CVC — c'est la même machine.",
+      "learnMore": "En savoir plus"
+    },
+    "dont": {
+      "title": "Ce que nous ne faisons pas",
+      "p1": "Nous ne faisons pas de logos, de gestion de réseaux sociaux ou d'e-commerce. Pas de SEO pour les marques nationales.",
+      "p2": "Si vous voulez un site primé pour son design, on n'est pas la bonne agence. Les nôtres sont faits pour un pouce mouillé sur un écran cassé à 23h."
+    },
+    "cta": {
+      "title": "Réservez un appel stratégique",
+      "subtitle": "Pas de carte. Pas d'engagement. On vous dira cash si on ne peut pas vous aider.",
+      "btn": "Réserver un appel stratégique"
+    }
+  },
+  "pricing": {
+    "header": {
+      "title": "De vrais prix.",
+      "subtitle": "Pas de devis sur mesure.",
+      "desc": "Choisissez un forfait. Si aucun ne correspond, on vous le dira au téléphone. On préfère perdre une vente plutôt que de vous vendre un site inutile."
+    },
+    "tiers": [
+      {
+        "name": "The Call Machine",
+        "tagline": "Faites sonner le téléphone",
+        "setup": "$997",
+        "monthly": "$299",
+        "monthlySuffix": "/mois",
+        "soldTo": "Celui qui n'a pas de site, ou un site de 2014.",
+        "timeline": "2 semaines",
+        "includes": [
+          "Site de 8-12 pages",
+          "Bouton d'appel fixe",
+          "Balisage schema LocalBusiness",
+          "Configuration Google Business",
+          "Numéro de suivi d'appels",
+          "Design mobile-first",
+          "SEO on-page de base"
+        ],
+        "doesNot": [
+          "Pages locales",
+          "SEO continu",
+          "Google Ads"
+        ]
+      },
+      {
+        "name": "Coverage",
+        "tagline": "Classement local mensuel",
+        "setup": "$1,497",
+        "monthly": "$599",
+        "monthlySuffix": "/mois",
+        "soldTo": "Celui qui a un site mais dont le téléphone ne sonne pas.",
+        "timeline": "Continu après 2 sem.",
+        "featured": true,
+        "includes": [
+          "Tout dans The Call Machine",
+          "Pages locales (1-2/mois)",
+          "Posts mensuels sur GBP",
+          "Automatisations SMS d'avis",
+          "Rapport mensuel d'appels",
+          "Nettoyage des citations locales",
+          "Audit de santé trimestriel"
+        ],
+        "doesNot": [
+          "Gestion Google Ads",
+          "Local Services Ads"
+        ]
+      },
+      {
+        "name": "Full Book",
+        "tagline": "Ads + organique. Planning plein.",
+        "setup": "$1,997",
+        "monthly": "$997",
+        "monthlySuffix": "/mois + budget ads",
+        "soldTo": "Celui qui a deux camions et en veut quatre.",
+        "timeline": "Continu",
+        "includes": [
+          "Tout dans Coverage",
+          "Création & gestion Google Ads",
+          "Gestion Local Services Ads",
+          "Optimisation des enchères",
+          "Suivi de fraude au clic",
+          "Rapport ROI mensuel",
+          "Tests A/B de créatives"
+        ],
+        "doesNot": []
+      }
+    ],
+    "card": {
+      "mostPopular": "Le plus populaire",
+      "setupLabel": "installation",
+      "timelineLabel": "Délai",
+      "includesLabel": "Inclus",
+      "doesNotLabel": "Non inclus",
+      "paySetup": "Payer {{setup}} (installation)",
+      "redirecting": "Redirection...",
+      "bookCall": "Réserver l'appel (10€)"
+    },
+    "addon": {
+      "title": "Option : Redirection d'appels",
+      "price": "$79/mois",
+      "desc": "ajoutable sur tout forfait",
+      "p": "Les appels manqués après 18h sont votre plus grande perte. Nous mettons en place un numéro suivi avec redirection hors horaires et SMS automatique en cas d'absence. Le client reçoit : \"Appel bien reçu. Un technicien vous rappelle d'ici 15 min.\" au lieu de la messagerie vocale.",
+      "items": [
+        "Numéro de téléphone suivi",
+        "Redirection d'appels hors horaires",
+        "SMS automatique si appel manqué",
+        "Journal mensuel des appels avec source"
+      ]
+    },
+    "note": {
+      "title": "Note sur le budget Ads",
+      "p": "Les 997€/mois du Full Book couvrent notre gestion. Le budget pub va directement à Google — nous recommandons de commencer entre 500 et 1 500€/mois. On vous dira cash au téléphone si les pubs ne sont pas rentables pour votre marché."
+    },
+    "cta": {
+      "title": "Commencez la création",
+      "subtitle": "On construit, vous voyez le résultat. Ensuite, vous choisissez un forfait ou vous partez. Sans pression.",
+      "btn": "Réserver l'appel stratégique"
+    },
+    "seoTitle": "Combien coûte un site web sur mesure pour un serrurier ? | Drape Digital",
+    "seoDesc": "Tarifs clairs et abordables pour la création de sites web sur mesure pour serruriers, chauffagistes et dépanneurs. Découvrez nos 3 forfaits sans frais cachés."
+  },
+  "howItWorks": {
+    "header": {
+      "title": "Voyez-le avant",
+      "titleBr": "de payer.",
+      "subtitle": "La plupart des agences vous vendent une promesse. Nous vous vendons le produit fini. Voici comment."
+    },
+    "steps": [
+      {
+        "step": "01",
+        "title": "Appel de 15 minutes",
+        "desc": "On discute de vos prix, votre zone, les chantiers que vous refusez. C'est tout. Pas de discours commercial. On note les faits pour votre site.",
+        "time": "15 minutes"
+      },
+      {
+        "step": "02",
+        "title": "Création de la page d'accueil",
+        "desc": "Trois jours ouvrés. Une vraie page, en ligne sur une vraie URL, avec votre nom, votre numéro et vos vrais prix. Pas une maquette — un vrai site.",
+        "time": "3 jours ouvrés"
+      },
+      {
+        "step": "03",
+        "title": "Vous le voyez en ligne",
+        "desc": "On vous envoie un lien. Vous l'ouvrez sur votre téléphone ou ordi. Pas de mot de passe. Pas de PDF. Cliquez sur les boutons. Montrez-le à un proche.",
+        "time": "Prenez votre temps"
+      },
+      {
+        "step": "04",
+        "title": "À vous de décider",
+        "desc": "Ça vous plaît ? On finit le site — le reste des pages, le SEO, le profil Google. Ça ne vous plaît pas ? Gardez les fichiers, on en reste là. Sans relances.",
+        "time": "Sans pression"
+      }
+    ],
+    "cta": {
+      "title": "Prêt à commencer ?",
+      "subtitle": "Pas de carte. Pas d'engagement. Juste un appel de 15 minutes.",
+      "btn": "Réserver un appel stratégique"
+    }
+  },
+  "tradesData": {
+    "locksmith-websites": {
+      "trade": "Serrurier",
+      "tradeNoun": "les serruriers",
+      "tradePlural": "Sites pour Serruriers",
+      "heroH1": "Des sites pour serruriers qui font sonner le téléphone",
+      "heroSub": "Nous construisons le site en premier. Vous le voyez en direct avant de payer. Si ce n'est pas mieux que votre site actuel, repartez avec.",
+      "leadValue": "150€–800€",
+      "decisionTime": "moins de 90 secondes",
+      "buyingChannel": "téléphone, à une main, souvent sous la pluie",
+      "seoTitle": "Création de site web sur mesure pour Serrurier | Drape Digital",
+      "seoDesc": "Services de création de site web sur mesure pour serruriers. Fonctionnalités essentielles, réservation intégrée, coûts transparents. Voir la démo avant paiement.",
+      "problemSection": {
+        "scenario": "Votre client est devant sa porte verrouillée. Il pleut. Il a son téléphone dans une main et quatre onglets ouverts.",
+        "searchBehavior": "Il ne lit pas votre page À Propos. Il cherche deux choses : pouvez-vous ouvrir, et combien ça coûte. Le premier qui répond obtient l'appel.",
+        "whatsBroken": "La plupart des sites ne répondent à aucun des deux. Grosse photo de porte. \"Qualité depuis 2009.\" Numéro en bas, en gris."
+      },
+      "exampleJobs": [
+        "Extraction de clé cassée",
+        "Ouverture de porte blindée",
+        "Réparation de serrure",
+        "Changement de barillet",
+        "Installation multipoints",
+        "Ouverture de coffre-fort",
+        "Clé perdue",
+        "Mise en sécurité après effraction"
+      ],
+      "exampleAreas": [
+        "Centre-ville",
+        "Banlieue",
+        "Zones industrielles",
+        "Quartiers résidentiels"
+      ],
+      "faq": [
+        {
+          "q": "Faites-vous uniquement des sites pour serruriers ?",
+          "a": "Non. Nous couvrons tous les métiers d'urgence : remorquage, CVC, plombiers. Mais c'est par la serrurerie que nous avons commencé."
+        },
+        {
+          "q": "En combien de temps ?",
+          "a": "Trois jours ouvrés pour la page d'accueil. Nous la construisons en ligne avant de demander quoi que ce soit."
+        },
+        {
+          "q": "Et si j'ai déjà un site ?",
+          "a": "On refait votre page d'accueil gratuitement. Si elle est meilleure, on discute. Sinon, gardez les fichiers."
+        },
+        {
+          "q": "Faites-vous des campagnes Google Ads ?",
+          "a": "Oui, dans le forfait Full Book. Les clics de serruriers sont chers (30-80€), donc le budget compte."
+        },
+        {
+          "q": "Pouvez-vous m'aider avec un profil Google suspendu ?",
+          "a": "Nous l'avons déjà fait. Les suspensions GBP sont courantes pour les serruriers. Nous connaissons le processus."
+        },
+        {
+          "q": "Que ne faites-vous pas ?",
+          "a": "Logos, réseaux sociaux, e-commerce, SEO national. Nous faisons sonner les téléphones locaux."
+        }
+      ]
+    },
+    "towing-websites": {
+      "trade": "Remorquage",
+      "tradeNoun": "les dépanneuses",
+      "tradePlural": "Sites de Remorquage",
+      "heroH1": "Des sites de remorquage qui génèrent des appels, pas des clics",
+      "heroSub": "On construit, vous validez. Si le site ne semble pas capable de voler les appels de vos concurrents, partez sans payer.",
+      "leadValue": "100€–500€",
+      "decisionTime": "moins de 60 secondes",
+      "buyingChannel": "téléphone, sur le bord de la route, stressé",
+      "seoTitle": "Création de Site & SEO pour Dépanneuse | Drape Digital",
+      "seoDesc": "Création de sites pour le dépannage et remorquage. Démo d'abord. SEO local, clic-pour-appeler.",
+      "problemSection": {
+        "scenario": "Votre client est sur la bande d'arrêt d'urgence. La voiture ne démarre pas. Il fait noir, il fait froid, 12% de batterie.",
+        "searchBehavior": "Il se fiche des photos de votre flotte. Il veut savoir : pouvez-vous venir, à quelle vitesse, et pour combien.",
+        "whatsBroken": "La plupart des sites montrent une photo de dépanneuse avec \"Service 24/7\". Pas de prix, pas d'ETA. Le client appelle le premier numéro visible."
+      },
+      "exampleJobs": [
+        "Assistance routière",
+        "Remorquage plateau",
+        "Remorquage moto",
+        "Remorquage longue distance",
+        "Récupération d'accident",
+        "Coup de boost batterie",
+        "Ouverture de portière",
+        "Treuillage"
+      ],
+      "exampleAreas": [
+        "Autoroutes",
+        "Centre-ville",
+        "Zones industrielles",
+        "Zones résidentielles"
+      ],
+      "faq": [
+        {
+          "q": "Faites-vous des sites pour dépanneuses spécifiquement ?",
+          "a": "Oui. Remorquage, serruriers, CVC — tout métier d'urgence où le client appelle en panique."
+        },
+        {
+          "q": "En combien de temps ?",
+          "a": "Page d'accueil en 3 jours. Site complet en 2 semaines. Tout est en ligne avant de payer."
+        },
+        {
+          "q": "Gérez-vous Google Ads pour le remorquage ?",
+          "a": "Dans le forfait 3, oui. Les clics sont chers. On vous dira si votre marché est viable."
+        },
+        {
+          "q": "Qu'en est-il de l'intégration logicielle (dispatch) ?",
+          "a": "Nous ne créons pas de logiciel. Nous faisons le site pour faire sonner le téléphone."
+        },
+        {
+          "q": "Pouvez-vous me classer sur 'remorquage près de chez moi' ?",
+          "a": "C'est un résultat de carte (Map Pack). Notre forfait 2 crée les pages locales pour y arriver."
+        },
+        {
+          "q": "Je couvre une petite zone, est-ce rentable ?",
+          "a": "Si vous faites 3+ interventions/jour, oui. Un appel de plus par jour rentabilise le site."
+        }
+      ]
+    },
+    "garage-door-websites": {
+      "trade": "Portes de Garage",
+      "tradeNoun": "les portes de garage",
+      "tradePlural": "Sites de Portes de Garage",
+      "heroH1": "Des sites de portes de garage qui convertissent à la première visite",
+      "heroSub": "Nous construisons le site en premier. S'il n'est pas meilleur que le vôtre, vous repartez sans frais.",
+      "leadValue": "200€–1 200€",
+      "decisionTime": "moins de 2 minutes",
+      "buyingChannel": "téléphone, dans le garage, la porte bloquée",
+      "seoTitle": "Création de Site pour Portes de Garage | Drape Digital",
+      "seoDesc": "Sites pour l'installation et la réparation de portes de garage. SEO local, vrais prix à l'écran.",
+      "problemSection": {
+        "scenario": "La porte du client est bloquée ouverte. Il est 7h, il doit aller bosser, sa voiture est coincée.",
+        "searchBehavior": "Il veut 3 choses : pouvez-vous réparer aujourd'hui, combien coûte un ressort, êtes-vous dans le coin.",
+        "whatsBroken": "La plupart des sites sont des galeries photos. Pas de prix, pas de zone d'intervention. L'appel va à celui qui répond à ces questions."
+      },
+      "exampleJobs": [
+        "Remplacement de ressort",
+        "Installation de moteur",
+        "Remplacement de panneau",
+        "Réparation de câble",
+        "Porte déraillée",
+        "Remplacement de roulettes",
+        "Joint d'étanchéité",
+        "Installation nouvelle porte"
+      ],
+      "exampleAreas": [
+        "Banlieue résidentielle",
+        "Constructions neuves",
+        "Parcs industriels"
+      ],
+      "faq": [
+        {
+          "q": "Faites-vous des sites pour portes de garage ?",
+          "a": "Oui, la réparation est un métier d'urgence — même schéma que la serrurerie."
+        },
+        {
+          "q": "En quoi vos sites diffèrent d'un template Wix ?",
+          "a": "Des pages spécifiques qui classent pour les vraies recherches. Des prix affichés. Un bouton d'appel fixe."
+        },
+        {
+          "q": "Puis-je afficher des prix si ça varie ?",
+          "a": "Oui. \"À partir de 85€\" est mieux que rien. Le client veut juste un ordre d'idée."
+        },
+        {
+          "q": "Et si je fais aussi des installations ?",
+          "a": "On crée des pages pour les deux. L'installation demande plus de réflexion (photos, détails). Même site, deux modes."
+        },
+        {
+          "q": "Ai-je besoin de pages locales ?",
+          "a": "Si vous couvrez plusieurs villes, oui. 'Réparation porte de garage [ville]' est ce que les gens cherchent."
+        },
+        {
+          "q": "Que ne faites-vous pas ?",
+          "a": "Pas d'e-commerce, pas de réseaux sociaux. Juste des sites qui génèrent des appels."
+        }
+      ]
+    },
+    "hvac-websites": {
+      "trade": "CVC (Chauffage/Clim)",
+      "tradeNoun": "les entreprises CVC",
+      "tradePlural": "Sites CVC",
+      "heroH1": "Des sites CVC qui transforment les recherches en interventions",
+      "heroSub": "On construit, vous voyez le résultat. Pas de contrat, pas d'acompte.",
+      "leadValue": "150€–2 000€",
+      "decisionTime": "moins de 3 minutes",
+      "buyingChannel": "téléphone, il fait trop chaud/froid, besoin d'une réparation aujourd'hui",
+      "seoTitle": "Création de Site CVC & Chauffagiste | Drape Digital",
+      "seoDesc": "Création de sites pour chauffagistes et réparateurs clim. Démo gratuite.",
+      "problemSection": {
+        "scenario": "On est en août. La clim a lâché. Il fait 35°C et le client a un bébé. Il cherche 'réparation clim urgence'.",
+        "searchBehavior": "Il se fiche de vos certifications. Il veut savoir : venez-vous aujourd'hui, et quel est le tarif de diagnostic.",
+        "whatsBroken": "La plupart des sites listent tous les services existants. Personne ne lit. Le client veut juste savoir quand vous arrivez."
+      },
+      "exampleJobs": [
+        "Réparation de clim",
+        "Réparation de chaudière",
+        "Installation pompe à chaleur",
+        "Réparation de conduits",
+        "Remplacement thermostat",
+        "Recharge de fluide",
+        "Entretien chaudière",
+        "Dépannage chauffage urgence"
+      ],
+      "exampleAreas": [
+        "Résidentiel",
+        "Commercial",
+        "Constructions neuves"
+      ],
+      "faq": [
+        {
+          "q": "Faites-vous des sites CVC spécifiquement ?",
+          "a": "Oui. C'est un métier d'urgence en été et hiver. Même architecture que les serruriers."
+        },
+        {
+          "q": "Et pour les contrats d'entretien ?",
+          "a": "On peut ajouter une page, mais ce n'est pas la priorité. Le but est de convertir l'urgence d'abord."
+        },
+        {
+          "q": "Pouvez-vous me classer sur 'réparation clim près de moi' ?",
+          "a": "C'est le but du Forfait 2 via les pages locales et le Google Business Profile."
+        },
+        {
+          "q": "Faites-vous du Google Ads pour CVC ?",
+          "a": "Dans le forfait 3. Les clics CVC sont saisonniers. On vous montrera les coûts d'abord."
+        },
+        {
+          "q": "Je fais du résidentiel et du commercial ?",
+          "a": "Oui, sections séparées. Le commercial cherche différemment, donc pages dédiées."
+        },
+        {
+          "q": "Et si je débute sans avis ?",
+          "a": "On met en place un flux SMS de collecte d'avis dans le forfait 2."
+        }
+      ]
+    }
+  },
+  "tradePage": {
+    "whyTitle": "Pourquoi {{tradeNoun}} ont besoin d'un site différent",
+    "leadValue": "Valeur du client",
+    "decisionTime": "Temps de décision",
+    "buyingChannel": "Canal d'achat",
+    "problemTitle": "Le problème",
+    "pagesTitle": "Des pages pour les vraies recherches",
+    "pagesDesc": "Chacune devient sa propre page sur votre site — se classant pour le problème spécifique que votre client tape sur son téléphone en ce moment.",
+    "tiersTitle": "Trois forfaits. Vrais prix.",
+    "tiersDesc": "Pas de devis sur mesure. Choisissez un forfait.",
+    "seePricing": "Voir les détails des tarifs →",
+    "faqTitle": "Questions fréquentes",
+    "ctaTitle": "Découvrez à quoi ressemblerait votre site",
+    "ctaDesc": "On crée votre page d'accueil gratuitement. Sur un vrai lien. Pas d'engagement.",
+    "ctaBtn": "Réserver un appel",
+    "paySetup": "Payer {{price}} (installation)",
+    "bookCall": "Réserver l'appel (10€)",
+    "redirecting": "Redirection..."
+  }
+}

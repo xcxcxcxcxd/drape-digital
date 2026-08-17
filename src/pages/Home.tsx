@@ -2,8 +2,10 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone, MapPin, Search, Star } from "lucide-react";
+import { useTranslation, Trans } from "react-i18next";
 
 export default function Home() {
+  const { t } = useTranslation();
   const { scrollYProgress } = useScroll();
   const yParallax = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const opacityParallax = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
@@ -32,13 +34,13 @@ export default function Home() {
             className="flex flex-col items-center"
           >
             <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-tighter mb-8 max-w-5xl">
-              Websites for locksmiths who need the{" "}
-              <span className="text-agency-accent">phone to ring</span>
+              <Trans i18nKey="hero.title">
+                Websites for locksmiths who need the <span className="text-agency-accent">phone to ring</span>
+              </Trans>
             </h1>
 
             <p className="text-lg md:text-xl text-agency-white/70 max-w-2xl mx-auto font-light leading-relaxed mb-10">
-              We build the site first. You see it live, on a real URL, before you pay anything.
-              If it's not better than what you've got, walk away and keep the pages.
+              {t("hero.subtitle")}
             </p>
 
             <Link
@@ -46,14 +48,14 @@ export default function Home() {
               id="hero-cta"
               className="inline-flex items-center gap-2 px-8 py-4 accent-gradient rounded-full font-bold text-sm tracking-tight shadow-xl shadow-agency-accent/20 hover:shadow-agency-accent/40 transition-all duration-300 group"
             >
-              Get a free homepage
+              {t("hero.cta")}
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
 
             <div className="trust-strip mt-10">
-              <span>Built for emergency trades</span>
-              <span>Demo-first — see it before you pay</span>
-              <span>Based in Morocco, working UK/US/Canada hours</span>
+              <span>{t("hero.trust1")}</span>
+              <span>{t("hero.trust2")}</span>
+              <span>{t("hero.trust3")}</span>
             </div>
           </motion.div>
         </motion.div>
@@ -69,20 +71,16 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-10">The problem</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-10">{t("home.problem.title")}</h2>
             <div className="section-prose space-y-6">
               <p>
-                Your customer is standing outside their own front door. It's raining.
-                They've got one hand on a phone and four tabs open.
+                {t("home.problem.p1")}
               </p>
               <p>
-                They're not reading your About page. They're looking for two things:
-                can you actually get in, and what will it cost. Whichever site answers
-                first gets the call.
+                {t("home.problem.p2")}
               </p>
               <p className="text-agency-white/50">
-                Most trade sites answer neither. Big photo of a door. "Quality service
-                since 2009." Phone number in the footer, in grey.
+                {t("home.problem.p3")}
               </p>
             </div>
           </motion.div>
@@ -98,30 +96,30 @@ export default function Home() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-14 max-w-3xl">What we build instead</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-14 max-w-3xl">{t("home.solution.title")}</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {[
               {
                 icon: <span className="text-2xl font-bold text-agency-accent">£</span>,
-                title: "Price on the screen",
-                desc: "Not \"competitive rates\" — the actual call-out fee. Your customer wants a number. Give them one.",
+                title: t("home.solution.priceTitle"),
+                desc: t("home.solution.priceDesc"),
               },
               {
                 icon: <MapPin size={24} className="text-agency-accent" />,
-                title: "Arrival window on the screen",
-                desc: "Real one, from your dispatch log. \"25 minutes in central, 40 minutes outer suburbs.\" Specifics beat promises.",
+                title: t("home.solution.arrivalTitle"),
+                desc: t("home.solution.arrivalDesc"),
               },
               {
                 icon: <Phone size={24} className="text-agency-accent" />,
-                title: "A call button that never leaves",
-                desc: "Fixed to the bottom of the viewport. Follows the thumb down the page. One tap to call, on every screen.",
+                title: t("home.solution.callTitle"),
+                desc: t("home.solution.callDesc"),
               },
               {
                 icon: <Search size={24} className="text-agency-accent" />,
-                title: "Pages for the jobs people actually search",
-                desc: "Broken key extraction. Transponder programming. Panic bar repair. Someone typing \"push pull paddle repair\" is ready to pay today.",
+                title: t("home.solution.pagesTitle"),
+                desc: t("home.solution.pagesDesc"),
               },
             ].map((item, i) => (
               <motion.div
@@ -146,8 +144,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-12 text-agency-white/50 max-w-2xl text-lg"
           >
-            Separate pages for the areas you cover, with real detail about the buildings there.
-            Not 200 spun copies of the same paragraph. Google's been catching that for two years.
+            {t("home.solution.footer")}
           </motion.p>
         </div>
       </section>
@@ -161,26 +158,26 @@ export default function Home() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-14 max-w-3xl">How the free homepage works</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-14 max-w-3xl">{t("home.process.title")}</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 step: "01",
-                text: "Fifteen minutes on the phone. We ask about your prices, your patch, the jobs you turn down.",
+                text: t("home.process.step1"),
               },
               {
                 step: "02",
-                text: "We build a homepage. Three working days.",
+                text: t("home.process.step2"),
               },
               {
                 step: "03",
-                text: "You look at it, live, on a real link. No login, no deck.",
+                text: t("home.process.step3"),
               },
               {
                 step: "04",
-                text: "Like it, we finish the site. Don't, keep the files and we'll leave you alone.",
+                text: t("home.process.step4"),
               },
             ].map((item, i) => (
               <motion.div
@@ -215,10 +212,10 @@ export default function Home() {
             className="mb-14"
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-4 max-w-3xl">
-              One site architecture. Every emergency trade.
+              {t("home.trades.title")}
             </h2>
             <p className="text-agency-white/50 text-lg max-w-2xl">
-              A lead is worth £150–£800. The customer decides in under 90 seconds. 100% of the buying happens on a phone. That's locksmiths, towing, garage doors, HVAC — same machine.
+              {t("home.trades.subtitle")}
             </p>
           </motion.div>
 
@@ -248,7 +245,7 @@ export default function Home() {
                     {trade.name}
                   </h3>
                   <div className="flex items-center gap-1 text-sm text-agency-white/40 group-hover:text-agency-white/60 transition-colors">
-                    Learn more <ArrowRight size={14} />
+                    {t("home.trades.learnMore")} <ArrowRight size={14} />
                   </div>
                 </Link>
               </motion.div>
@@ -267,15 +264,13 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-10">What we don't do</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-10">{t("home.dont.title")}</h2>
             <div className="section-prose space-y-6">
               <p>
-                We don't do logos, brand books, or social media management. We don't do e-commerce.
-                We don't do SEO for national brands.
+                {t("home.dont.p1")}
               </p>
               <p className="text-agency-white/50 italic">
-                If you need a site that wins a design award, we're the wrong shop.
-                Ours are built for a wet thumb on a cracked screen at 11pm.
+                {t("home.dont.p2")}
               </p>
             </div>
           </motion.div>
@@ -292,11 +287,9 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="max-w-3xl mx-auto relative z-10"
         >
-          <h2 className="text-3xl md:text-6xl font-bold mb-6">
-            Get a free homepage
-          </h2>
+          <h2 className="text-3xl md:text-6xl font-bold mb-6">{t("home.cta.title")}</h2>
           <p className="text-lg text-agency-white/50 mb-10 max-w-xl mx-auto">
-            No card. No contract. We'll tell you on the call if we don't think we can help.
+            {t("home.cta.subtitle")}
           </p>
           <Link
             to="/contact"

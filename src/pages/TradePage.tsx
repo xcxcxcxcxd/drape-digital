@@ -6,9 +6,13 @@ import { getTradeBySlug } from "../data/tradeData";
 import React, { useState } from "react";
 import NotFound from "./NotFound";
 
+import { useTranslation } from "react-i18next";
+import { TradeConfig } from "../data/tradeData";
+
 export default function TradePage() {
+  const { t } = useTranslation();
   const { slug } = useParams<{ slug: string }>();
-  const trade = slug ? getTradeBySlug(slug) : undefined;
+  const trade = slug ? t(`tradesData.${slug}`, { returnObjects: true, defaultValue: null }) as TradeConfig | null : null;
   const [loadingTier, setLoadingTier] = useState<string | null>(null);
 
   const handleCheckout = async (e: React.MouseEvent, tierName: string, priceString: string) => {
@@ -95,9 +99,9 @@ export default function TradePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { label: "Lead value", value: trade.leadValue },
-              { label: "Decision time", value: trade.decisionTime },
-              { label: "Buying channel", value: trade.buyingChannel },
+              { label: t("tradePage.leadValue"), value: trade.leadValue },
+              { label: t("tradePage.decisionTime"), value: trade.decisionTime },
+              { label: t("tradePage.buyingChannel"), value: trade.buyingChannel },
             ].map((stat, i) => (
               <motion.div
                 key={i}
@@ -124,7 +128,7 @@ export default function TradePage() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-10">The problem</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-10">{t("tradePage.problemTitle")}</h2>
             <div className="section-prose space-y-6">
               <p>{trade.problemSection.scenario}</p>
               <p>{trade.problemSection.searchBehavior}</p>
@@ -144,12 +148,8 @@ export default function TradePage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mb-10"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Pages for the jobs people actually search
-            </h2>
-            <p className="text-agency-white/50 text-lg">
-              Each of these becomes its own page on your site — ranking for the specific problem your customer is typing into their phone right now.
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("tradePage.pagesTitle")}</h2>
+            <p className="text-agency-white/50 text-lg">{t("tradePage.pagesDesc")}</p>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -180,8 +180,8 @@ export default function TradePage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mb-14"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Three tiers. Real prices.</h2>
-            <p className="text-agency-white/50 text-lg">No custom quotes. No hourly billing. Pick a tier.</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("tradePage.tiersTitle")}</h2>
+            <p className="text-agency-white/50 text-lg">{t("tradePage.tiersDesc")}</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -248,16 +248,16 @@ export default function TradePage() {
                     }`}
                   >
                     {loadingTier === tier.name ? (
-                      <><Loader2 size={16} className="animate-spin" /> Redirecting...</>
+                      <><Loader2 size={16} className="animate-spin" /> {t("tradePage.redirecting")}</>
                     ) : (
-                      <>Pay {tier.price} Setup Fee</>
+                      <>{t("tradePage.paySetup").replace("{{price}}", tier.price)}</>
                     )}
                   </button>
                   <Link
                     to="/contact"
                     className="w-full text-center py-4 rounded-full font-bold text-sm tracking-tight transition-all bg-agency-white/5 border border-agency-white/10 hover:bg-agency-white/10 text-agency-white"
                   >
-                    Book strategy call ($10)
+                    {t("tradePage.bookCall")}
                   </Link>
                 </div>
               </motion.div>
@@ -266,7 +266,7 @@ export default function TradePage() {
 
           <div className="mt-8 text-center">
             <Link to="/pricing" className="text-sm text-agency-white/40 hover:text-agency-white transition-colors border-b border-agency-white/20 pb-1">
-              See full pricing details →
+              {t("tradePage.seePricing")}
             </Link>
           </div>
         </div>
@@ -282,7 +282,7 @@ export default function TradePage() {
             transition={{ duration: 0.6 }}
             className="mb-10"
           >
-            <h2 className="text-3xl md:text-4xl font-bold">Questions</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">{t("tradePage.faqTitle")}</h2>
           </motion.div>
 
           <div className="space-y-2">
@@ -303,10 +303,10 @@ export default function TradePage() {
           className="max-w-3xl mx-auto"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            See what your site would look like
+            {t("tradePage.ctaTitle")}
           </h2>
           <p className="text-lg text-agency-white/50 mb-10 max-w-xl mx-auto">
-            We'll build your homepage for free. Live on a real URL. No card, no contract.
+            {t("tradePage.ctaDesc")}
           </p>
           <Link
             to="/contact"
